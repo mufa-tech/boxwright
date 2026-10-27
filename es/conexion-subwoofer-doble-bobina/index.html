@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es-419">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Conexión de subwoofer doble bobina a 1, 2 o 4 ohms</title>
+<meta name="description" content="Cómo conectar de 1 a 4 subs de bobina sencilla o doble bobina: la impedancia final en serie y en paralelo, y la carga mínima de tu amplificador.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEAE5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131416" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/boxwright/es/conexion-subwoofer-doble-bobina/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/boxwright/subwoofer-wiring/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/boxwright/pt-br/ligacao-subwoofer-bobina-dupla/">
+<link rel="alternate" hreflang="es-419" href="https://mufa-tech.github.io/boxwright/es/conexion-subwoofer-doble-bobina/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/boxwright/subwoofer-wiring/">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="preload" href="../../assets/fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Boxwright">
+<meta property="og:title" content="Conexión de subwoofer doble bobina a 1, 2 o 4 ohms">
+<meta property="og:description" content="Cómo conectar de 1 a 4 subs de bobina sencilla o doble bobina: la impedancia final en serie y en paralelo, y la carga mínima de tu amplificador.">
+<meta property="og:url" content="https://mufa-tech.github.io/boxwright/es/conexion-subwoofer-doble-bobina/">
+<meta property="og:image" content="https://mufa-tech.github.io/boxwright/assets/og-es-419.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_MX">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Ir al contenido</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../../es/"><img src="../../assets/icon.svg" alt="" width="32" height="32">Boxwright</a>
+<nav class="main" aria-label="Principal"><a href="../../es/calculadora-cajon-subwoofer/">Calculadora de cajones</a><a href="../../es/support/">Soporte</a></nav>
+<details class="langpick"><summary aria-label="Idioma: Español (Latinoamérica)"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>ES</span></summary><nav aria-label="Idioma"><a href="../../subwoofer-wiring/" hreflang="en" lang="en">English</a><a href="../../pt-br/ligacao-subwoofer-bobina-dupla/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../../es/conexion-subwoofer-doble-bobina/" hreflang="es-419" lang="es-419" aria-current="true">Español (Latinoamérica)</a><a href="../../id/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../../pl/" hreflang="pl" lang="pl">Polski</a><a href="../../de/" hreflang="de" lang="de">Deutsch</a><a href="../../fr/" hreflang="fr" lang="fr">Français</a><a href="../../nl/" hreflang="nl" lang="nl">Nederlands</a><a href="../../it/" hreflang="it" lang="it">Italiano</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../../es/">Boxwright</a></p>
+<h1>Conexión de subwoofers: serie, paralelo y doble bobina</h1>
+<p class="lead">La carga que ve tu amplificador depende de cómo unas las bobinas y los subs. Aquí está cada conexión posible de uno a cuatro subs, calculada con la misma función que usa la app.</p>
+
+<article class="prose">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">En esta página</p><ol><li><a href="#rules">Dos reglas</a></li><li><a href="#dvc">Subs de doble bobina</a></li><li><a href="#svc">Subs de bobina sencilla</a></li><li><a href="#amp">Que cuadre con el amplificador</a></li><li><a href="#meter">Lo que marca el multímetro</a></li></ol></nav>
+<h2 id="rules">Dos reglas</h2>
+<p>En <strong>serie</strong> las impedancias se suman: dos bobinas de 4 Ω dan 8 Ω. En <strong>paralelo</strong> se dividen: dos bobinas de 4 Ω dan 2 Ω, y en general 1/Z = 1/Z1 + 1/Z2 + … Un sub de doble bobina son dos bobinas en un mismo cono. Primero conecta las bobinas entre sí, en serie o en paralelo, y luego conecta los subs.</p>
+<h2 id="dvc">Subs de doble bobina</h2>
+<p>“–” quiere decir que esa conexión no aplica con un solo sub.</p><p class="table-cap" aria-hidden="true">Subs de doble bobina (DVC), impedancia final</p><div class="table-wrap"><table class="num-table"><caption class="sr">Subs de doble bobina (DVC), impedancia final</caption>
+<thead><tr><th scope="col">Subs</th><th scope="col">Bobinas en serie, subs en paralelo</th><th scope="col">Bobinas en paralelo, subs en paralelo</th><th scope="col">Bobinas en serie, subs en serie</th><th scope="col">Bobinas en paralelo, subs en serie</th></tr></thead>
+<tbody><tr><th scope="row" class="l">1 × DVC de 1 Ω</th><td>2 Ω</td><td>0.5 Ω</td><td>–</td><td>–</td></tr>
+<tr><th scope="row" class="l">2 × DVC de 1 Ω</th><td>1 Ω</td><td>0.25 Ω</td><td>4 Ω</td><td>1 Ω</td></tr>
+<tr><th scope="row" class="l">3 × DVC de 1 Ω</th><td>0.67 Ω</td><td>0.17 Ω</td><td>6 Ω</td><td>1.5 Ω</td></tr>
+<tr><th scope="row" class="l">4 × DVC de 1 Ω</th><td>0.5 Ω</td><td>0.13 Ω</td><td>8 Ω</td><td>2 Ω</td></tr>
+<tr><th scope="row" class="l">1 × DVC de 2 Ω</th><td>4 Ω</td><td>1 Ω</td><td>–</td><td>–</td></tr>
+<tr><th scope="row" class="l">2 × DVC de 2 Ω</th><td>2 Ω</td><td>0.5 Ω</td><td>8 Ω</td><td>2 Ω</td></tr>
+<tr><th scope="row" class="l">3 × DVC de 2 Ω</th><td>1.33 Ω</td><td>0.33 Ω</td><td>12 Ω</td><td>3 Ω</td></tr>
+<tr><th scope="row" class="l">4 × DVC de 2 Ω</th><td>1 Ω</td><td>0.25 Ω</td><td>16 Ω</td><td>4 Ω</td></tr>
+<tr><th scope="row" class="l">1 × DVC de 4 Ω</th><td>8 Ω</td><td>2 Ω</td><td>–</td><td>–</td></tr>
+<tr><th scope="row" class="l">2 × DVC de 4 Ω</th><td>4 Ω</td><td>1 Ω</td><td>16 Ω</td><td>4 Ω</td></tr>
+<tr><th scope="row" class="l">3 × DVC de 4 Ω</th><td>2.67 Ω</td><td>0.67 Ω</td><td>24 Ω</td><td>6 Ω</td></tr>
+<tr><th scope="row" class="l">4 × DVC de 4 Ω</th><td>2 Ω</td><td>0.5 Ω</td><td>32 Ω</td><td>8 Ω</td></tr></tbody></table></div><p>En serie o en paralelo, las bobinas dan la misma fuerza de motor (Bl²/Re), así que el diseño del cajón no cambia. Si dejas una bobina sin conectar, la fuerza del motor baja a la mitad: el Qes se duplica y el sub suena más suelto en un cajón calculado para las dos bobinas. Usa las dos.</p>
+<h2 id="svc">Subs de bobina sencilla</h2>
+<p class="table-cap" aria-hidden="true">Subs de bobina sencilla (SVC), impedancia final</p><div class="table-wrap"><table class="num-table"><caption class="sr">Subs de bobina sencilla (SVC), impedancia final</caption>
+<thead><tr><th scope="col">Subs</th><th scope="col">Paralelo</th><th scope="col">Serie</th></tr></thead>
+<tbody><tr><th scope="row" class="l">1 × SVC de 2 Ω</th><td>2 Ω</td><td>–</td></tr>
+<tr><th scope="row" class="l">2 × SVC de 2 Ω</th><td>1 Ω</td><td>4 Ω</td></tr>
+<tr><th scope="row" class="l">3 × SVC de 2 Ω</th><td>0.67 Ω</td><td>6 Ω</td></tr>
+<tr><th scope="row" class="l">4 × SVC de 2 Ω</th><td>0.5 Ω</td><td>8 Ω</td></tr>
+<tr><th scope="row" class="l">1 × SVC de 4 Ω</th><td>4 Ω</td><td>–</td></tr>
+<tr><th scope="row" class="l">2 × SVC de 4 Ω</th><td>2 Ω</td><td>8 Ω</td></tr>
+<tr><th scope="row" class="l">3 × SVC de 4 Ω</th><td>1.33 Ω</td><td>12 Ω</td></tr>
+<tr><th scope="row" class="l">4 × SVC de 4 Ω</th><td>1 Ω</td><td>16 Ω</td></tr>
+<tr><th scope="row" class="l">1 × SVC de 8 Ω</th><td>8 Ω</td><td>–</td></tr>
+<tr><th scope="row" class="l">2 × SVC de 8 Ω</th><td>4 Ω</td><td>16 Ω</td></tr>
+<tr><th scope="row" class="l">3 × SVC de 8 Ω</th><td>2.67 Ω</td><td>24 Ω</td></tr>
+<tr><th scope="row" class="l">4 × SVC de 8 Ω</th><td>2 Ω</td><td>32 Ω</td></tr></tbody></table></div>
+<h2 id="amp">Que cuadre con el amplificador</h2>
+<p>Todo amplificador tiene una carga mínima estable: “estable a 1 ohm”, “estable a 2 ohms”. Elige una conexión que quede en esa carga o arriba. Casi todos los amplificadores monoblock clase D sacan su mayor potencia en su carga estable más baja, por eso se usan tanto las conexiones a 1 Ω y a 2 Ω. Si bajas de ahí, el amplificador se calienta y se apaga, o se daña.</p><p>Subs iguales se reparten la potencia por igual en cualquiera de estas conexiones. Si mezclas subs distintos en un mismo canal no se reparte parejo, así que deja cada grupo con un solo modelo.</p>
+<h2 id="meter">Lo que marca el multímetro</h2>
+<p>El multímetro marca la resistencia de la bobina en corriente directa, el Re, no la impedancia nominal. Una bobina de 4 Ω marca unos 3.2 a 3.6 Ω (la hoja del JL Audio 12W3v3-4 trae Re = 3.56 Ω). Una carga final de 2 Ω marca unos 1.6 a 1.8 Ω. Es normal. Si marca casi 0 Ω, hay un corto.</p>
+<nav class="next" aria-label="Siguiente pregunta"><p class="next-h">Siguiente pregunta</p><ul><li><a href="../../es/calculadora-cajon-subwoofer/">Calculadora de cajón<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><a href="../../es/verificar-sintonia-del-puerto/">Revisión de sintonía<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">En la app</h2>
+<p>La app enlista cada conexión válida de 1 a 16 subs con 1, 2 o 4 bobinas, esconde las que quedan debajo de la carga mínima de tu amplificador y te dice cuánta potencia le toca a cada sub.</p>
+<p class="small">Gratis: todos los tipos de cajón, la lista completa de bocinas, las medidas de corte, la conexión y la prueba de tono. Pro es un solo pago, sin suscripción. Sin cuenta y funciona sin internet.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Muy pronto</b></span><span class="store soon"><small>App Store</small><b>Más adelante</b></span></div>
+</aside>
+<h2>Fuentes</h2>
+<ol class="sources"><li><a href="https://en.wikipedia.org/wiki/Series_and_parallel_circuits" rel="noopener">Series and parallel circuits (Ohm’s law)</a></li></ol>
+<p class="callout">Los resultados son estimados de diseño. Antes de armar, revisa la hoja técnica de la bocina y la carga mínima de tu amplificador.</p>
+<p class="updated">Revisado contra las fuentes: 27 de octubre de 2026</p>
+</article>
+</div>
+<div class="wrap"><p class="also-in"><span>Esta página en:</span> <a href="../../subwoofer-wiring/" hreflang="en" lang="en">English</a><a href="../../pt-br/ligacao-subwoofer-bobina-dupla/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Los resultados son estimados de diseño. Antes de armar, revisa la hoja técnica de la bocina y la carga mínima de tu amplificador.</p>
+<p>Boxwright es una app para diseñar cajones de subwoofer y bafles, para car audio y hi-fi casero, hecha por Mufatech. Este sitio no usa cookies y no carga nada de otros servidores.</p>
+<nav aria-label="Sitio"><a href="../../es/">Boxwright</a><a href="../../es/calculadora-cajon-subwoofer/">Calculadora de cajón</a><a href="../../es/errores-hoja-tecnica-thiele-small/">Revisión de hoja técnica</a><a href="../../es/conexion-subwoofer-doble-bobina/">Tablas de conexión</a><a href="../../es/verificar-sintonia-del-puerto/">Revisión de sintonía</a><a href="../../es/support/">Soporte</a><a href="../../es/privacy/">Privacidad</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+
+</body>
+</html>

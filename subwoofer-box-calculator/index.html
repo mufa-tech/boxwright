@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Subwoofer box calculator: sealed volume and port length</title>
+<meta name="description" content="Free subwoofer box calculator: Qtc, Fc and F3 for a sealed box from Fs, Qts and Vas, and the port length for a ported box. Runs in your browser.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEAE5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131416" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/boxwright/subwoofer-box-calculator/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/boxwright/subwoofer-box-calculator/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/boxwright/pt-br/calculadora-caixa-subwoofer/">
+<link rel="alternate" hreflang="es-419" href="https://mufa-tech.github.io/boxwright/es/calculadora-cajon-subwoofer/">
+<link rel="alternate" hreflang="de" href="https://mufa-tech.github.io/boxwright/de/gehaeuse-rechner/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/boxwright/subwoofer-box-calculator/">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<link rel="preload" href="../assets/fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Boxwright">
+<meta property="og:title" content="Subwoofer box calculator: sealed volume and port length">
+<meta property="og:description" content="Free subwoofer box calculator: Qtc, Fc and F3 for a sealed box from Fs, Qts and Vas, and the port length for a ported box. Runs in your browser.">
+<meta property="og:url" content="https://mufa-tech.github.io/boxwright/subwoofer-box-calculator/">
+<meta property="og:image" content="https://mufa-tech.github.io/boxwright/assets/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="es_MX">
+<meta property="og:locale:alternate" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../"><img src="../assets/icon.svg" alt="" width="32" height="32">Boxwright</a>
+<nav class="main" aria-label="Main"><a href="../subwoofer-box-calculator/" aria-current="page">Box calculator</a><a href="../validation/">How we check the maths</a><a href="../support/">Support</a></nav>
+<details class="langpick"><summary aria-label="Language: English"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>EN</span></summary><nav aria-label="Language"><a href="../subwoofer-box-calculator/" hreflang="en" lang="en" aria-current="true">English</a><a href="../pt-br/calculadora-caixa-subwoofer/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../es/calculadora-cajon-subwoofer/" hreflang="es-419" lang="es-419">Español (Latinoamérica)</a><a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../pl/" hreflang="pl" lang="pl">Polski</a><a href="../de/gehaeuse-rechner/" hreflang="de" lang="de">Deutsch</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../nl/" hreflang="nl" lang="nl">Nederlands</a><a href="../it/" hreflang="it" lang="it">Italiano</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../">Boxwright</a></p>
+<h1>Subwoofer box calculator</h1>
+<p class="lead">Sealed: enter the driver’s Fs, Qts and Vas and the net volume, and see Qtc, Fc and F3. Ported: enter the net volume, the tuning and the port size, and get the length to cut.</p>
+<div class="calc">
+<form class="panel" id="calc-form" data-calc="box" novalidate>
+<fieldset class="choice"><legend>Box type</legend><div class="pills"><label class="pill"><input type="radio" name="mode" value="sealed" checked><span>Sealed</span></label><label class="pill"><input type="radio" name="mode" value="ported"><span>Ported</span></label></div></fieldset>
+<fieldset class="choice"><legend>Units</legend><div class="pills"><label class="pill"><input type="radio" name="units" value="metric"><span>Litres, cm</span></label><label class="pill"><input type="radio" name="units" value="imperial" checked><span>ft³, inches</span></label></div></fieldset>
+<div data-show="mode:sealed">
+<div class="field-row two"><div class="field"><label for="fs">Fs</label>
+<div class="joined"><input id="fs" name="fs" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="26.7" required aria-describedby="fs-hint fs-err"><span class="unit">Hz</span></div>
+<span class="hint" id="fs-hint">Free-air resonance, from the datasheet.</span><span class="err" id="fs-err" hidden></span></div><div class="field"><label for="qts">Qts</label>
+<input id="qts" name="qts" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="0.44" required aria-describedby="qts-hint qts-err">
+<span class="hint" id="qts-hint">Total Q of the driver.</span><span class="err" id="qts-err" hidden></span></div></div>
+<div class="field"><label for="vas">Vas</label>
+<div class="joined"><input id="vas" name="vas" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="vol" value="2.84" required aria-describedby="vas-hint vas-err"><span class="unit" data-unit="vol">ft³</span></div>
+<span class="hint" id="vas-hint">Check the unit on the datasheet: litres or cubic feet.</span><span class="err" id="vas-err" hidden></span></div>
+<div class="field"><label for="vb">Net volume</label>
+<div class="joined"><input id="vb" name="vb" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="vol" value="1.25" required aria-describedby="vb-hint vb-err"><span class="unit" data-unit="vol">ft³</span></div>
+<span class="hint" id="vb-hint">Air inside the box, after the driver, port and bracing.</span><span class="err" id="vb-err" hidden></span></div>
+</div>
+<div data-show="mode:ported" hidden>
+<div class="field-row two"><div class="field"><label for="pvb">Net volume</label>
+<div class="joined"><input id="pvb" name="pvb" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="vol" value="1.75" aria-describedby="pvb-hint pvb-err"><span class="unit" data-unit="vol">ft³</span></div>
+<span class="hint" id="pvb-hint">Air inside the box, after the driver, port and bracing.</span><span class="err" id="pvb-err" hidden></span></div><div class="field"><label for="fb">Tuning (Fb)</label>
+<div class="joined"><input id="fb" name="fb" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="34" aria-describedby="fb-hint fb-err"><span class="unit">Hz</span></div>
+<span class="hint" id="fb-hint">Car subs usually sit between 30 and 40 Hz.</span><span class="err" id="fb-err" hidden></span></div></div>
+<fieldset class="choice"><legend>Port</legend><div class="pills"><label class="pill"><input type="radio" name="shape" value="round" checked><span>Round</span></label><label class="pill"><input type="radio" name="shape" value="slot"><span>Slot</span></label></div></fieldset>
+<div data-show="shape:round"><div class="field"><label for="dia">Inside diameter</label>
+<div class="joined"><input id="dia" name="dia" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="len" value="4" aria-describedby="dia-hint dia-err"><span class="unit" data-unit="len">in</span></div>
+<span class="hint" id="dia-hint">Per port.</span><span class="err" id="dia-err" hidden></span></div></div>
+<div data-show="shape:slot" hidden><div class="field-row two"><div class="field"><label for="sw">Slot width</label>
+<div class="joined"><input id="sw" name="sw" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="len" value="2" aria-describedby="sw-hint sw-err"><span class="unit" data-unit="len">in</span></div>
+<span class="hint" id="sw-hint">The narrow side, inside.</span><span class="err" id="sw-err" hidden></span></div><div class="field"><label for="sh">Slot height</label>
+<div class="joined"><input id="sh" name="sh" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="len" value="12" aria-describedby="sh-err"><span class="unit" data-unit="len">in</span></div>
+<span class="err" id="sh-err" hidden></span></div></div></div>
+<div class="field"><label for="count">Number of ports</label>
+<input id="count" name="count" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" value="1" aria-describedby="count-hint count-err">
+<span class="hint" id="count-hint">Identical ports, each this size.</span><span class="err" id="count-err" hidden></span></div>
+<div class="field"><label for="built">Length you built (optional)</label>
+<div class="joined"><input id="built" name="built" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="len" aria-describedby="built-hint built-err"><span class="unit" data-unit="len">in</span></div>
+<span class="hint" id="built-hint">Shows where that length tunes.</span><span class="err" id="built-err" hidden></span></div>
+<details class="more"><summary>Port ends</summary>
+<fieldset class="choice"><legend>End correction</legend><div class="pills"><label class="pill"><input type="radio" name="ends" value="flanged-free" checked><span>Flush + free</span></label><label class="pill"><input type="radio" name="ends" value="flanged-flanged"><span>Both flared</span></label><label class="pill"><input type="radio" name="ends" value="free-free"><span>Both free</span></label></div></fieldset>
+<p class="small">Default: the outer end flush with the baffle, the inner end free in the box. A flare or a port running along a wall makes that end act as flanged.</p></details>
+</div>
+</form>
+<section class="results" aria-labelledby="res-h">
+<h2 id="res-h" class="sr">Result</h2>
+<div id="calc-nojs" class="callout"><p>This calculator needs JavaScript. It runs in your browser and sends nothing anywhere.</p></div>
+<div id="res" class="res-card card" aria-live="polite" hidden></div>
+<p class="note">Runs in your browser. Nothing you type is sent or saved.</p>
+</section>
+</div>
+<script type="application/json" id="calc-i18n">{"locale":"en-US","decimal":".","units":"imperial","unitNames":{"metric":{"vol":"L","len":"cm"},"imperial":{"vol":"ft³","len":"in"}},"errEmpty":"Enter a number.","errNumber":"That is not a number. Use digits and one decimal mark.","errInteger":"Whole number only.","errRange":"Between {min} and {max}.","errPositive":"Every value has to be more than zero.","fixInputs":"Fix the marked field and the result shows here.","howTitle":"How it was worked out","words":{"warn":"Check","stop":"Won’t work","info":"Note","good":"OK"},"sealedH":"Sealed box","fc":"Fc, box resonance","f3":"F3, −3 dB from the flat line","f3Peak":"F3, −3 dB below the peak","peak":"Peak","qtcLow":"Qtc below 0.6: tight and deep, rolls off early. Cabin gain in a car fills some of it back in.","qtcFlat":"Qtc 0.6 to 0.8: flat and controlled. The usual target.","qtcPunchy":"Qtc 0.8 to 1.0: more punch around Fc, a small bump, less deep bass.","qtcPeaky":"Qtc above 1.0: a clear peak, boomy. A bigger box brings it down.","qtcTable":"Net volume for common Qtc","netVolume":"Net volume","noBox":"none: Qts is too high","howSealed":"α = Vas/Vb. F3 is where the response is 3 dB below the flat line it settles to; above Qtc 0.707 the second F3 is measured from the peak instead.","portedH":"Port length to cut","portedWhat":"Ports: {n}. Net volume {vb}, tuned to {fb}.","effective":"Acoustic length (Leff)","endCorr":"End correction","area":"Port area, total","pipe":"First pipe resonance","builtTunes":"A {len} port tunes to","tooShort":"The port would need a negative length: Leff {leff} is shorter than the end correction {ec}. The port area is too small for this box and tuning: use a bigger port, more ports, or tune lower.","tooLong":"At {len} the port is longer than a box this size can hold (about {room}). Fold it, use an L-shaped port, or use a smaller port area.","pipeLow":"The port’s own pipe resonance sits at {hz}, low enough to be heard as a note. A shorter port or a lower crossover keeps it out of the way.","slotEstimate":"Slot end corrections are an estimate. Build the port a little long and trim it after a tone check.","netNote":"Net volume means the air left after the port itself is inside. A long port takes up litres; the app works out port and volume together.","howPorted":"Physical length = Leff minus the end correction. Ends: {ends}, end correction {ec}.","endsNames":{"flanged-free":"one flush, one free (1.46 × radius)","flanged-flanged":"both flared (1.70 × radius)","free-free":"both free (1.23 × radius)"}}</script>
+<article class="prose gap-top">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">On this page</p><ol><li><a href="#inputs">Which numbers you need</a></li><li><a href="#sealed">Sealed: Qtc, Fc and F3</a></li><li><a href="#ported">Ported: the port length</a></li><li><a href="#speed">What this page leaves out</a></li></ol></nav>
+<h2 id="inputs">Which numbers you need</h2>
+<p>Three numbers from the driver’s datasheet do the box: <strong>Fs</strong> (free-air resonance), <strong>Qts</strong> (total Q) and <strong>Vas</strong> (the air volume as stiff as the suspension). Read the Vas unit twice: most US sheets print cubic feet, most European ones litres. If a sheet prints Qes and Qms but no Qts, Qts = Qes·Qms/(Qes + Qms). Not sure the numbers agree? The <a href="../thiele-small-datasheet-check/">datasheet check</a> tests them against each other.</p><p>The box volume here is the <strong>net</strong> volume: the air inside after the driver, the port, bracing and any double baffle are out. A box that measures 1.75 ft³ inside is about 1.55 ft³ net once a 12-inch driver and a 4-inch port are in.</p>
+<h2 id="sealed">Sealed: Qtc, Fc and F3</h2>
+<p>A sealed box adds the stiffness of its air to the driver’s suspension. With α = Vas/Vb, the box resonance is Fc = Fs·√(α + 1) and the box Q is Qtc = Qts·√(α + 1) (Small, 1972). A smaller box gives a higher Qtc and Fc.</p><ul><li><strong>0.577</strong>: the flattest group delay, tight, needs a bigger box.</li><li><strong>0.707</strong>: maximally flat. The usual hi-fi target.</li><li><strong>0.8 to 1.0</strong>: common in cars. Cabin gain lifts the low end, so a little punch at Fc works.</li><li><strong>Above 1.1</strong>: boomy. The box is too small for that driver.</li></ul><p>F3 is reported two ways because sites and datasheets use both: −3 dB below the flat line the response settles to, and, when there is a peak, −3 dB below the peak. The calculator shows which is which.</p>
+<h2 id="ported">Ported: the port length</h2>
+<p>A port and the air in the box make a Helmholtz resonator. The acoustic length that tunes a net volume Vb to Fb with port area Sp is Leff = c²·Sp/(4π²·Fb²·Vb), with c = 343 m/s at 20 °C. The length you cut is shorter: the air just outside each end moves with the port, so each end adds an end correction.</p><p>This calculator, like the app, uses one flanged end (0.85 × radius, the end flush with the baffle) and one free end (0.61 × radius, the end inside the box). Our check against Hornresp found its implied correction at 1.46 to 1.62 × radius, and this default put the tuning within 1 % of it (see <a href="../validation/">how we check the maths</a>). A flared port or one that runs along a wall behaves as flanged at that end: choose it under Port ends.</p><p>Two warnings come from the same maths. If the port is longer than the box, fold it or use a smaller area. If its own pipe resonance, c/(2·Leff), falls below about four times your crossover, you may hear it as a note.</p>
+<h2 id="speed">What this page leaves out</h2>
+<p>Port air speed and cone travel depend on the driver’s Sd, Xmax and your amplifier’s power. A port that tunes right can still chuff at 300 W. The app checks both at your amp’s real RMS and suggests the port area or the subsonic filter that fixes it. For the full response of a ported box, its F3 and the classic alignments (QB3, SBB4, SC4), use the app.</p>
+<nav class="next" aria-label="Next question"><p class="next-h">Next question</p><ul><li><a href="../port-tuning-check/">Port tuning check<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><a href="../subwoofer-wiring/">Wiring charts<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><a href="../thiele-small-datasheet-check/">Datasheet check<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">In the app</h2>
+<p>In the app the port and the net volume are solved together: the port’s own volume comes off the box, the length is worked out again, and the cut list includes the port walls.</p>
+<p class="small">Free: every box, the full driver list, the cut list, wiring and the tone check. Pro is one payment, no subscription. No account, works offline.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Coming soon</b></span><span class="store soon"><small>App Store</small><b>Coming later</b></span></div>
+</aside>
+<h2>Sources</h2>
+<ol class="sources"><li><a href="https://www.aes.org/e-lib/browse.cfm?elib=2026" rel="noopener">Small, R. H., “Closed-Box Loudspeaker Systems”, JAES 20 (1972)</a></li><li><a href="https://sdlabo.jp/archives/Vented_Box_Loudspeaker%20Systems_Part_1-4.pdf" rel="noopener">Small, R. H., “Vented-Box Loudspeaker Systems” Parts I–IV, JAES 21 (1973)</a></li><li><a href="https://en.wikipedia.org/wiki/End_correction" rel="noopener">End correction: Rayleigh (flanged, 0.8488 r) and Levine &amp; Schwinger 1948 (free, 0.6133 r)</a></li><li><a href="https://usenclosure.com/Enclosure%20Formulas/enclosure_formula.html" rel="noopener">usenclosure.com, enclosure formulas</a></li><li><a href="https://www.scan-speak.dk/datasheet/tech/Scan-Speak_Technote07_Box-alignments.pdf" rel="noopener">Scan-Speak Technote 07, box alignments</a></li></ol>
+<p class="callout">Results are design estimates. Check the driver’s datasheet and your amplifier’s minimum load before you build.</p>
+<p class="updated">Checked against the sources: October 27, 2026</p>
+</article>
+</div>
+<div class="wrap"><p class="also-in"><span>This page in:</span> <a href="../pt-br/calculadora-caixa-subwoofer/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../es/calculadora-cajon-subwoofer/" hreflang="es-419" lang="es-419">Español (Latinoamérica)</a><a href="../de/gehaeuse-rechner/" hreflang="de" lang="de">Deutsch</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Results are design estimates. Check the driver’s datasheet and your amplifier’s minimum load before you build.</p>
+<p>Boxwright is a speaker and subwoofer box designer for car audio and DIY hi-fi, made by Mufatech. This site sets no cookies and loads nothing from other servers.</p>
+<nav aria-label="Site"><a href="../">Boxwright</a><a href="../subwoofer-box-calculator/">Box calculator</a><a href="../thiele-small-datasheet-check/">Datasheet check</a><a href="../subwoofer-wiring/">Wiring charts</a><a href="../port-tuning-check/">Port tuning check</a><a href="../validation/">Validation</a><a href="../support/">Support</a><a href="../privacy/">Privacy</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+<script type="module" src="../assets/calc-ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>So prüfen wir Boxwright: Hornresp, Datenblätter, Toleranzen</title>
+<meta name="description" content="So wird der Rechenkern von Boxwright getestet: 338 Referenzwerte, Abgleich mit Hornresp 60.60, Werte aus Datenblättern und unsere Toleranzen.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEAE5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131416" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/boxwright/de/validierung/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/boxwright/validation/">
+<link rel="alternate" hreflang="de" href="https://mufa-tech.github.io/boxwright/de/validierung/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/boxwright/validation/">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="preload" href="../../assets/fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Boxwright">
+<meta property="og:title" content="So prüfen wir Boxwright: Hornresp, Datenblätter, Toleranzen">
+<meta property="og:description" content="So wird der Rechenkern von Boxwright getestet: 338 Referenzwerte, Abgleich mit Hornresp 60.60, Werte aus Datenblättern und unsere Toleranzen.">
+<meta property="og:url" content="https://mufa-tech.github.io/boxwright/de/validierung/">
+<meta property="og:image" content="https://mufa-tech.github.io/boxwright/assets/og-de.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../../de/"><img src="../../assets/icon.svg" alt="" width="32" height="32">Boxwright</a>
+<nav class="main" aria-label="Hauptmenü"><a href="../../de/gehaeuse-rechner/">Gehäuserechner</a><a href="../../de/validierung/" aria-current="page">So prüfen wir die Rechnung</a><a href="../../de/support/">Hilfe</a></nav>
+<details class="langpick"><summary aria-label="Sprache: Deutsch"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>DE</span></summary><nav aria-label="Sprache"><a href="../../validation/" hreflang="en" lang="en">English</a><a href="../../pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../../es/" hreflang="es-419" lang="es-419">Español (Latinoamérica)</a><a href="../../id/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../../pl/" hreflang="pl" lang="pl">Polski</a><a href="../../de/validierung/" hreflang="de" lang="de" aria-current="true">Deutsch</a><a href="../../fr/" hreflang="fr" lang="fr">Français</a><a href="../../nl/" hreflang="nl" lang="nl">Nederlands</a><a href="../../it/" hreflang="it" lang="it">Italiano</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../../de/">Boxwright</a></p>
+<h1>So prüfen wir die Zahlen</h1>
+<p class="lead">Eine Gehäuserechnung nützt nur, wenn du ihr trauen kannst. Hier steht, wogegen der Rechenkern getestet wird, welche Toleranzen wir einhalten und warum ein anderes Programm trotzdem eine andere Zahl liefern kann.</p>
+
+<article class="prose">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">Auf dieser Seite</p><ol><li><a href="#summary">Kurz gesagt</a></li><li><a href="#hornresp">Abgleich mit Hornresp</a></li><li><a href="#published">Abgleich mit veröffentlichten Werten</a></li><li><a href="#tolerances">Was wir zusagen</a></li><li><a href="#winisd">Warum WinISD oder ein anderer Rechner andere Zahlen zeigt</a></li><li><a href="#report">Eine Zahl sieht falsch aus?</a></li></ol></nav>
+<h2 id="summary">Kurz gesagt</h2>
+<ul><li>Ein Rechenkern, einmal geschrieben, jede Formel mit Quelle. Die App und die Rechner auf dieser Website nutzen ihn; die JavaScript-Fassung für die Website wird an 963 Eingaben auf 1e-9 genau gegen den Kern geprüft.</li><li><strong>338</strong> Referenzwerte laufen bei jedem Build: von Hand gerechnete Werte, Grenzfälle und <strong>79</strong> Werte, die Hersteller oder Fachartikel veröffentlicht haben. Jeder muss innerhalb seiner eigenen Toleranz liegen.</li><li>Eine getrennte Referenz in Python stimmt bei mehr als 4.000 Werten auf 1e-9 mit dem Kern überein. 26 absichtlich eingebaute Fehler (ein Vorzeichen, eine Konstante) haben die Tests alle gefunden.</li><li>7 echte Gehäuse mit Hornresp 60.60 verglichen.</li></ul>
+<h2 id="hornresp">Abgleich mit Hornresp</h2>
+<p>Hornresp ist ein kostenloser Simulator, den viele Selbstbauer als Referenz nehmen. Wir haben in beide Programme dieselben Chassis (aus Fs, Qes, Qms, Vas, Sd und Re laut Datenblatt) und dieselben Gehäuse eingegeben, bei 2,83 V, Halbraum, 1 m, QL 7.</p><p class="table-cap" aria-hidden="true">Rechenkern gegen Hornresp 60.60, 15 bis 100 Hz, 2,83 V, Halbraum, 1 m</p><div class="table-wrap"><table class="num-table"><caption class="sr">Rechenkern gegen Hornresp 60.60, 15 bis 100 Hz, 2,83 V, Halbraum, 1 m</caption>
+<thead><tr><th scope="col">Chassis</th><th scope="col">Gehäuse</th><th scope="col">Größte SPL-Abweichung</th><th scope="col">Größte Hub-Abweichung</th><th scope="col">Fb Rechenkern / Hornresp</th></tr></thead>
+<tbody><tr><th scope="row" class="l">JL Audio 12W3v3-4</th><td class="l">Geschlossen 35,4 L</td><td>0,04 dB</td><td>0,4 %</td><td>–</td></tr>
+<tr><th scope="row" class="l">JL Audio 12W3v3-4</th><td class="l">Bassreflex 49,6 L, 100 cm² × 36 cm</td><td>0,61 dB</td><td>2,6 %</td><td>36,85 / 36,48 Hz (+1,0 %)</td></tr>
+<tr><th scope="row" class="l">SB Acoustics SB23NRXS45-8</th><td class="l">Bassreflex 40 L, 50 cm² × 20 cm</td><td>0,62 dB</td><td>2,0 %</td><td>37,97 / 37,97 Hz (+0,0 %)</td></tr>
+<tr><th scope="row" class="l">Scan-Speak 18W/8531G00</th><td class="l">Geschlossen 20 L</td><td>0,03 dB</td><td>0,4 %</td><td>–</td></tr>
+<tr><th scope="row" class="l">Dayton RSS265HF-4</th><td class="l">Bassreflex 55 L, 80 cm² × 30 cm</td><td>0,52 dB</td><td>1,5 %</td><td>34,05 / 33,90 Hz (+0,5 %)</td></tr>
+<tr><th scope="row" class="l">Peerless SLS-P830669</th><td class="l">Geschlossen 60 L</td><td>0,08 dB</td><td>0,7 %</td><td>–</td></tr>
+<tr><th scope="row" class="l">JL Audio 10TW3-D4</th><td class="l">Geschlossen 17 L</td><td>0,03 dB</td><td>0,5 %</td><td>–</td></tr></tbody></table></div><ul><li><strong>Geschlossene Gehäuse</strong> stimmen auf 0,1 dB und 1 % überein.</li><li><strong>Bassreflex-Gehäuse</strong> liegen weit unterhalb der Abstimmung bis zu 0,6 dB niedriger (bei 15 Hz, wo der Pegel schon rund 25 dB abgefallen ist), im Nutzbereich innerhalb von 0,3 dB. Hornresp behandelt den Port als eigene Schallquelle; unser Modell summiert wie das von Small Membran und Port in einem Punkt.</li><li>Die <strong>Abstimmfrequenz</strong> stimmt auf 1 % überein. Aus Hornresp ergibt sich eine Mündungskorrektur von 1,46 bis 1,62 × Radius; unser Standard (ein Ende mit Flansch, eins frei) liegt bei 1,46.</li></ul><p>Noch nicht verglichen: Bandpass, Passivmembran und die Luftgeschwindigkeit im Port.</p>
+<h2 id="published">Abgleich mit veröffentlichten Werten</h2>
+<p>Diese Werte hat ein Hersteller oder ein Autor veröffentlicht. Der Rechner auf dieser Website rechnet sie mit seinem eigenen Code nach:</p><p class="table-cap" aria-hidden="true">Veröffentlichte Werte, die der kostenlose Rechner auf dieser Website nachrechnet</p><div class="table-wrap"><table class="num-table"><caption class="sr">Veröffentlichte Werte, die der kostenlose Rechner auf dieser Website nachrechnet</caption>
+<thead><tr><th scope="col">Quelle</th><th scope="col">Wert</th><th scope="col">Veröffentlicht</th><th scope="col">Unser Ergebnis</th><th scope="col">Toleranz</th><th scope="col">Ergebnis</th></tr></thead>
+<tbody><tr><th scope="row" class="l">JL Audio 12W3v3-4</th><td class="l">Qts aus Qes und Qms</td><td>0,444</td><td>0,444</td><td>± 0,006</td><td><span class="ok-mark">✓ innerhalb</span></td></tr>
+<tr><th scope="row" class="l">JL Audio 12W3v3-4</th><td class="l">Qtc geschlossen</td><td>0,830</td><td>0,835</td><td>± 0,006</td><td><span class="ok-mark">✓ innerhalb</span></td></tr>
+<tr><th scope="row" class="l">JL Audio 12W3v3-4</th><td class="l">Fc geschlossen</td><td>50,2 Hz</td><td>50,2 Hz</td><td>± 0,1 Hz</td><td><span class="ok-mark">✓ innerhalb</span></td></tr>
+<tr><th scope="row" class="l">JL Audio 12W3v3-4</th><td class="l">F3 geschlossen</td><td>43,7 Hz</td><td>43,7 Hz</td><td>± 0,1 Hz</td><td><span class="ok-mark">✓ innerhalb</span></td></tr>
+<tr><th scope="row" class="l">JL Audio 12W3v3-4</th><td class="l">Abstimmung mit Slot-Port</td><td>30,0 Hz</td><td>29,5 Hz</td><td>± 1 Hz</td><td><span class="ok-mark">✓ innerhalb</span></td></tr>
+<tr><th scope="row" class="l">Scan-Speak Technote 07</th><td class="l">Geschlossenes Volumen für Qtc 0,707</td><td>13,63 L</td><td>13,63 L</td><td>± 0,01 L</td><td><span class="ok-mark">✓ innerhalb</span></td></tr>
+<tr><th scope="row" class="l">Scan-Speak Technote 07</th><td class="l">Geschlossenes Volumen für Qtc 0,707</td><td>17,79 L</td><td>17,79 L</td><td>± 0,01 L</td><td><span class="ok-mark">✓ innerhalb</span></td></tr>
+<tr><th scope="row" class="l">Scan-Speak Technote 07</th><td class="l">Rohrlänge, 6-cm-Rohr</td><td>21,7 cm</td><td>21,0 cm</td><td>± 1 cm</td><td><span class="ok-mark">✓ innerhalb</span></td></tr>
+<tr><th scope="row" class="l">Scan-Speak Technote 07</th><td class="l">Rohrlänge, 6-cm-Rohr</td><td>24,6 cm</td><td>24,4 cm</td><td>± 1 cm</td><td><span class="ok-mark">✓ innerhalb</span></td></tr>
+<tr><th scope="row" class="l">Scan-Speak Technote 07</th><td class="l">Rohrlänge, 6-cm-Rohr</td><td>51,9 cm</td><td>51,5 cm</td><td>± 1 cm</td><td><span class="ok-mark">✓ innerhalb</span></td></tr>
+<tr><th scope="row" class="l">Scan-Speak 18W/8531G00</th><td class="l">Geschlossenes Volumen für Qtc 0,707</td><td>23,0 L</td><td>23,0 L</td><td>± 0,5 L</td><td><span class="ok-mark">✓ innerhalb</span></td></tr>
+<tr><th scope="row" class="l">SB Acoustics SB23NRXS45-8</th><td class="l">Fs aus Mms und Cms</td><td>27,00 Hz</td><td>26,98 Hz</td><td>± 0,16 Hz</td><td><span class="ok-mark">✓ innerhalb</span></td></tr>
+<tr><th scope="row" class="l">SB Acoustics SB23NRXS45-8</th><td class="l">Vas aus Cms und Sd</td><td>94,0 L</td><td>93,8 L</td><td>± 1,5 L</td><td><span class="ok-mark">✓ innerhalb</span></td></tr>
+<tr><th scope="row" class="l">Peerless SLS-P830669</th><td class="l">Fs aus Mms und Cms</td><td>31,48 Hz</td><td>31,48 Hz</td><td>± 0,19 Hz</td><td><span class="ok-mark">✓ innerhalb</span></td></tr>
+<tr><th scope="row" class="l">usenclosure.com</th><td class="l">Rohrlänge, 4-Zoll-Rohr, 1,5 ft³, 35 Hz</td><td>15,50 in</td><td>15,36 in</td><td>± 0,15 in</td><td><span class="ok-mark">✓ innerhalb</span></td></tr></tbody></table></div><p>Die Toleranz ist die Rundung im Original oder die Streuung, die die Quelle selbst angibt. Alle geprüften Werte nach Quelle:</p><p class="table-cap" aria-hidden="true">Alle geprüften Referenzwerte nach Quelle (alle bestehen in den Tests des Rechenkerns)</p><div class="table-wrap"><table class="num-table"><caption class="sr">Alle geprüften Referenzwerte nach Quelle (alle bestehen in den Tests des Rechenkerns)</caption>
+<thead><tr><th scope="col">Quelle</th><th scope="col">Was geprüft wird</th><th scope="col">Werte</th></tr></thead>
+<tbody><tr><th scope="row" class="l"><a href="https://www.cartoys.com/products/jl-audio-12w3v3-4" rel="noopener">JL Audio 12W3v3-4 specifications (authorised retailer copy)</a></th><td class="l">Qts, Bl, Wirkungsgrad, Kennschalldruck, Fc, Qtc und F3 geschlossen, Abstimmung mit Slot, Nettovolumen</td><td>9</td></tr>
+<tr><th scope="row" class="l"><a href="https://www.scan-speak.dk/datasheet/tech/Scan-Speak_Technote07_Box-alignments.pdf" rel="noopener">Scan-Speak Technote 07, box alignments</a></th><td class="l">Geschlossene Volumen, QB3- und SC4-Gehäuse, Rohrlängen, Fs, Qes, Rms, Zmax</td><td>17</td></tr>
+<tr><th scope="row" class="l"><a href="https://sbacoustics.com/wp-content/uploads/2026/05/8-inch-SB23NRXS45-8.pdf" rel="noopener">SB Acoustics SB23NRXS45-8 datasheet</a></th><td class="l">Qts, Vas, Fs, Qes, Rms</td><td>5</td></tr>
+<tr><th scope="row" class="l"><a href="https://www.parts-express.com/pedocs/specs/295-460-dayton-audio-rss265hf-4-specifications-46172.pdf" rel="noopener">Dayton Audio RSS265HF-4 specifications</a></th><td class="l">Qts, Fs, Vd</td><td>3</td></tr>
+<tr><th scope="row" class="l"><a href="https://www.Lautsprechershop.de/pdf/peerless/peerless_sls_p830669.pdf" rel="noopener">Peerless SLS-P830669 datasheet</a></th><td class="l">Qts, Vas mit Smalls Luftkonstanten, Fs, Qes, Sd</td><td>5</td></tr>
+<tr><th scope="row" class="l"><a href="https://audioxpress.com/article/voice-coil-focus-quasi-alignment-families" rel="noopener">audioXpress, “Voice Coil Focus: Quasi-Alignment Families”</a></th><td class="l">QB3-Auslegungstabelle bei QL 10</td><td>6</td></tr>
+<tr><th scope="row" class="l"><a href="https://speakerbench.com/doc/alignment_theory.html" rel="noopener">Speakerbench, alignment theory</a></th><td class="l">Auslegungen B4, LR4, IB4, BL4 und CD4 bei QL ∞, 10 und 7</td><td>15</td></tr>
+<tr><th scope="row" class="l"><a href="https://sdlabo.jp/archives/Vented_Box_Loudspeaker%20Systems_Part_1-4.pdf" rel="noopener">Small, R. H., “Vented-Box Loudspeaker Systems” Parts I–IV, JAES 21 (1973)</a></th><td class="l">Butterworth- und Bessel-Koeffizienten</td><td>2</td></tr>
+<tr><th scope="row" class="l"><a href="https://usenclosure.com/Enclosure%20Formulas/enclosure_formula.html" rel="noopener">usenclosure.com, enclosure formulas</a></th><td class="l">Tabelle F3/Fc geschlossen, Rohrlänge</td><td>9</td></tr>
+<tr><th scope="row" class="l"><a href="https://audiojudgement.com/4th-order-bandpass-design/" rel="noopener">audiojudgement, 4th-order bandpass design (Dickason example)</a></th><td class="l">Rechenbeispiel Bandpass 4. Ordnung</td><td>8</td></tr></tbody></table></div>
+<h2 id="tolerances">Was wir zusagen</h2>
+<ul><li>Gehäuseformeln (Qtc, Fc, F3, Rohrlänge, Volumen, Verschaltung): exakt nach Formel, 1e-9.</li><li>Gegen Hornresp: geschlossen auf 0,1 dB, Bassreflex auf 0,7 dB von 15 bis 100 Hz, Abstimmung auf 1 %.</li><li>Gegen Datenblätter: innerhalb der Rundung im Datenblatt. Widerspricht sich ein Datenblatt selbst, sagt dir die Eingabeprüfung der App das, statt sich stillschweigend für einen Wert zu entscheiden.</li><li>Schätzungen sind als solche gekennzeichnet: die Mündungskorrektur beim Slot, die Innenraumverstärkung und die Grenzen für Portgeräusche.</li></ul>
+<h2 id="winisd">Warum WinISD oder ein anderer Rechner andere Zahlen zeigt</h2>
+<p>Mit WinISD haben wir nicht verglichen: Es gibt keinen offiziellen Download mehr, mit dem wir testen könnten. Liegen zwei Programme auseinander, steckt fast immer einer dieser Punkte dahinter:</p><ul><li><strong>Netto- oder Bruttovolumen.</strong> Manche Rechner nehmen das Innenmaß des Gehäuses. Boxwright will das Nettovolumen, also ohne Chassis, Port und Verstrebung.</li><li><strong>Mündungskorrektur.</strong> Je nach Programm 0,6 bis 0,85 × Radius pro Rohrende, oder du stellst sie selbst ein. Ob ein Ende mit Flansch oder frei gerechnet wird, verschiebt die Abstimmung um ein paar Prozent.</li><li><strong>Gehäuseverluste (QL).</strong> Für Bassreflex rechnen wir mit QL 7, dem typischen Wert nach Small. Ein verlustfreies Modell ergibt ein etwas anderes F3 und einen spitzeren Frequenzgang.</li><li><strong>Luftkonstanten.</strong> Wir nehmen 343 m/s und 1,204 kg/m³ (20 °C). Small hat mit 345 m/s und 1,18 kg/m³ gerechnet.</li><li><strong>Welches F3.</strong> 3 dB unter dem flachen Verlauf oder 3 dB unter der Überhöhung. Wir zeigen beide und schreiben dazu, welches welches ist.</li><li><strong>Die TSP.</strong> Zwei Programme mit zwei verschiedenen Ständen des Datenblatts kommen nicht auf dasselbe. Prüf zuerst das Datenblatt: Qts muss zu Qes und Qms passen, Fs zu Mms und Cms, Vas zu Cms und Sd. Die Eingabeprüfung der App gleicht das für dich ab.</li></ul><p>Wenn du selbst nachrechnen willst: Der <a href="../../de/gehaeuse-rechner/">Gehäuserechner</a> auf dieser Website zeigt zu jedem Ergebnis die Formel und die Annahmen.</p>
+<h2 id="report">Eine Zahl sieht falsch aus?</h2>
+<p>Schreib an <a href="mailto:hello@mufatech.com">hello@mufatech.com</a>, mit Chassis, Gehäuse und dem Wert, den du erwartet hast. Ist es unser Fehler, wird daraus zuerst ein Test, dann die Korrektur, und der Test bleibt dauerhaft im Testsatz.</p>
+<nav class="next" aria-label="Nächste Frage"><p class="next-h">Nächste Frage</p><ul><li><a href="../../de/gehaeuse-rechner/">Gehäuserechner<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">In der App</h2>
+<p>Unter jedem Ergebnis in der App steht eine Zeile mit der Formel, deinen Zahlen und den Annahmen (Luft, Mündungskorrektur, QL). Tippst du auf einen Begriff, kommt eine kurze Erklärung.</p>
+<p class="small">Kostenlos: jedes Gehäuse, die ganze Chassis-Liste, der Zuschnitt, die Verschaltung und der Tontest. Pro ist ein Einmalkauf, kein Abo. Kein Konto, läuft offline.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Bald verfügbar</b></span><span class="store soon"><small>App Store</small><b>Später verfügbar</b></span></div>
+</aside>
+<h2>Quellen</h2>
+<ol class="sources"><li><a href="https://www.hornresp.net/" rel="noopener">Hornresp (D. McBean), version 60.60</a></li><li><a href="https://www.cartoys.com/products/jl-audio-12w3v3-4" rel="noopener">JL Audio 12W3v3-4 specifications (authorised retailer copy)</a></li><li><a href="https://www.scan-speak.dk/datasheet/pdf/18w-8531g00.pdf" rel="noopener">Scan-Speak 18W/8531G00 datasheet</a></li><li><a href="https://www.scan-speak.dk/datasheet/tech/Scan-Speak_Technote07_Box-alignments.pdf" rel="noopener">Scan-Speak Technote 07, box alignments</a></li><li><a href="https://sbacoustics.com/wp-content/uploads/2026/05/8-inch-SB23NRXS45-8.pdf" rel="noopener">SB Acoustics SB23NRXS45-8 datasheet</a></li><li><a href="https://www.parts-express.com/pedocs/specs/295-460-dayton-audio-rss265hf-4-specifications-46172.pdf" rel="noopener">Dayton Audio RSS265HF-4 specifications</a></li><li><a href="https://www.Lautsprechershop.de/pdf/peerless/peerless_sls_p830669.pdf" rel="noopener">Peerless SLS-P830669 datasheet</a></li><li><a href="https://audioxpress.com/article/voice-coil-focus-quasi-alignment-families" rel="noopener">audioXpress, “Voice Coil Focus: Quasi-Alignment Families”</a></li><li><a href="https://speakerbench.com/doc/alignment_theory.html" rel="noopener">Speakerbench, alignment theory</a></li><li><a href="https://sdlabo.jp/archives/Vented_Box_Loudspeaker%20Systems_Part_1-4.pdf" rel="noopener">Small, R. H., “Vented-Box Loudspeaker Systems” Parts I–IV, JAES 21 (1973)</a></li><li><a href="https://usenclosure.com/Enclosure%20Formulas/enclosure_formula.html" rel="noopener">usenclosure.com, enclosure formulas</a></li><li><a href="https://audiojudgement.com/4th-order-bandpass-design/" rel="noopener">audiojudgement, 4th-order bandpass design (Dickason example)</a></li></ol>
+<p class="callout">Die Ergebnisse sind Planungswerte. Prüf vor dem Bauen das Datenblatt des Chassis und die Mindestlast deiner Endstufe.</p>
+<p class="updated">Mit den Quellen abgeglichen: 27. Oktober 2026</p>
+</article>
+</div>
+<div class="wrap"><p class="also-in"><span>Diese Seite auf:</span> <a href="../../validation/" hreflang="en" lang="en">English</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Die Ergebnisse sind Planungswerte. Prüf vor dem Bauen das Datenblatt des Chassis und die Mindestlast deiner Endstufe.</p>
+<p>Boxwright berechnet Lautsprecher- und Subwoofer-Gehäuse für Car-HiFi und Hifi-Selbstbau, gemacht von Mufatech. Diese Website setzt keine Cookies und lädt nichts von fremden Servern.</p>
+<nav aria-label="Website"><a href="../../de/">Boxwright</a><a href="../../de/gehaeuse-rechner/">Gehäuserechner</a><a href="../../de/validierung/">Validierung</a><a href="../../de/support/">Hilfe</a><a href="../../de/privacy/">Datenschutz</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+
+</body>
+</html>

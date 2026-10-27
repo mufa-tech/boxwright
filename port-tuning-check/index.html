@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>How to check port tuning with a tone sweep</title>
+<meta name="description" content="Find the real tuning of a ported box you built: play a slow tone sweep and watch where the cone nearly stops. Then work out how much port to cut.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEAE5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131416" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/boxwright/port-tuning-check/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/boxwright/port-tuning-check/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/boxwright/pt-br/conferir-sintonia-do-duto/">
+<link rel="alternate" hreflang="es-419" href="https://mufa-tech.github.io/boxwright/es/verificar-sintonia-del-puerto/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/boxwright/port-tuning-check/">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<link rel="preload" href="../assets/fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Boxwright">
+<meta property="og:title" content="How to check port tuning with a tone sweep">
+<meta property="og:description" content="Find the real tuning of a ported box you built: play a slow tone sweep and watch where the cone nearly stops. Then work out how much port to cut.">
+<meta property="og:url" content="https://mufa-tech.github.io/boxwright/port-tuning-check/">
+<meta property="og:image" content="https://mufa-tech.github.io/boxwright/assets/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../"><img src="../assets/icon.svg" alt="" width="32" height="32">Boxwright</a>
+<nav class="main" aria-label="Main"><a href="../subwoofer-box-calculator/">Box calculator</a><a href="../validation/">How we check the maths</a><a href="../support/">Support</a></nav>
+<details class="langpick"><summary aria-label="Language: English"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>EN</span></summary><nav aria-label="Language"><a href="../port-tuning-check/" hreflang="en" lang="en" aria-current="true">English</a><a href="../pt-br/conferir-sintonia-do-duto/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../es/verificar-sintonia-del-puerto/" hreflang="es-419" lang="es-419">Español (Latinoamérica)</a><a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../pl/" hreflang="pl" lang="pl">Polski</a><a href="../de/" hreflang="de" lang="de">Deutsch</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../nl/" hreflang="nl" lang="nl">Nederlands</a><a href="../it/" hreflang="it" lang="it">Italiano</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../">Boxwright</a></p>
+<h1>Check your port tuning with a tone sweep</h1>
+<p class="lead">A built box rarely tunes exactly where the plan said. The port end, bracing and the real net volume all move it. Here is how to find the real tuning with a tone generator and your eyes, and how to correct it.</p>
+
+<article class="prose">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">On this page</p><ol><li><a href="#why">Why the tuning moves</a></li><li><a href="#how">The method</a></li><li><a href="#impedance">Why not the impedance dip</a></li><li><a href="#fix">Cut the port to fix it</a></li><li><a href="#sealed">Sealed boxes</a></li></ol></nav>
+<h2 id="why">Why the tuning moves</h2>
+<p>The plan assumes a net volume, an end correction for each port end, and a box with no leaks. A port that ends near a wall acts longer than it is. Bracing and a driver with a deep motor take volume. Each of these moves the tuning by a few hertz, and a few hertz near 30 Hz is a lot.</p>
+<h2 id="how">The method</h2>
+<ol><li>Connect a tone generator to the amp. Set the gain low and the bass boost off.</li><li>Play a slow sweep from about 20 Hz to 60 Hz, or step through single tones 1 Hz apart.</li><li>Watch the cone, or rest a fingertip on the dust cap. At the box’s tuning the cone moves least, while the port blows hardest.</li><li>Note that frequency. Check it twice, sweeping up and down.</li></ol><p>Start quiet and turn up slowly. A long tone at high level can damage the driver and your hearing.</p>
+<h2 id="impedance">Why not the impedance dip</h2>
+<p>Many guides find the tuning from the dip between the two impedance peaks. In our check against Hornresp, that minimum sat about 1.2 Hz below the true tuning, because of box leakage. The point where the cone nearly stops is the tuning itself, so that is what we use.</p>
+<h2 id="fix">Cut the port to fix it</h2>
+<p>A longer port tunes lower, a shorter one higher. The tuning goes with 1/√Leff, so to move from the measured Fm to the target Ft: new Leff = old Leff × (Fm/Ft)², and the length to cut is the new Leff minus the end correction. Cut a little at a time and check again.</p><p class="table-cap" aria-hidden="true">Round port 4 in, 1.75 ft³ net, cut for 32 Hz: tuning vs length</p><div class="table-wrap"><table class="num-table"><caption class="sr">Round port 4 in, 1.75 ft³ net, cut for 32 Hz: tuning vs length</caption>
+<thead><tr><th scope="col">Port length</th><th scope="col">Change</th><th scope="col">Tuning</th></tr></thead>
+<tbody><tr><td>12.8 in</td><td>−3 in</td><td>34.9 Hz</td></tr>
+<tr><td>13.8 in</td><td>−2 in</td><td>33.9 Hz</td></tr>
+<tr><td>14.8 in</td><td>−1 in</td><td>32.9 Hz</td></tr>
+<tr class="base"><td>15.8 in</td><td>–</td><td>32.0 Hz</td></tr>
+<tr><td>16.8 in</td><td>+1 in</td><td>31.2 Hz</td></tr>
+<tr><td>17.8 in</td><td>+2 in</td><td>30.4 Hz</td></tr></tbody></table></div><p>The table comes from the same port maths as the <a href="../subwoofer-box-calculator/">box calculator</a>. Values for your own box: use the calculator with the length you built.</p>
+<h2 id="sealed">Sealed boxes</h2>
+<p>A sealed box has no tuning to find. The same slow sweep is still useful: listen for rattles, buzzing panels and air leaks around the driver and the terminal cup.</p>
+<nav class="next" aria-label="Next question"><p class="next-h">Next question</p><ul><li><a href="../subwoofer-box-calculator/">Box calculator<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><a href="../thiele-small-datasheet-check/">Datasheet check<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">In the app</h2>
+<p>Check my box in the app has the tone generator built in, with a slow sweep and a tap at the point where the cone stops. It then tells you how many millimetres or sixteenths to take off the port.</p>
+<p class="small">Free: every box, the full driver list, the cut list, wiring and the tone check. Pro is one payment, no subscription. No account, works offline.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Coming soon</b></span><span class="store soon"><small>App Store</small><b>Coming later</b></span></div>
+</aside>
+<h2>Sources</h2>
+<ol class="sources"><li><a href="https://sdlabo.jp/archives/Vented_Box_Loudspeaker%20Systems_Part_1-4.pdf" rel="noopener">Small, R. H., “Vented-Box Loudspeaker Systems” Parts I–IV, JAES 21 (1973)</a></li><li><a href="https://en.wikipedia.org/wiki/End_correction" rel="noopener">End correction: Rayleigh (flanged, 0.8488 r) and Levine &amp; Schwinger 1948 (free, 0.6133 r)</a></li></ol>
+<p class="callout">Results are design estimates. Check the driver’s datasheet and your amplifier’s minimum load before you build.</p>
+<p class="updated">Checked against the sources: October 27, 2026</p>
+</article>
+</div>
+<div class="wrap"><p class="also-in"><span>This page in:</span> <a href="../pt-br/conferir-sintonia-do-duto/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../es/verificar-sintonia-del-puerto/" hreflang="es-419" lang="es-419">Español (Latinoamérica)</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Results are design estimates. Check the driver’s datasheet and your amplifier’s minimum load before you build.</p>
+<p>Boxwright is a speaker and subwoofer box designer for car audio and DIY hi-fi, made by Mufatech. This site sets no cookies and loads nothing from other servers.</p>
+<nav aria-label="Site"><a href="../">Boxwright</a><a href="../subwoofer-box-calculator/">Box calculator</a><a href="../thiele-small-datasheet-check/">Datasheet check</a><a href="../subwoofer-wiring/">Wiring charts</a><a href="../port-tuning-check/">Port tuning check</a><a href="../validation/">Validation</a><a href="../support/">Support</a><a href="../privacy/">Privacy</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+
+</body>
+</html>

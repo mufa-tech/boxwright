@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>How Boxwright’s numbers are checked</title>
+<meta name="description" content="How the Boxwright engine is tested: 338 reference vectors, a Hornresp 60.60 comparison, published datasheet values, and the tolerances we publish.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEAE5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131416" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/boxwright/validation/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/boxwright/validation/">
+<link rel="alternate" hreflang="de" href="https://mufa-tech.github.io/boxwright/de/validierung/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/boxwright/validation/">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<link rel="preload" href="../assets/fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Boxwright">
+<meta property="og:title" content="How Boxwright’s numbers are checked">
+<meta property="og:description" content="How the Boxwright engine is tested: 338 reference vectors, a Hornresp 60.60 comparison, published datasheet values, and the tolerances we publish.">
+<meta property="og:url" content="https://mufa-tech.github.io/boxwright/validation/">
+<meta property="og:image" content="https://mufa-tech.github.io/boxwright/assets/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../"><img src="../assets/icon.svg" alt="" width="32" height="32">Boxwright</a>
+<nav class="main" aria-label="Main"><a href="../subwoofer-box-calculator/">Box calculator</a><a href="../validation/" aria-current="page">How we check the maths</a><a href="../support/">Support</a></nav>
+<details class="langpick"><summary aria-label="Language: English"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>EN</span></summary><nav aria-label="Language"><a href="../validation/" hreflang="en" lang="en" aria-current="true">English</a><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../es/" hreflang="es-419" lang="es-419">Español (Latinoamérica)</a><a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../pl/" hreflang="pl" lang="pl">Polski</a><a href="../de/validierung/" hreflang="de" lang="de">Deutsch</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../nl/" hreflang="nl" lang="nl">Nederlands</a><a href="../it/" hreflang="it" lang="it">Italiano</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../">Boxwright</a></p>
+<h1>How we check the numbers</h1>
+<p class="lead">Box maths is only useful if you can trust it. Here is everything the engine is tested against, the tolerances we hold it to, and why another program can still give you a different number.</p>
+
+<article class="prose">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">On this page</p><ol><li><a href="#summary">In short</a></li><li><a href="#hornresp">Against Hornresp</a></li><li><a href="#published">Against published values</a></li><li><a href="#tolerances">What we promise</a></li><li><a href="#winisd">Why WinISD or another calculator shows a different number</a></li><li><a href="#report">Found a number that looks wrong?</a></li></ol></nav>
+<h2 id="summary">In short</h2>
+<ul><li>One engine, written once, with every formula sourced. The app and this site’s calculators use it; the site’s JavaScript port is tested against the engine on 963 inputs to 1e-9.</li><li><strong>338</strong> reference vectors run on every build: hand-worked values, edge cases, and <strong>79</strong> values published by manufacturers and in papers. Every one must pass within its own tolerance.</li><li>A separate Python reference agrees with the engine on more than 4,000 values to 1e-9. 26 deliberate bugs (a sign, a constant) were each caught by the tests.</li><li>7 real designs compared with Hornresp 60.60.</li></ul>
+<h2 id="hornresp">Against Hornresp</h2>
+<p>Hornresp is a free simulator many builders treat as the reference. We entered the same drivers (from their datasheet Fs, Qes, Qms, Vas, Sd and Re) and the same boxes in both, at 2.83 V, half space, 1 m, QL 7.</p><p class="table-cap" aria-hidden="true">Engine against Hornresp 60.60, 15 to 100 Hz, 2.83 V, half space, 1 m</p><div class="table-wrap"><table class="num-table"><caption class="sr">Engine against Hornresp 60.60, 15 to 100 Hz, 2.83 V, half space, 1 m</caption>
+<thead><tr><th scope="col">Driver</th><th scope="col">Box</th><th scope="col">Largest SPL difference</th><th scope="col">Largest excursion difference</th><th scope="col">Fb engine / Hornresp</th></tr></thead>
+<tbody><tr><th scope="row" class="l">JL Audio 12W3v3-4</th><td class="l">Sealed 35.4 L</td><td>0.04 dB</td><td>0.4 %</td><td>–</td></tr>
+<tr><th scope="row" class="l">JL Audio 12W3v3-4</th><td class="l">Ported 49.6 L, 100 cm² × 36 cm</td><td>0.61 dB</td><td>2.6 %</td><td>36.85 / 36.48 Hz (+1.0 %)</td></tr>
+<tr><th scope="row" class="l">SB Acoustics SB23NRXS45-8</th><td class="l">Ported 40 L, 50 cm² × 20 cm</td><td>0.62 dB</td><td>2.0 %</td><td>37.97 / 37.97 Hz (+0.0 %)</td></tr>
+<tr><th scope="row" class="l">Scan-Speak 18W/8531G00</th><td class="l">Sealed 20 L</td><td>0.03 dB</td><td>0.4 %</td><td>–</td></tr>
+<tr><th scope="row" class="l">Dayton RSS265HF-4</th><td class="l">Ported 55 L, 80 cm² × 30 cm</td><td>0.52 dB</td><td>1.5 %</td><td>34.05 / 33.90 Hz (+0.5 %)</td></tr>
+<tr><th scope="row" class="l">Peerless SLS-P830669</th><td class="l">Sealed 60 L</td><td>0.08 dB</td><td>0.7 %</td><td>–</td></tr>
+<tr><th scope="row" class="l">JL Audio 10TW3-D4</th><td class="l">Sealed 17 L</td><td>0.03 dB</td><td>0.5 %</td><td>–</td></tr></tbody></table></div><ul><li><strong>Sealed boxes</strong> agree within 0.1 dB and 1 %.</li><li><strong>Ported boxes</strong> read up to 0.6 dB lower far below tuning (at 15 Hz, where output is already about 25 dB down) and within 0.3 dB in the useful band. Hornresp treats the port as its own sound source; our model, like Small’s, sums cone and port at one point.</li><li><strong>Tuning</strong> agrees within 1 %. Hornresp’s implied port end correction is 1.46 to 1.62 × radius; our default (one flanged, one free end) is 1.46.</li></ul><p>Not compared yet: bandpass boxes, passive radiators and port air speed.</p>
+<h2 id="published">Against published values</h2>
+<p>These are values a manufacturer or an author printed, worked out again by this site’s calculator code:</p><p class="table-cap" aria-hidden="true">Published values that the free calculator on this site reproduces</p><div class="table-wrap"><table class="num-table"><caption class="sr">Published values that the free calculator on this site reproduces</caption>
+<thead><tr><th scope="col">Source</th><th scope="col">Value</th><th scope="col">Published</th><th scope="col">Our result</th><th scope="col">Tolerance</th><th scope="col">Result</th></tr></thead>
+<tbody><tr><th scope="row" class="l">JL Audio 12W3v3-4</th><td class="l">Qts from Qes and Qms</td><td>0.444</td><td>0.444</td><td>± 0.006</td><td><span class="ok-mark">✓ within</span></td></tr>
+<tr><th scope="row" class="l">JL Audio 12W3v3-4</th><td class="l">Sealed Qtc</td><td>0.830</td><td>0.835</td><td>± 0.006</td><td><span class="ok-mark">✓ within</span></td></tr>
+<tr><th scope="row" class="l">JL Audio 12W3v3-4</th><td class="l">Sealed Fc</td><td>50.2 Hz</td><td>50.2 Hz</td><td>± 0.1 Hz</td><td><span class="ok-mark">✓ within</span></td></tr>
+<tr><th scope="row" class="l">JL Audio 12W3v3-4</th><td class="l">Sealed F3</td><td>43.7 Hz</td><td>43.7 Hz</td><td>± 0.1 Hz</td><td><span class="ok-mark">✓ within</span></td></tr>
+<tr><th scope="row" class="l">JL Audio 12W3v3-4</th><td class="l">Slot port tuning</td><td>30.0 Hz</td><td>29.5 Hz</td><td>± 1 Hz</td><td><span class="ok-mark">✓ within</span></td></tr>
+<tr><th scope="row" class="l">Scan-Speak Technote 07</th><td class="l">Sealed volume for Qtc 0.707</td><td>13.63 L</td><td>13.63 L</td><td>± 0.01 L</td><td><span class="ok-mark">✓ within</span></td></tr>
+<tr><th scope="row" class="l">Scan-Speak Technote 07</th><td class="l">Sealed volume for Qtc 0.707</td><td>17.79 L</td><td>17.79 L</td><td>± 0.01 L</td><td><span class="ok-mark">✓ within</span></td></tr>
+<tr><th scope="row" class="l">Scan-Speak Technote 07</th><td class="l">Port length, 6 cm port</td><td>21.7 cm</td><td>21.0 cm</td><td>± 1 cm</td><td><span class="ok-mark">✓ within</span></td></tr>
+<tr><th scope="row" class="l">Scan-Speak Technote 07</th><td class="l">Port length, 6 cm port</td><td>24.6 cm</td><td>24.4 cm</td><td>± 1 cm</td><td><span class="ok-mark">✓ within</span></td></tr>
+<tr><th scope="row" class="l">Scan-Speak Technote 07</th><td class="l">Port length, 6 cm port</td><td>51.9 cm</td><td>51.5 cm</td><td>± 1 cm</td><td><span class="ok-mark">✓ within</span></td></tr>
+<tr><th scope="row" class="l">Scan-Speak 18W/8531G00</th><td class="l">Sealed volume for Qtc 0.707</td><td>23.0 L</td><td>23.0 L</td><td>± 0.5 L</td><td><span class="ok-mark">✓ within</span></td></tr>
+<tr><th scope="row" class="l">SB Acoustics SB23NRXS45-8</th><td class="l">Fs from Mms and Cms</td><td>27.00 Hz</td><td>26.98 Hz</td><td>± 0.16 Hz</td><td><span class="ok-mark">✓ within</span></td></tr>
+<tr><th scope="row" class="l">SB Acoustics SB23NRXS45-8</th><td class="l">Vas from Cms and Sd</td><td>94.0 L</td><td>93.8 L</td><td>± 1.5 L</td><td><span class="ok-mark">✓ within</span></td></tr>
+<tr><th scope="row" class="l">Peerless SLS-P830669</th><td class="l">Fs from Mms and Cms</td><td>31.48 Hz</td><td>31.48 Hz</td><td>± 0.19 Hz</td><td><span class="ok-mark">✓ within</span></td></tr>
+<tr><th scope="row" class="l">usenclosure.com</th><td class="l">Port length, 4 in port, 1.5 ft³, 35 Hz</td><td>15.50 in</td><td>15.36 in</td><td>± 0.15 in</td><td><span class="ok-mark">✓ within</span></td></tr></tbody></table></div><p>The tolerance is the printed rounding, or the scatter the source states. The full set of verified values, by source:</p><p class="table-cap" aria-hidden="true">Every verified vector by source (all pass in the engine tests)</p><div class="table-wrap"><table class="num-table"><caption class="sr">Every verified vector by source (all pass in the engine tests)</caption>
+<thead><tr><th scope="col">Source</th><th scope="col">What is checked</th><th scope="col">Vectors</th></tr></thead>
+<tbody><tr><th scope="row" class="l"><a href="https://www.cartoys.com/products/jl-audio-12w3v3-4" rel="noopener">JL Audio 12W3v3-4 specifications (authorised retailer copy)</a></th><td class="l">Qts, Bl, efficiency, sensitivity, sealed Fc, Qtc and F3, slot port tuning, net volume</td><td>9</td></tr>
+<tr><th scope="row" class="l"><a href="https://www.scan-speak.dk/datasheet/tech/Scan-Speak_Technote07_Box-alignments.pdf" rel="noopener">Scan-Speak Technote 07, box alignments</a></th><td class="l">Sealed volumes, QB3 and SC4 boxes, port lengths, Fs, Qes, Rms, Zmax</td><td>17</td></tr>
+<tr><th scope="row" class="l"><a href="https://sbacoustics.com/wp-content/uploads/2026/05/8-inch-SB23NRXS45-8.pdf" rel="noopener">SB Acoustics SB23NRXS45-8 datasheet</a></th><td class="l">Qts, Vas, Fs, Qes, Rms</td><td>5</td></tr>
+<tr><th scope="row" class="l"><a href="https://www.parts-express.com/pedocs/specs/295-460-dayton-audio-rss265hf-4-specifications-46172.pdf" rel="noopener">Dayton Audio RSS265HF-4 specifications</a></th><td class="l">Qts, Fs, Vd</td><td>3</td></tr>
+<tr><th scope="row" class="l"><a href="https://www.Lautsprechershop.de/pdf/peerless/peerless_sls_p830669.pdf" rel="noopener">Peerless SLS-P830669 datasheet</a></th><td class="l">Qts, Vas with Small’s air constants, Fs, Qes, Sd</td><td>5</td></tr>
+<tr><th scope="row" class="l"><a href="https://audioxpress.com/article/voice-coil-focus-quasi-alignment-families" rel="noopener">audioXpress, “Voice Coil Focus: Quasi-Alignment Families”</a></th><td class="l">QB3 alignment table at QL 10</td><td>6</td></tr>
+<tr><th scope="row" class="l"><a href="https://speakerbench.com/doc/alignment_theory.html" rel="noopener">Speakerbench, alignment theory</a></th><td class="l">B4, LR4, IB4, BL4 and CD4 alignments at QL ∞, 10 and 7</td><td>15</td></tr>
+<tr><th scope="row" class="l"><a href="https://sdlabo.jp/archives/Vented_Box_Loudspeaker%20Systems_Part_1-4.pdf" rel="noopener">Small, R. H., “Vented-Box Loudspeaker Systems” Parts I–IV, JAES 21 (1973)</a></th><td class="l">Butterworth and Bessel coefficients</td><td>2</td></tr>
+<tr><th scope="row" class="l"><a href="https://usenclosure.com/Enclosure%20Formulas/enclosure_formula.html" rel="noopener">usenclosure.com, enclosure formulas</a></th><td class="l">Sealed F3/Fc table, port length</td><td>9</td></tr>
+<tr><th scope="row" class="l"><a href="https://audiojudgement.com/4th-order-bandpass-design/" rel="noopener">audiojudgement, 4th-order bandpass design (Dickason example)</a></th><td class="l">4th-order bandpass worked example</td><td>8</td></tr></tbody></table></div>
+<h2 id="tolerances">What we promise</h2>
+<ul><li>Box formulas (Qtc, Fc, F3, port length, volumes, wiring): exact to the formula, 1e-9.</li><li>Against Hornresp: sealed within 0.1 dB, ported within 0.7 dB from 15 to 100 Hz, tuning within 1 %.</li><li>Against datasheets: within the sheet’s own rounding. When a sheet disagrees with itself, the app tells you instead of picking a side (see the <a href="../thiele-small-datasheet-check/">datasheet check</a>).</li><li>Estimates are labelled: slot port end corrections, cabin gain and the port-noise limits.</li></ul>
+<h2 id="winisd">Why WinISD or another calculator shows a different number</h2>
+<p>We have not compared against WinISD: there is no official download any more to test with. When two programs disagree, it is almost always one of these:</p><ul><li><strong>Net or gross volume.</strong> Some calculators take the inside size of the box. Boxwright wants net: the driver, port and bracing out.</li><li><strong>Port end correction.</strong> Programs use anything from 0.6 to 0.85 × radius per end, or let you choose. One end flanged or free moves the tuning by a few percent.</li><li><strong>Box losses (QL).</strong> We use QL 7 for ported boxes, Small’s typical value. A lossless model gives a slightly different F3 and a sharper response.</li><li><strong>Air constants.</strong> We use 343 m/s and 1.204 kg/m³ (20 °C). Small used 345 m/s and 1.18 kg/m³.</li><li><strong>Which F3.</strong> −3 dB from the flat line, or −3 dB below the peak. We show both and say which.</li><li><strong>The driver numbers.</strong> Two programs with two different datasheet versions will disagree. Check the sheet first with the <a href="../thiele-small-datasheet-check/">datasheet check</a>.</li></ul>
+<h2 id="report">Found a number that looks wrong?</h2>
+<p>Write to <a href="mailto:hello@mufatech.com">hello@mufatech.com</a> with the driver, the box and what you expected. If it is our mistake, it becomes a test first, then a fix, and it stays in the test set.</p>
+<nav class="next" aria-label="Next question"><p class="next-h">Next question</p><ul><li><a href="../thiele-small-datasheet-check/">Datasheet check<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><a href="../subwoofer-box-calculator/">Box calculator<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">In the app</h2>
+<p>Every result in the app has a line under it: the formula, your numbers and the assumption (air, end correction, QL). Tap a term for a short explanation.</p>
+<p class="small">Free: every box, the full driver list, the cut list, wiring and the tone check. Pro is one payment, no subscription. No account, works offline.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Coming soon</b></span><span class="store soon"><small>App Store</small><b>Coming later</b></span></div>
+</aside>
+<h2>Sources</h2>
+<ol class="sources"><li><a href="https://www.hornresp.net/" rel="noopener">Hornresp (D. McBean), version 60.60</a></li><li><a href="https://www.cartoys.com/products/jl-audio-12w3v3-4" rel="noopener">JL Audio 12W3v3-4 specifications (authorised retailer copy)</a></li><li><a href="https://www.scan-speak.dk/datasheet/pdf/18w-8531g00.pdf" rel="noopener">Scan-Speak 18W/8531G00 datasheet</a></li><li><a href="https://www.scan-speak.dk/datasheet/tech/Scan-Speak_Technote07_Box-alignments.pdf" rel="noopener">Scan-Speak Technote 07, box alignments</a></li><li><a href="https://sbacoustics.com/wp-content/uploads/2026/05/8-inch-SB23NRXS45-8.pdf" rel="noopener">SB Acoustics SB23NRXS45-8 datasheet</a></li><li><a href="https://www.parts-express.com/pedocs/specs/295-460-dayton-audio-rss265hf-4-specifications-46172.pdf" rel="noopener">Dayton Audio RSS265HF-4 specifications</a></li><li><a href="https://www.Lautsprechershop.de/pdf/peerless/peerless_sls_p830669.pdf" rel="noopener">Peerless SLS-P830669 datasheet</a></li><li><a href="https://audioxpress.com/article/voice-coil-focus-quasi-alignment-families" rel="noopener">audioXpress, “Voice Coil Focus: Quasi-Alignment Families”</a></li><li><a href="https://speakerbench.com/doc/alignment_theory.html" rel="noopener">Speakerbench, alignment theory</a></li><li><a href="https://sdlabo.jp/archives/Vented_Box_Loudspeaker%20Systems_Part_1-4.pdf" rel="noopener">Small, R. H., “Vented-Box Loudspeaker Systems” Parts I–IV, JAES 21 (1973)</a></li><li><a href="https://usenclosure.com/Enclosure%20Formulas/enclosure_formula.html" rel="noopener">usenclosure.com, enclosure formulas</a></li><li><a href="https://audiojudgement.com/4th-order-bandpass-design/" rel="noopener">audiojudgement, 4th-order bandpass design (Dickason example)</a></li></ol>
+<p class="callout">Results are design estimates. Check the driver’s datasheet and your amplifier’s minimum load before you build.</p>
+<p class="updated">Checked against the sources: October 27, 2026</p>
+</article>
+</div>
+<div class="wrap"><p class="also-in"><span>This page in:</span> <a href="../de/validierung/" hreflang="de" lang="de">Deutsch</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Results are design estimates. Check the driver’s datasheet and your amplifier’s minimum load before you build.</p>
+<p>Boxwright is a speaker and subwoofer box designer for car audio and DIY hi-fi, made by Mufatech. This site sets no cookies and loads nothing from other servers.</p>
+<nav aria-label="Site"><a href="../">Boxwright</a><a href="../subwoofer-box-calculator/">Box calculator</a><a href="../thiele-small-datasheet-check/">Datasheet check</a><a href="../subwoofer-wiring/">Wiring charts</a><a href="../port-tuning-check/">Port tuning check</a><a href="../validation/">Validation</a><a href="../support/">Support</a><a href="../privacy/">Privacy</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+
+</body>
+</html>

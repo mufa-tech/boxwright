@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Boxwright: Subwoofer-Gehäuse berechnen, mit Zuschnitt</title>
+<meta name="description" content="Geschlossene und Bassreflex-Gehäuse aus den TSP deines Chassis berechnen: Nettovolumen, Rohrlänge, Zuschnitt und ein Tontest fürs fertige Gehäuse.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEAE5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131416" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/boxwright/de/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/boxwright/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/boxwright/pt-br/">
+<link rel="alternate" hreflang="es-419" href="https://mufa-tech.github.io/boxwright/es/">
+<link rel="alternate" hreflang="id" href="https://mufa-tech.github.io/boxwright/id/">
+<link rel="alternate" hreflang="tr" href="https://mufa-tech.github.io/boxwright/tr/">
+<link rel="alternate" hreflang="pl" href="https://mufa-tech.github.io/boxwright/pl/">
+<link rel="alternate" hreflang="de" href="https://mufa-tech.github.io/boxwright/de/">
+<link rel="alternate" hreflang="fr" href="https://mufa-tech.github.io/boxwright/fr/">
+<link rel="alternate" hreflang="nl" href="https://mufa-tech.github.io/boxwright/nl/">
+<link rel="alternate" hreflang="it" href="https://mufa-tech.github.io/boxwright/it/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/boxwright/">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<link rel="preload" href="../assets/fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Boxwright">
+<meta property="og:title" content="Boxwright: Subwoofer-Gehäuse berechnen, mit Zuschnitt">
+<meta property="og:description" content="Geschlossene und Bassreflex-Gehäuse aus den TSP deines Chassis berechnen: Nettovolumen, Rohrlänge, Zuschnitt und ein Tontest fürs fertige Gehäuse.">
+<meta property="og:url" content="https://mufa-tech.github.io/boxwright/de/">
+<meta property="og:image" content="https://mufa-tech.github.io/boxwright/assets/og-de.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="es_MX">
+<meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../de/"><img src="../assets/icon.svg" alt="" width="32" height="32">Boxwright</a>
+<nav class="main" aria-label="Hauptmenü"><a href="../de/gehaeuse-rechner/">Gehäuserechner</a><a href="../de/validierung/">So prüfen wir die Rechnung</a><a href="../de/support/">Hilfe</a></nav>
+<details class="langpick"><summary aria-label="Sprache: Deutsch"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>DE</span></summary><nav aria-label="Sprache"><a href="../" hreflang="en" lang="en">English</a><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../es/" hreflang="es-419" lang="es-419">Español (Latinoamérica)</a><a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../pl/" hreflang="pl" lang="pl">Polski</a><a href="../de/" hreflang="de" lang="de" aria-current="true">Deutsch</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../nl/" hreflang="nl" lang="nl">Nederlands</a><a href="../it/" hreflang="it" lang="it">Italiano</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<section class="hero" aria-labelledby="h1">
+<div>
+<p class="eyebrow">Car-HiFi und Lautsprecher-Selbstbau</p>
+<h1 id="h1">Erst rechnen. Dann genau dieses Gehäuse bauen.</h1>
+<p class="lead">Such dein Chassis aus, und du bekommst Nettovolumen, Port und einen Zuschnitt, in dem Portwände und Schallwand schon eingerechnet sind. Steht das Gehäuse, spielst du einen langsamen Sweep und siehst, wo es wirklich abgestimmt ist.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Bald verfügbar</b></span><span class="store soon"><small>App Store</small><b>Später verfügbar</b></span></div>
+<ul class="promise"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Kein Konto</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Kein Abo</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Läuft offline</li></ul>
+</div>
+<figure class="card specimen" aria-label="Beispiel für ein Gehäuse in Boxwright">
+<div class="sp-head"><span class="sp-tag">12″</span><span class="sp-name">Bassreflex für den Kofferraum</span></div>
+<svg class="sp-draw" viewBox="0 0 300 190" role="img" aria-label="Front des Gehäuses mit Chassisausschnitt und rundem Port, Durchmesser bemaßt">
+<path class="top" d="M40 50 70 22h190l-30 28z"/><path class="side" d="M230 50l30-28v118l-30 28z"/>
+<rect class="face" x="40" y="50" width="190" height="118" rx="3"/>
+<circle class="hole" cx="110" cy="109" r="44"/><circle class="cone" cx="110" cy="109" r="26"/><circle class="cone" cx="110" cy="109" r="10"/>
+<circle class="hole" cx="190" cy="109" r="17"/>
+<path class="dim" d="M173 140h34M173 135v10M207 135v10"/>
+<rect class="dimtag" x="158" y="149" width="64" height="18" rx="3"/><text x="190" y="162" text-anchor="middle">Ø 10 cm</text>
+</svg>
+<dl class="sp-nums">
+<div><dt>Nettovolumen</dt><dd>50<small> L</small></dd></div>
+<div><dt>Abstimmung</dt><dd>34<small> Hz</small></dd></div>
+<div><dt>Port</dt><dd>10 × 33,2<small> cm</small></dd></div>
+<div><dt>Eingabeprüfung</dt><dd>✓<small> Werte stimmen</small></dd></div>
+</dl>
+<figcaption>Rohrlänge mit derselben Rechnung wie in der App: ein Rohrende mit Flansch, eins frei.</figcaption>
+</figure>
+</section>
+<section class="gap-top" aria-labelledby="tools-h">
+<h2 id="tools-h">Kostenlose Rechner auf dieser Seite</h2>
+<p class="lead narrow">Dieselben Formeln wie in der App, direkt im Browser. Ohne Anmeldung, ohne Installation.</p>
+<ul class="calc-cards"><li><a class="card calc-card" href="../de/gehaeuse-rechner/"><span class="cc-h">Gehäuserechner<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span><span class="cc-p">Qtc, Fc und F3 im geschlossenen Gehäuse oder die Rohrlänge für Bassreflex.</span></a></li><li><a class="card calc-card" href="../de/validierung/"><span class="cc-h">Validierung<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span><span class="cc-p">Referenzwerte, Abgleich mit Hornresp, veröffentlichte Werte und unsere Toleranzen.</span></a></li></ul>
+</section>
+<h2 class="gap-top">Was die App kann</h2>
+<div class="features"><div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="6.5" width="13" height="14" rx="1"/><path d="M3.5 6.5 7 3h13.5v14L16.5 20.5M16.5 6.5 20.5 3"/><circle cx="10" cy="12.5" r="3.5"/></svg></span><h3>Gehäuse, Port und Nettovolumen in einem</h3><p>Änderst du den Port, zieht das Nettovolumen mit. Portwände, Chassis, Verstrebung und doppelte Schallwand gehen vom Bruttovolumen ab, bevor die Abstimmung gerechnet wird.</p></div>
+<div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 2.5 20h19z"/><path d="M12 10v4.5M12 17.5v.5"/></svg></span><h3>Zuerst das Datenblatt prüfen</h3><p>Qts, Fs, Vas und Sd werden gegeneinander abgeglichen. Steht Vas in Kubikfuß im Datenblatt und wurde als Liter eingetragen, oder Sd in cm² statt m², fällt das auf, bevor du sägst.</p></div>
+<div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15.5V12l2.2-5h13.6L21 12v3.5z"/><path d="M3 12h18"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span><h3>Ein klares Ergebnis fürs Auto</h3><p>Trag die echte RMS-Leistung deiner Endstufe ein. Du bekommst eine von drei Antworten: passt, Portgeräusche wahrscheinlich oder über Xmax, dazu die Gehäusegröße oder den Subsonic-Filter, der das behebt.</p></div>
+<div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18v16H3z"/><path d="M3 10h18M10 10v10M3 15h7"/></svg></span><h3>Erst einpassen, dann zuschneiden</h3><p>Gib zwei Außenmaße und das Nettovolumen vor, Boxwright rechnet das dritte aus. Dann kommt die Zuschnittliste in mm, mit Schnittbreite, Schallwand, Portwänden und Chassisausschnitt.</p></div>
+<div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c2-5 4-5 6 0s4 5 6 0 4-5 6 0"/><path d="M21 6v12"/></svg></span><h3>Gehäuse prüfen</h3><p>Ein langsamer Sweep über deine Endstufe. Wo die Membran fast stillsteht, liegt die echte Abstimmung. Danach sagt dir die App, wie viel du vom Port absägen musst.</p></div>
+<div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h6M7 13h4"/><path d="M15 12h3v3h-3z"/></svg></span><h3>Baukarte</h3><p>Ein Bild mit Chassis, Nettovolumen, Abstimmung, Port und F3 fürs Forum, dazu eine Projektdatei, die ein anderes Handy mit allen Zahlen öffnet.</p></div></div>
+<div class="tiers gap-top">
+<section class="card" aria-labelledby="free-h"><h2 id="free-h" class="h3">Dauerhaft kostenlos</h2><ul class="ticks"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Beliebig viele Gehäuse und eigene Chassis</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Rund 700 Chassis aus Herstellerdatenblättern</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Eingabeprüfung, geschlossene und Bassreflex-Gehäuse</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Rechnung für Port und Nettovolumen, Einpassen in deinen Platz</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Zuschnitt für rechteckige und schräge Gehäuse</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Verschaltung von 1 bis 16 Subs, Warnungen zu Portgeräuschen und Xmax</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Gehäuse prüfen, Baukarte, Sicherung</li></ul></section>
+<section class="card pro" aria-labelledby="pro-h"><h2 id="pro-h" class="h3">Pro, einmal bezahlt</h2><ul class="ticks"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Kurven für SPL, Hub, Portströmung und Gruppenlaufzeit bei deiner Leistung</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Innenraumverstärkung, geschlossen und Bassreflex in einem Diagramm</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Bandpass 4. Ordnung</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Plattenaufteilung: wie viele Platten und wo jedes Teil liegt</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>PDF-Bauplan für den Zuschnitt</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Alle Auslegungen im Vergleich</li></ul><p class="small pro-note">Pro kannst du einmal 7 Tage kostenlos testen. Daraus wird nie von selbst eine Zahlung. Nach der Testphase bleiben deine Gehäuse, wie sie sind.</p></section>
+</div>
+<div class="split gap-top">
+<section class="card" aria-labelledby="priv-h"><h2 id="priv-h" class="h3">Deine Gehäuse bleiben auf dem Handy</h2><p>Kein Konto, kein Server, keine Analyse. Boxwright fragt nach keiner einzigen Berechtigung. Der Tontest spielt nur Töne ab, das Mikrofon nutzt er nie. Ins Netz geht die App nur über den Store, wenn du Pro kaufst.</p><p><a href="../de/privacy/">Datenschutz</a></p></section>
+<section class="card" aria-labelledby="about-h"><h2 id="about-h" class="h3">Zahlen, die du nachprüfen kannst</h2><p>Jedes Ergebnis zeigt die Formel und deine Zahlen. Der Rechenkern wird gegen 338 Rechenbeispiele getestet, davon 79 veröffentlichte Werte aus Datenblättern und Fachartikeln, und gegen Hornresp an 7 echten Gehäusen.</p><p><a href="../de/validierung/">So prüfen wir die Rechnung</a></p></section>
+</div>
+</div>
+<div class="wrap"><p class="also-in"><span>Diese Seite auf:</span> <a href="../" hreflang="en" lang="en">English</a><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../es/" hreflang="es-419" lang="es-419">Español (Latinoamérica)</a><a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../pl/" hreflang="pl" lang="pl">Polski</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../nl/" hreflang="nl" lang="nl">Nederlands</a><a href="../it/" hreflang="it" lang="it">Italiano</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Die Ergebnisse sind Planungswerte. Prüf vor dem Bauen das Datenblatt des Chassis und die Mindestlast deiner Endstufe.</p>
+<p>Boxwright berechnet Lautsprecher- und Subwoofer-Gehäuse für Car-HiFi und Hifi-Selbstbau, gemacht von Mufatech. Diese Website setzt keine Cookies und lädt nichts von fremden Servern.</p>
+<nav aria-label="Website"><a href="../de/">Boxwright</a><a href="../de/gehaeuse-rechner/">Gehäuserechner</a><a href="../de/validierung/">Validierung</a><a href="../de/support/">Hilfe</a><a href="../de/privacy/">Datenschutz</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+
+</body>
+</html>

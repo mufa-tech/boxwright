@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Boxwright: subwoofer kist berekenen met zaaglijst</title>
+<meta name="description" content="Reken een gesloten of basreflex subwoofer kist uit met de datasheet: netto volume, poortlengte, zaaglijst en een toontest voor de kist die je bouwde.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEAE5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131416" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/boxwright/nl/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/boxwright/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/boxwright/pt-br/">
+<link rel="alternate" hreflang="es-419" href="https://mufa-tech.github.io/boxwright/es/">
+<link rel="alternate" hreflang="id" href="https://mufa-tech.github.io/boxwright/id/">
+<link rel="alternate" hreflang="tr" href="https://mufa-tech.github.io/boxwright/tr/">
+<link rel="alternate" hreflang="pl" href="https://mufa-tech.github.io/boxwright/pl/">
+<link rel="alternate" hreflang="de" href="https://mufa-tech.github.io/boxwright/de/">
+<link rel="alternate" hreflang="fr" href="https://mufa-tech.github.io/boxwright/fr/">
+<link rel="alternate" hreflang="nl" href="https://mufa-tech.github.io/boxwright/nl/">
+<link rel="alternate" hreflang="it" href="https://mufa-tech.github.io/boxwright/it/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/boxwright/">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<link rel="preload" href="../assets/fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Boxwright">
+<meta property="og:title" content="Boxwright: subwoofer kist berekenen met zaaglijst">
+<meta property="og:description" content="Reken een gesloten of basreflex subwoofer kist uit met de datasheet: netto volume, poortlengte, zaaglijst en een toontest voor de kist die je bouwde.">
+<meta property="og:url" content="https://mufa-tech.github.io/boxwright/nl/">
+<meta property="og:image" content="https://mufa-tech.github.io/boxwright/assets/og-nl.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="es_MX">
+<meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../nl/"><img src="../assets/icon.svg" alt="" width="32" height="32">Boxwright</a>
+<nav class="main" aria-label="Hoofdmenu"><a href="../nl/support/">Support</a></nav>
+<details class="langpick"><summary aria-label="Taal: Nederlands"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>NL</span></summary><nav aria-label="Taal"><a href="../" hreflang="en" lang="en">English</a><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../es/" hreflang="es-419" lang="es-419">Español (Latinoamérica)</a><a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../pl/" hreflang="pl" lang="pl">Polski</a><a href="../de/" hreflang="de" lang="de">Deutsch</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../nl/" hreflang="nl" lang="nl" aria-current="true">Nederlands</a><a href="../it/" hreflang="it" lang="it">Italiano</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<section class="hero" aria-labelledby="h1">
+<div>
+<p class="eyebrow">Car audio en zelfbouwluidsprekers</p>
+<h1 id="h1">Subwoofer kist berekenen, tot en met de zaaglijst</h1>
+<p class="lead">Kies je sub en je krijgt het netto volume, de poort en een zaaglijst waarin de poortwanden en de frontplaat al zijn meegeteld. Staat de kist er, speel dan een langzame sweep af en kijk waar hij echt op afgestemd is.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Binnenkort</b></span><span class="store soon"><small>App Store</small><b>Later</b></span></div>
+<ul class="promise"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Geen account</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Geen abonnement</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Werkt offline</li></ul>
+</div>
+<figure class="card specimen" aria-label="Voorbeeld van een kast in Boxwright">
+<div class="sp-head"><span class="sp-tag">12″</span><span class="sp-name">Basreflexkist voor de kofferbak</span></div>
+<svg class="sp-draw" viewBox="0 0 300 190" role="img" aria-label="Voorkant van de kast met het gat voor de woofer en de ronde poort, met de diameter erbij">
+<path class="top" d="M40 50 70 22h190l-30 28z"/><path class="side" d="M230 50l30-28v118l-30 28z"/>
+<rect class="face" x="40" y="50" width="190" height="118" rx="3"/>
+<circle class="hole" cx="110" cy="109" r="44"/><circle class="cone" cx="110" cy="109" r="26"/><circle class="cone" cx="110" cy="109" r="10"/>
+<circle class="hole" cx="190" cy="109" r="17"/>
+<path class="dim" d="M173 140h34M173 135v10M207 135v10"/>
+<rect class="dimtag" x="158" y="149" width="64" height="18" rx="3"/><text x="190" y="162" text-anchor="middle">Ø 10 cm</text>
+</svg>
+<dl class="sp-nums">
+<div><dt>Netto volume</dt><dd>50<small> L</small></dd></div>
+<div><dt>Afstemming</dt><dd>34<small> Hz</small></dd></div>
+<div><dt>Poort</dt><dd>10 × 33,2<small> cm</small></dd></div>
+<div><dt>Invoercontrole</dt><dd>✓<small> alles klopt</small></dd></div>
+</dl>
+<figcaption>Poortlengte uitgerekend zoals in de app: één uiteinde gelijk met de frontplaat, het andere vrij in de kast.</figcaption>
+</figure>
+</section>
+
+<h2 class="gap-top">Wat de app doet</h2>
+<div class="features"><div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="6.5" width="13" height="14" rx="1"/><path d="M3.5 6.5 7 3h13.5v14L16.5 20.5M16.5 6.5 20.5 3"/><circle cx="10" cy="12.5" r="3.5"/></svg></span><h3>Kast, poort en netto volume in één keer</h3><p>Verander de poort en het netto volume gaat mee. Poortwanden, woofer, verstevigingen en een dubbele frontplaat gaan van het bruto volume af voordat de afstemming wordt uitgerekend.</p></div>
+<div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 2.5 20h19z"/><path d="M12 10v4.5M12 17.5v.5"/></svg></span><h3>Eerst de datasheet controleren</h3><p>Qts, Fs, Vas en Sd worden naast elkaar gelegd. Een Vas in kubieke voet die als liter is ingevuld, of een Sd in cm², valt op voordat je gaat zagen.</p></div>
+<div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15.5V12l2.2-5h13.6L21 12v3.5z"/><path d="M3 12h18"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span><h3>Een oordeel voor de auto</h3><p>Vul het echte RMS-vermogen van je versterker in. Je krijgt een van drie oordelen: goed, poortgeruis waarschijnlijk of boven Xmax, plus de kastmaat of het subsonic filter dat het oplost.</p></div>
+<div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18v16H3z"/><path d="M3 10h18M10 10v10M3 15h7"/></svg></span><h3>Passend maken, dan zagen</h3><p>Geef twee buitenmaten en het netto volume, dan krijg je de derde maat. Daarna een zaaglijst in mm of 1/16 inch, met zaagsnede, frontplaat, poortwanden en het gat voor de woofer.</p></div>
+<div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c2-5 4-5 6 0s4 5 6 0 4-5 6 0"/><path d="M21 6v12"/></svg></span><h3>Mijn kast checken</h3><p>Een langzame sweep via je versterker. Waar de conus bijna stilstaat, zit de echte afstemming. Daarna zie je hoeveel je van de poort moet afzagen.</p></div>
+<div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h6M7 13h4"/><path d="M15 12h3v3h-3z"/></svg></span><h3>Bouwkaart</h3><p>Eén afbeelding met de woofer, het netto volume, de afstemming, de poort en F3 om op een forum te zetten, plus een projectbestand dat een andere telefoon opent met alle getallen erin.</p></div></div>
+<div class="tiers gap-top">
+<section class="card" aria-labelledby="free-h"><h2 id="free-h" class="h3">Gratis, en dat blijft zo</h2><ul class="ticks"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Onbeperkt kasten en eigen woofers</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Zo’n 700 woofers uit datasheets van fabrikanten</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Invoercontrole, gesloten en basreflex ontwerpen</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Poort en netto volume samen, passend maken voor je ruimte</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Zaaglijst voor rechte en schuine kasten</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Bedrading voor 1 tot 16 subs, waarschuwingen voor poortgeruis en Xmax</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Mijn kast checken, bouwkaart, back-up</li></ul></section>
+<section class="card pro" aria-labelledby="pro-h"><h2 id="pro-h" class="h3">Pro, één keer betalen</h2><ul class="ticks"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Curves voor SPL, conusuitslag, poortsnelheid en groepslooptijd bij jouw vermogen</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Cabin gain, en gesloten naast basreflex in één grafiek</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Bandpass 4e orde ontwerpen</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Plaatindeling: hoeveel platen, en waar elk paneel komt</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>PDF-bouwtekening voor in de werkplaats</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Alle alignments naast elkaar</li></ul><p class="small pro-note">Probeer Pro één keer 7 dagen gratis. Het wordt nooit vanzelf een betaling. Na de proefperiode blijven je kasten zoals ze zijn.</p></section>
+</div>
+<div class="split gap-top">
+<section class="card" aria-labelledby="priv-h"><h2 id="priv-h" class="h3">Je kasten blijven op je telefoon</h2><p>Geen account, geen server, geen analytics. Boxwright vraagt helemaal geen toestemmingen. De toontest speelt alleen geluid af en gebruikt nooit de microfoon. De app gaat alleen online voor de store, als je Pro koopt.</p><p><a href="../nl/privacy/">Privacy</a></p></section>
+<section class="card" aria-labelledby="about-h"><h2 id="about-h" class="h3">Getallen die je kunt narekenen</h2><p>Bij elke uitkomst staan de formule en jouw getallen. De rekenkern wordt getest op 338 uitgewerkte voorbeelden, waarvan 79 gepubliceerde waarden uit datasheets en artikelen, en vergeleken met Hornresp op 7 echte ontwerpen.</p></section>
+</div>
+</div>
+<div class="wrap"><p class="also-in"><span>Deze pagina in:</span> <a href="../" hreflang="en" lang="en">English</a><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../es/" hreflang="es-419" lang="es-419">Español (Latinoamérica)</a><a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../pl/" hreflang="pl" lang="pl">Polski</a><a href="../de/" hreflang="de" lang="de">Deutsch</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../it/" hreflang="it" lang="it">Italiano</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">De uitkomsten zijn ontwerpschattingen. Check de datasheet van de woofer en de minimale belasting van je versterker voordat je gaat bouwen.</p>
+<p>Boxwright is een app om subwooferkasten en luidsprekerkasten te ontwerpen, voor car audio en hifi-zelfbouw, gemaakt door Mufatech. Deze site plaatst geen cookies en laadt niets van andere servers.</p>
+<nav aria-label="Site"><a href="../nl/">Boxwright</a><a href="../nl/support/">Support</a><a href="../nl/privacy/">Privacy</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+
+</body>
+</html>

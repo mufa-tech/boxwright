@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Boxwright: subwoofer box calculator with cut list</title>
+<meta name="description" content="Design sealed and ported subwoofer boxes from the driver’s datasheet: net volume, port length, cut list and a tone check for the box you built.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEAE5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131416" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/boxwright/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/boxwright/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/boxwright/pt-br/">
+<link rel="alternate" hreflang="es-419" href="https://mufa-tech.github.io/boxwright/es/">
+<link rel="alternate" hreflang="id" href="https://mufa-tech.github.io/boxwright/id/">
+<link rel="alternate" hreflang="tr" href="https://mufa-tech.github.io/boxwright/tr/">
+<link rel="alternate" hreflang="pl" href="https://mufa-tech.github.io/boxwright/pl/">
+<link rel="alternate" hreflang="de" href="https://mufa-tech.github.io/boxwright/de/">
+<link rel="alternate" hreflang="fr" href="https://mufa-tech.github.io/boxwright/fr/">
+<link rel="alternate" hreflang="nl" href="https://mufa-tech.github.io/boxwright/nl/">
+<link rel="alternate" hreflang="it" href="https://mufa-tech.github.io/boxwright/it/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/boxwright/">
+<link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="./assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="./assets/icon-180.png">
+<link rel="preload" href="./assets/fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Boxwright">
+<meta property="og:title" content="Boxwright: subwoofer box calculator with cut list">
+<meta property="og:description" content="Design sealed and ported subwoofer boxes from the driver’s datasheet: net volume, port length, cut list and a tone check for the box you built.">
+<meta property="og:url" content="https://mufa-tech.github.io/boxwright/">
+<meta property="og:image" content="https://mufa-tech.github.io/boxwright/assets/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="es_MX">
+<meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="./assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="./"><img src="./assets/icon.svg" alt="" width="32" height="32">Boxwright</a>
+<nav class="main" aria-label="Main"><a href="./subwoofer-box-calculator/">Box calculator</a><a href="./validation/">How we check the maths</a><a href="./support/">Support</a></nav>
+<details class="langpick"><summary aria-label="Language: English"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>EN</span></summary><nav aria-label="Language"><a href="./" hreflang="en" lang="en" aria-current="true">English</a><a href="./pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="./es/" hreflang="es-419" lang="es-419">Español (Latinoamérica)</a><a href="./id/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="./tr/" hreflang="tr" lang="tr">Türkçe</a><a href="./pl/" hreflang="pl" lang="pl">Polski</a><a href="./de/" hreflang="de" lang="de">Deutsch</a><a href="./fr/" hreflang="fr" lang="fr">Français</a><a href="./nl/" hreflang="nl" lang="nl">Nederlands</a><a href="./it/" hreflang="it" lang="it">Italiano</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<section class="hero" aria-labelledby="h1">
+<div>
+<p class="eyebrow">Car audio and DIY speaker boxes</p>
+<h1 id="h1">Design the box. Then build that box.</h1>
+<p class="lead">Pick your sub, get the net volume and the port, and a cut list that already counts the port walls and the baffle. When it is built, play a slow tone sweep and see where your box really tunes.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Coming soon</b></span><span class="store soon"><small>App Store</small><b>Coming later</b></span></div>
+<ul class="promise"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>No account</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>No subscription</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Works offline</li></ul>
+</div>
+<figure class="card specimen" aria-label="Example of a box in Boxwright">
+<div class="sp-head"><span class="sp-tag">12″</span><span class="sp-name">Ported box, trunk build</span></div>
+<svg class="sp-draw" viewBox="0 0 300 190" role="img" aria-label="Front of the box with the driver cutout and the round port, its diameter marked">
+<path class="top" d="M40 50 70 22h190l-30 28z"/><path class="side" d="M230 50l30-28v118l-30 28z"/>
+<rect class="face" x="40" y="50" width="190" height="118" rx="3"/>
+<circle class="hole" cx="110" cy="109" r="44"/><circle class="cone" cx="110" cy="109" r="26"/><circle class="cone" cx="110" cy="109" r="10"/>
+<circle class="hole" cx="190" cy="109" r="17"/>
+<path class="dim" d="M173 140h34M173 135v10M207 135v10"/>
+<rect class="dimtag" x="166" y="149" width="48" height="18" rx="3"/><text x="190" y="162" text-anchor="middle">Ø 4″</text>
+</svg>
+<dl class="sp-nums">
+<div><dt>Net volume</dt><dd>1.75<small> ft³</small></dd></div>
+<div><dt>Tuning</dt><dd>34<small> Hz</small></dd></div>
+<div><dt>Port</dt><dd>4″ × 13.7<small> in</small></dd></div>
+<div><dt>Input check</dt><dd>✓<small> all clear</small></dd></div>
+</dl>
+<figcaption>Port length worked out by the same maths as the app: one flanged and one free port end.</figcaption>
+</figure>
+</section>
+<section class="gap-top" aria-labelledby="tools-h">
+<h2 id="tools-h">Free tools on this site</h2>
+<p class="lead narrow">The same formulas as the app, in your browser. No sign-up, nothing to install.</p>
+<ul class="calc-cards"><li><a class="card calc-card" href="./subwoofer-box-calculator/"><span class="cc-h">Box calculator<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span><span class="cc-p">Sealed Qtc, Fc and F3, or the port length for a ported box.</span></a></li><li><a class="card calc-card" href="./thiele-small-datasheet-check/"><span class="cc-h">Datasheet check<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span><span class="cc-p">Test Qts, Fs, Vas, Sd and Bl against each other, and catch unit mix-ups.</span></a></li><li><a class="card calc-card" href="./subwoofer-wiring/"><span class="cc-h">Wiring charts<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span><span class="cc-p">Final impedance for 1 to 4 subs, SVC and DVC, series and parallel.</span></a></li><li><a class="card calc-card" href="./port-tuning-check/"><span class="cc-h">Port tuning check<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span><span class="cc-p">Find where your built box really tunes, then cut the port to fix it.</span></a></li><li><a class="card calc-card" href="./validation/"><span class="cc-h">Validation<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span><span class="cc-p">Reference vectors, the Hornresp comparison, published values and our tolerances.</span></a></li></ul>
+</section>
+<h2 class="gap-top">What the app does</h2>
+<div class="features"><div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="6.5" width="13" height="14" rx="1"/><path d="M3.5 6.5 7 3h13.5v14L16.5 20.5M16.5 6.5 20.5 3"/><circle cx="10" cy="12.5" r="3.5"/></svg></span><h3>Box, port and net volume together</h3><p>Change the port and the net volume follows. Port walls, the driver, bracing and a double baffle come off the gross volume before the tuning is worked out.</p></div>
+<div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 2.5 20h19z"/><path d="M12 10v4.5M12 17.5v.5"/></svg></span><h3>Checks the datasheet first</h3><p>Qts, Fs, Vas and Sd are tested against each other. A Vas typed in cubic feet as litres, or an Sd in cm², gets caught before you cut wood.</p></div>
+<div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15.5V12l2.2-5h13.6L21 12v3.5z"/><path d="M3 12h18"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span><h3>A verdict for the car</h3><p>Enter your amp’s real RMS. You get one of three answers: fine, port noise likely, or over Xmax, with the box size or subsonic filter that fixes it.</p></div>
+<div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18v16H3z"/><path d="M3 10h18M10 10v10M3 15h7"/></svg></span><h3>Fit to space, then a cut list</h3><p>Give two outside sizes and the net volume, get the third. Then a cut list in 1/16 inch or mm, with saw kerf, baffle, port walls and the driver hole.</p></div>
+<div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c2-5 4-5 6 0s4 5 6 0 4-5 6 0"/><path d="M21 6v12"/></svg></span><h3>Check my box</h3><p>A slow tone sweep through your amp. Where the cone nearly stops, that is the real tuning. Then it tells you how much port to cut off.</p></div>
+<div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h6M7 13h4"/><path d="M15 12h3v3h-3z"/></svg></span><h3>Build card</h3><p>One image with the driver, net volume, tuning, port and F3 to post on a forum, plus a project file another phone opens with every number.</p></div></div>
+<div class="tiers gap-top">
+<section class="card" aria-labelledby="free-h"><h2 id="free-h" class="h3">Free, for good</h2><ul class="ticks"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Unlimited boxes and your own drivers</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>About 700 drivers from manufacturer datasheets</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Input check, sealed and ported design</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Port and net-volume ledger, fit to space</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Cut list for square and wedge boxes</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Wiring for 1 to 16 subs, port noise and Xmax warnings</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Check my box, build card, backup</li></ul></section>
+<section class="card pro" aria-labelledby="pro-h"><h2 id="pro-h" class="h3">Pro, one payment</h2><ul class="ticks"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>SPL, cone travel, port speed and group delay curves at your power</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Cabin gain, and sealed against ported on one chart</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>4th-order bandpass design</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Sheet layout: how many sheets, and where each part goes</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>PDF build sheet for the shop</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Every alignment side by side</li></ul><p class="small pro-note">Try Pro free for 7 days, once. It never turns into a payment by itself. When the trial ends your boxes stay as they are.</p></section>
+</div>
+<div class="split gap-top">
+<section class="card" aria-labelledby="priv-h"><h2 id="priv-h" class="h3">Your boxes stay on your phone</h2><p>No account, no server, no analytics. Boxwright asks for no permissions at all. The tone check only plays sound; it never uses the microphone. The only network traffic is the store, when you buy Pro.</p><p><a href="./privacy/">Privacy</a></p></section>
+<section class="card" aria-labelledby="about-h"><h2 id="about-h" class="h3">Numbers you can check</h2><p>Every result shows the formula and your numbers. The maths runs against 338 worked examples, 79 of them published values from datasheets and papers, and against Hornresp on 7 real designs.</p><p><a href="./validation/">How we check the maths</a></p></section>
+</div>
+</div>
+<div class="wrap"><p class="also-in"><span>This page in:</span> <a href="./pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="./es/" hreflang="es-419" lang="es-419">Español (Latinoamérica)</a><a href="./id/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="./tr/" hreflang="tr" lang="tr">Türkçe</a><a href="./pl/" hreflang="pl" lang="pl">Polski</a><a href="./de/" hreflang="de" lang="de">Deutsch</a><a href="./fr/" hreflang="fr" lang="fr">Français</a><a href="./nl/" hreflang="nl" lang="nl">Nederlands</a><a href="./it/" hreflang="it" lang="it">Italiano</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Results are design estimates. Check the driver’s datasheet and your amplifier’s minimum load before you build.</p>
+<p>Boxwright is a speaker and subwoofer box designer for car audio and DIY hi-fi, made by Mufatech. This site sets no cookies and loads nothing from other servers.</p>
+<nav aria-label="Site"><a href="./">Boxwright</a><a href="./subwoofer-box-calculator/">Box calculator</a><a href="./thiele-small-datasheet-check/">Datasheet check</a><a href="./subwoofer-wiring/">Wiring charts</a><a href="./port-tuning-check/">Port tuning check</a><a href="./validation/">Validation</a><a href="./support/">Support</a><a href="./privacy/">Privacy</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+
+</body>
+</html>

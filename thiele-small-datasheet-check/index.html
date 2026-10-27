@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Thiele-Small datasheet check: when Qts, Vas and Sd disagree</title>
+<meta name="description" content="Check a speaker datasheet: does Qts match Qes and Qms, Fs match Mms and Cms, Vas match Cms and Sd? Free, in your browser, with the usual unit traps.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEAE5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131416" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/boxwright/thiele-small-datasheet-check/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/boxwright/thiele-small-datasheet-check/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/boxwright/pt-br/erros-ficha-tecnica-thiele-small/">
+<link rel="alternate" hreflang="es-419" href="https://mufa-tech.github.io/boxwright/es/errores-hoja-tecnica-thiele-small/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/boxwright/thiele-small-datasheet-check/">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<link rel="preload" href="../assets/fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Boxwright">
+<meta property="og:title" content="Thiele-Small datasheet check: when Qts, Vas and Sd disagree">
+<meta property="og:description" content="Check a speaker datasheet: does Qts match Qes and Qms, Fs match Mms and Cms, Vas match Cms and Sd? Free, in your browser, with the usual unit traps.">
+<meta property="og:url" content="https://mufa-tech.github.io/boxwright/thiele-small-datasheet-check/">
+<meta property="og:image" content="https://mufa-tech.github.io/boxwright/assets/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../"><img src="../assets/icon.svg" alt="" width="32" height="32">Boxwright</a>
+<nav class="main" aria-label="Main"><a href="../subwoofer-box-calculator/">Box calculator</a><a href="../validation/">How we check the maths</a><a href="../support/">Support</a></nav>
+<details class="langpick"><summary aria-label="Language: English"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>EN</span></summary><nav aria-label="Language"><a href="../thiele-small-datasheet-check/" hreflang="en" lang="en" aria-current="true">English</a><a href="../pt-br/erros-ficha-tecnica-thiele-small/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../es/errores-hoja-tecnica-thiele-small/" hreflang="es-419" lang="es-419">Español (Latinoamérica)</a><a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../pl/" hreflang="pl" lang="pl">Polski</a><a href="../de/" hreflang="de" lang="de">Deutsch</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../nl/" hreflang="nl" lang="nl">Nederlands</a><a href="../it/" hreflang="it" lang="it">Italiano</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../">Boxwright</a></p>
+<h1>Datasheet errors: when Qts, Vas and Sd disagree</h1>
+<p class="lead">Thiele-Small parameters are tied to each other by a few exact formulas. When a datasheet breaks one, a box designed from it will be off. Type what the sheet prints and see which numbers hold.</p>
+<div class="calc">
+<form class="panel" id="calc-form" data-calc="ts" novalidate>
+<p class="small">Type what the datasheet prints, leave the rest empty. Units as shown.</p>
+<div class="field-row three"><div class="field"><label for="t-fs">Fs</label>
+<div class="joined"><input id="t-fs" name="t-fs" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="28" aria-describedby="t-fs-err"><span class="unit">Hz</span></div>
+<span class="err" id="t-fs-err" hidden></span></div><div class="field"><label for="t-re">Re</label>
+<div class="joined"><input id="t-re" name="t-re" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="5.8" aria-describedby="t-re-err"><span class="unit">Ω</span></div>
+<span class="err" id="t-re-err" hidden></span></div><div class="field"><label for="t-bl">Bl</label>
+<div class="joined"><input id="t-bl" name="t-bl" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="6.8" aria-describedby="t-bl-err"><span class="unit">T·m</span></div>
+<span class="err" id="t-bl-err" hidden></span></div></div>
+<div class="field-row three"><div class="field"><label for="t-qts">Qts</label>
+<input id="t-qts" name="t-qts" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="0.36" aria-describedby="t-qts-err">
+<span class="err" id="t-qts-err" hidden></span></div><div class="field"><label for="t-qes">Qes</label>
+<input id="t-qes" name="t-qes" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="0.39" aria-describedby="t-qes-err">
+<span class="err" id="t-qes-err" hidden></span></div><div class="field"><label for="t-qms">Qms</label>
+<input id="t-qms" name="t-qms" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="5.1" aria-describedby="t-qms-err">
+<span class="err" id="t-qms-err" hidden></span></div></div>
+<div class="field-row three"><div class="field"><label for="t-vas">Vas</label>
+<div class="joined"><input id="t-vas" name="t-vas" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="58.2" aria-describedby="t-vas-err"><span class="unit">L</span></div>
+<span class="err" id="t-vas-err" hidden></span></div><div class="field"><label for="t-cms">Cms</label>
+<div class="joined"><input id="t-cms" name="t-cms" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="1.85" aria-describedby="t-cms-err"><span class="unit">mm/N</span></div>
+<span class="err" id="t-cms-err" hidden></span></div><div class="field"><label for="t-mms">Mms</label>
+<div class="joined"><input id="t-mms" name="t-mms" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="17.5" aria-describedby="t-mms-err"><span class="unit">g</span></div>
+<span class="err" id="t-mms-err" hidden></span></div></div>
+<div class="field-row two"><div class="field"><label for="t-sd">Sd</label>
+<div class="joined"><input id="t-sd" name="t-sd" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="157" aria-describedby="t-sd-err"><span class="unit">cm²</span></div>
+<span class="err" id="t-sd-err" hidden></span></div><div class="field"><label for="t-d">Effective diameter D</label>
+<div class="joined"><input id="t-d" name="t-d" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="13.8" aria-describedby="t-d-hint t-d-err"><span class="unit">cm</span></div>
+<span class="hint" id="t-d-hint">Cone plus about half the surround.</span><span class="err" id="t-d-err" hidden></span></div></div>
+<p class="small">Filled in: the Scan-Speak 18W/8531G00 datasheet. Two checks fail, and the table shows why.</p>
+</form>
+<section class="results" aria-labelledby="res-h">
+<h2 id="res-h" class="sr">Result</h2>
+<div id="calc-nojs" class="callout"><p>This calculator needs JavaScript. It runs in your browser and sends nothing anywhere.</p></div>
+<div id="res" class="res-card card" aria-live="polite" hidden></div>
+<p class="note">Runs in your browser. Nothing you type is sent or saved.</p>
+</section>
+</div>
+<script type="application/json" id="calc-i18n">{"locale":"en-US","decimal":".","units":"imperial","unitNames":{"metric":{"vol":"L","len":"cm"},"imperial":{"vol":"ft³","len":"in"}},"errEmpty":"Enter a number.","errNumber":"That is not a number. Use digits and one decimal mark.","errInteger":"Whole number only.","errRange":"Between {min} and {max}.","errPositive":"Every value has to be more than zero.","fixInputs":"Fix the marked field and the result shows here.","howTitle":"How it was worked out","words":{"warn":"Check","stop":"Won’t work","info":"Note","good":"OK"},"tsH":"Datasheet cross-check","tsGood":"All {total} checks agree within their tolerance.","tsBad":"{n} of {total} checks are outside their tolerance.","tsNeedMore":"Fill in a set that can be checked: Qts with Qes and Qms, Fs with Mms and Cms, Vas with Cms and Sd or D, Qes with Fs, Mms, Re and Bl.","tsCheck":"Check","tsGiven":"Printed","tsDerived":"From the others","tsResult":"Result","qtsImpossible":"Qts has to be smaller than both Qes and Qms. One of the three is a typo.","checks":{"qts":"Qts vs Qes·Qms/(Qes+Qms)","fs":"Fs vs 1/(2π√(Mms·Cms))","vas":"Vas vs ρc²·Sd²·Cms","vasFromDiameter":"Vas with Sd taken from D","qesBl":"Qes vs 2π·Fs·Mms·Re/Bl²","sdDiameter":"Sd vs π(D/2)²"},"traps":{"vasLooksLikeFt3":"Vas is about 28 times too small: it looks like cubic feet typed as litres.","vasLooksLikeLitres":"Vas is about 28 times too big: it looks like litres typed as cubic feet.","sdLooksLikeCm2":"Sd is 10,000 times off: cm² and m² got mixed up.","xmaxLooksPeakToPeak":"Xmax looks like a peak-to-peak value. Box maths wants one way."},"howTs":"Air: ρ = 1.204 kg/m³, c = 343 m/s (20 °C). Tolerances: Qts 2 %, Fs 3 %, Sd vs D 3 %, Vas 5 %, Qes vs Bl 5 %."}</script>
+<article class="prose gap-top">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">On this page</p><ol><li><a href="#formulas">The formulas that tie the numbers together</a></li><li><a href="#examples">Real sheets that fail</a></li><li><a href="#traps">Unit traps</a></li><li><a href="#trust">Which number to trust</a></li></ol></nav>
+<h2 id="formulas">The formulas that tie the numbers together</h2>
+<p>Five identities come straight from the definitions (Small, 1972). A good datasheet meets each within rounding:</p><ul><li><strong>Qts = Qes·Qms/(Qes + Qms)</strong>, within 2 %.</li><li><strong>Fs = 1/(2π√(Mms·Cms))</strong>, within 3 %.</li><li><strong>Vas = ρc²·Sd²·Cms</strong>, within 5 %.</li><li><strong>Qes = 2π·Fs·Mms·Re/Bl²</strong>, within 5 %.</li><li><strong>Sd = π(D/2)²</strong> for the printed effective diameter, within 3 %.</li></ul><p>The tolerances are wide on purpose. Sheets round to two or three digits, and makers measure with slightly different air constants: Small’s 1.18 kg/m³ and 345 m/s give a ρc² 0.85 % lower than 1.204 and 343.</p>
+<h2 id="examples">Real sheets that fail</h2>
+<p><strong>Scan-Speak 18W/8531G00.</strong> The sheet prints Sd 157 cm² and D 13.8 cm. A 13.8 cm circle is 149.6 cm²: the printed Sd is 4.9 % larger. With the printed Sd, Vas from Cms comes out at 64.6 L against the printed 58.2 L (+11 %). With Sd from D it is 58.6 L, which matches. So the Vas on the sheet was worked out from D, and the printed Sd is the odd one out.</p><p><strong>Dayton Audio RSS265HF-4.</strong> Cms 0.32 mm/N and Sd 356.3 cm² give a Vas of 57.5 L, 6.5 % more than the 54 L on the sheet. Small, but it moves a sealed box by a few litres.</p><p><strong>Peerless SLS-P830669.</strong> Fs from Mms and Cms is 31.48 Hz, the same as the sheet. Vas is within 0.9 %. A sheet can be right.</p>
+<h2 id="traps">Unit traps</h2>
+<ul><li><strong>Vas in cubic feet typed as litres</strong> (or the other way): off by 28.3 times. A 12-inch sub with a Vas of 2.8 L is really 2.8 ft³.</li><li><strong>Sd in cm² typed as m²</strong>: off by 10,000.</li><li><strong>Xmax peak-to-peak</strong>: some sheets print the total travel. Box maths wants one way, half of it.</li><li><strong>Re against the nominal impedance</strong>: a 4 Ω coil measures about 3.2 to 3.6 Ω with a meter. That is Re, and it is normal.</li></ul>
+<h2 id="trust">Which number to trust</h2>
+<p>Fs, Re, Qes and Qms come from an impedance sweep, the most direct measurement. Vas and Cms come from an added-mass or added-box test and scatter more between samples. When the check fails, keep the measured numbers, ask the maker, or measure your own driver. The app marks every value it derived and lets you correct a driver row; your correction stays on your phone.</p>
+<nav class="next" aria-label="Next question"><p class="next-h">Next question</p><ul><li><a href="../subwoofer-box-calculator/">Box calculator<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><a href="../validation/">Validation<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">In the app</h2>
+<p>The app runs these checks when you pick or type a driver, marks values it derived, and warns before you design from a sheet that does not add up.</p>
+<p class="small">Free: every box, the full driver list, the cut list, wiring and the tone check. Pro is one payment, no subscription. No account, works offline.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Coming soon</b></span><span class="store soon"><small>App Store</small><b>Coming later</b></span></div>
+</aside>
+<h2>Sources</h2>
+<ol class="sources"><li><a href="https://www.aes.org/e-lib/browse.cfm?elib=2026" rel="noopener">Small, R. H., “Closed-Box Loudspeaker Systems”, JAES 20 (1972)</a></li><li><a href="https://www.scan-speak.dk/datasheet/pdf/18w-8531g00.pdf" rel="noopener">Scan-Speak 18W/8531G00 datasheet</a></li><li><a href="https://www.parts-express.com/pedocs/specs/295-460-dayton-audio-rss265hf-4-specifications-46172.pdf" rel="noopener">Dayton Audio RSS265HF-4 specifications</a></li><li><a href="https://www.Lautsprechershop.de/pdf/peerless/peerless_sls_p830669.pdf" rel="noopener">Peerless SLS-P830669 datasheet</a></li><li><a href="https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9" rel="noopener">NIST SP 811, Appendix B.9: cubic foot and inch</a></li></ol>
+<p class="callout">Results are design estimates. Check the driver’s datasheet and your amplifier’s minimum load before you build.</p>
+<p class="updated">Checked against the sources: October 27, 2026</p>
+</article>
+</div>
+<div class="wrap"><p class="also-in"><span>This page in:</span> <a href="../pt-br/erros-ficha-tecnica-thiele-small/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../es/errores-hoja-tecnica-thiele-small/" hreflang="es-419" lang="es-419">Español (Latinoamérica)</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Results are design estimates. Check the driver’s datasheet and your amplifier’s minimum load before you build.</p>
+<p>Boxwright is a speaker and subwoofer box designer for car audio and DIY hi-fi, made by Mufatech. This site sets no cookies and loads nothing from other servers.</p>
+<nav aria-label="Site"><a href="../">Boxwright</a><a href="../subwoofer-box-calculator/">Box calculator</a><a href="../thiele-small-datasheet-check/">Datasheet check</a><a href="../subwoofer-wiring/">Wiring charts</a><a href="../port-tuning-check/">Port tuning check</a><a href="../validation/">Validation</a><a href="../support/">Support</a><a href="../privacy/">Privacy</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+<script type="module" src="../assets/calc-ui.js"></script>
+</body>
+</html>

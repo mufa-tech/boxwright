@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es-419">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Verificar la sintonía del puerto con un barrido de tonos</title>
+<meta name="description" content="Encuentra la sintonía real del cajón porteado que armaste: pon un barrido lento de tonos y ve dónde el cono casi se detiene. Luego calcula cuánto cortar.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEAE5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131416" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/boxwright/es/verificar-sintonia-del-puerto/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/boxwright/port-tuning-check/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/boxwright/pt-br/conferir-sintonia-do-duto/">
+<link rel="alternate" hreflang="es-419" href="https://mufa-tech.github.io/boxwright/es/verificar-sintonia-del-puerto/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/boxwright/port-tuning-check/">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="preload" href="../../assets/fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Boxwright">
+<meta property="og:title" content="Verificar la sintonía del puerto con un barrido de tonos">
+<meta property="og:description" content="Encuentra la sintonía real del cajón porteado que armaste: pon un barrido lento de tonos y ve dónde el cono casi se detiene. Luego calcula cuánto cortar.">
+<meta property="og:url" content="https://mufa-tech.github.io/boxwright/es/verificar-sintonia-del-puerto/">
+<meta property="og:image" content="https://mufa-tech.github.io/boxwright/assets/og-es-419.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_MX">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Ir al contenido</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../../es/"><img src="../../assets/icon.svg" alt="" width="32" height="32">Boxwright</a>
+<nav class="main" aria-label="Principal"><a href="../../es/calculadora-cajon-subwoofer/">Calculadora de cajones</a><a href="../../es/support/">Soporte</a></nav>
+<details class="langpick"><summary aria-label="Idioma: Español (Latinoamérica)"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>ES</span></summary><nav aria-label="Idioma"><a href="../../port-tuning-check/" hreflang="en" lang="en">English</a><a href="../../pt-br/conferir-sintonia-do-duto/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../../es/verificar-sintonia-del-puerto/" hreflang="es-419" lang="es-419" aria-current="true">Español (Latinoamérica)</a><a href="../../id/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../../pl/" hreflang="pl" lang="pl">Polski</a><a href="../../de/" hreflang="de" lang="de">Deutsch</a><a href="../../fr/" hreflang="fr" lang="fr">Français</a><a href="../../nl/" hreflang="nl" lang="nl">Nederlands</a><a href="../../it/" hreflang="it" lang="it">Italiano</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../../es/">Boxwright</a></p>
+<h1>Verifica la sintonía del puerto con un barrido de tonos</h1>
+<p class="lead">Un cajón ya armado casi nunca sintoniza justo donde decía el plano. El extremo del puerto, los refuerzos y el volumen neto real la mueven. Así encuentras la sintonía real con un generador de tonos y tus propios ojos, y así la corriges.</p>
+
+<article class="prose">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">En esta página</p><ol><li><a href="#why">Por qué se mueve la sintonía</a></li><li><a href="#how">El método</a></li><li><a href="#impedance">Por qué no el mínimo de impedancia</a></li><li><a href="#fix">Corta el puerto para ajustarla</a></li><li><a href="#sealed">Cajones sellados</a></li></ol></nav>
+<h2 id="why">Por qué se mueve la sintonía</h2>
+<p>El plano supone un volumen neto, una corrección para cada extremo del puerto y un cajón sin fugas. Un puerto que termina cerca de una pared se comporta como si fuera más largo. Los refuerzos y una bocina con motor profundo ocupan volumen. Cada cosa mueve la sintonía unos cuantos hertz, y unos cuantos hertz cerca de 30 Hz es mucho.</p>
+<h2 id="how">El método</h2>
+<ol><li>Conecta un generador de tonos al amplificador. Pon la ganancia baja y el bass boost apagado.</li><li>Pon un barrido lento de unos 20 Hz a 60 Hz, o ve tono por tono, de 1 Hz en 1 Hz.</li><li>Mira el cono, o apoya la yema del dedo en el guardapolvo, la tapita del centro. En la sintonía del cajón el cono es el que menos se mueve, mientras el puerto sopla con más fuerza.</li><li>Anota esa frecuencia. Revísala dos veces, subiendo y bajando.</li></ol><p>Empieza bajito y sube poco a poco. Un tono largo a mucho volumen puede dañar la bocina y tus oídos.</p>
+<h2 id="impedance">Por qué no el mínimo de impedancia</h2>
+<p>Muchas guías sacan la sintonía del mínimo que queda entre los dos picos de impedancia. Al comparar con Hornresp, ese mínimo quedó como 1.2 Hz debajo de la sintonía real, por las fugas del cajón. El punto donde el cono casi se detiene es la sintonía misma, así que ese es el que usamos.</p>
+<h2 id="fix">Corta el puerto para ajustarla</h2>
+<p>Un puerto más largo sintoniza más abajo y uno más corto más arriba. La sintonía va con 1/√Leff, así que para pasar de la Fm medida a la Ft que buscas: Leff nuevo = Leff anterior × (Fm/Ft)², y el largo a cortar es el Leff nuevo menos la corrección de extremos. Corta poco a poco y vuelve a revisar.</p><p class="table-cap" aria-hidden="true">Puerto redondo de 10 cm, 50 L netos, cortado para 32 Hz: sintonía según el largo</p><div class="table-wrap"><table class="num-table"><caption class="sr">Puerto redondo de 10 cm, 50 L netos, cortado para 32 Hz: sintonía según el largo</caption>
+<thead><tr><th scope="col">Largo del puerto</th><th scope="col">Cambio</th><th scope="col">Sintonía</th></tr></thead>
+<tbody><tr><td>32.4 cm</td><td>−6 cm</td><td>34.3 Hz</td></tr>
+<tr><td>34.4 cm</td><td>−4 cm</td><td>33.5 Hz</td></tr>
+<tr><td>36.4 cm</td><td>−2 cm</td><td>32.7 Hz</td></tr>
+<tr class="base"><td>38.4 cm</td><td>–</td><td>32.0 Hz</td></tr>
+<tr><td>40.4 cm</td><td>+2 cm</td><td>31.3 Hz</td></tr>
+<tr><td>42.4 cm</td><td>+4 cm</td><td>30.7 Hz</td></tr></tbody></table></div><p>La tabla sale de las mismas cuentas de puerto que la <a href="../../es/calculadora-cajon-subwoofer/">calculadora de cajones</a>. Para los valores de tu propio cajón, usa la calculadora con el largo que armaste.</p>
+<h2 id="sealed">Cajones sellados</h2>
+<p>Un cajón sellado no tiene sintonía que buscar. Aun así, el mismo barrido lento sirve: escucha si algo vibra, si zumba algún panel o si hay fugas de aire alrededor de la bocina y de la terminal.</p>
+<nav class="next" aria-label="Siguiente pregunta"><p class="next-h">Siguiente pregunta</p><ul><li><a href="../../es/calculadora-cajon-subwoofer/">Calculadora de cajón<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><a href="../../es/errores-hoja-tecnica-thiele-small/">Revisión de hoja técnica<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">En la app</h2>
+<p>Revisar mi cajón, en la app, trae el generador de tonos integrado, con un barrido lento y un toque en el punto donde el cono se detiene. Luego te dice cuántos milímetros o dieciseisavos de pulgada quitarle al puerto.</p>
+<p class="small">Gratis: todos los tipos de cajón, la lista completa de bocinas, las medidas de corte, la conexión y la prueba de tono. Pro es un solo pago, sin suscripción. Sin cuenta y funciona sin internet.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Muy pronto</b></span><span class="store soon"><small>App Store</small><b>Más adelante</b></span></div>
+</aside>
+<h2>Fuentes</h2>
+<ol class="sources"><li><a href="https://sdlabo.jp/archives/Vented_Box_Loudspeaker%20Systems_Part_1-4.pdf" rel="noopener">Small, R. H., “Vented-Box Loudspeaker Systems” Parts I–IV, JAES 21 (1973)</a></li><li><a href="https://en.wikipedia.org/wiki/End_correction" rel="noopener">End correction: Rayleigh (flanged, 0.8488 r) and Levine &amp; Schwinger 1948 (free, 0.6133 r)</a></li></ol>
+<p class="callout">Los resultados son estimados de diseño. Antes de armar, revisa la hoja técnica de la bocina y la carga mínima de tu amplificador.</p>
+<p class="updated">Revisado contra las fuentes: 27 de octubre de 2026</p>
+</article>
+</div>
+<div class="wrap"><p class="also-in"><span>Esta página en:</span> <a href="../../port-tuning-check/" hreflang="en" lang="en">English</a><a href="../../pt-br/conferir-sintonia-do-duto/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Los resultados son estimados de diseño. Antes de armar, revisa la hoja técnica de la bocina y la carga mínima de tu amplificador.</p>
+<p>Boxwright es una app para diseñar cajones de subwoofer y bafles, para car audio y hi-fi casero, hecha por Mufatech. Este sitio no usa cookies y no carga nada de otros servidores.</p>
+<nav aria-label="Sitio"><a href="../../es/">Boxwright</a><a href="../../es/calculadora-cajon-subwoofer/">Calculadora de cajón</a><a href="../../es/errores-hoja-tecnica-thiele-small/">Revisión de hoja técnica</a><a href="../../es/conexion-subwoofer-doble-bobina/">Tablas de conexión</a><a href="../../es/verificar-sintonia-del-puerto/">Revisión de sintonía</a><a href="../../es/support/">Soporte</a><a href="../../es/privacy/">Privacidad</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+
+</body>
+</html>

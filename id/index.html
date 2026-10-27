@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Boxwright: desain box speaker dan ukuran potong</title>
+<meta name="description" content="Hitung box subwoofer sealed dan ported dari datasheet speaker: volume bersih, panjang lubang porting, ukuran potong, lalu cek tuning box yang sudah jadi.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEAE5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131416" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/boxwright/id/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/boxwright/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/boxwright/pt-br/">
+<link rel="alternate" hreflang="es-419" href="https://mufa-tech.github.io/boxwright/es/">
+<link rel="alternate" hreflang="id" href="https://mufa-tech.github.io/boxwright/id/">
+<link rel="alternate" hreflang="tr" href="https://mufa-tech.github.io/boxwright/tr/">
+<link rel="alternate" hreflang="pl" href="https://mufa-tech.github.io/boxwright/pl/">
+<link rel="alternate" hreflang="de" href="https://mufa-tech.github.io/boxwright/de/">
+<link rel="alternate" hreflang="fr" href="https://mufa-tech.github.io/boxwright/fr/">
+<link rel="alternate" hreflang="nl" href="https://mufa-tech.github.io/boxwright/nl/">
+<link rel="alternate" hreflang="it" href="https://mufa-tech.github.io/boxwright/it/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/boxwright/">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<link rel="preload" href="../assets/fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Boxwright">
+<meta property="og:title" content="Boxwright: desain box speaker dan ukuran potong">
+<meta property="og:description" content="Hitung box subwoofer sealed dan ported dari datasheet speaker: volume bersih, panjang lubang porting, ukuran potong, lalu cek tuning box yang sudah jadi.">
+<meta property="og:url" content="https://mufa-tech.github.io/boxwright/id/">
+<meta property="og:image" content="https://mufa-tech.github.io/boxwright/assets/og-id.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="id_ID">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="es_MX">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Langsung ke isi</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../id/"><img src="../assets/icon.svg" alt="" width="32" height="32">Boxwright</a>
+<nav class="main" aria-label="Menu utama"><a href="../id/support/">Bantuan</a></nav>
+<details class="langpick"><summary aria-label="Bahasa: Bahasa Indonesia"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>ID</span></summary><nav aria-label="Bahasa"><a href="../" hreflang="en" lang="en">English</a><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../es/" hreflang="es-419" lang="es-419">Español (Latinoamérica)</a><a href="../id/" hreflang="id" lang="id" aria-current="true">Bahasa Indonesia</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../pl/" hreflang="pl" lang="pl">Polski</a><a href="../de/" hreflang="de" lang="de">Deutsch</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../nl/" hreflang="nl" lang="nl">Nederlands</a><a href="../it/" hreflang="it" lang="it">Italiano</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<section class="hero" aria-labelledby="h1">
+<div>
+<p class="eyebrow">Box speaker audio mobil dan rakitan sendiri</p>
+<h1 id="h1">Desain box speaker, lalu bikin persis seperti hitungannya.</h1>
+<p class="lead">Pilih subwoofer kamu, keluar volume bersih dan port-nya, plus ukuran potong yang sudah menghitung dinding port dan papan depan. Setelah box jadi, putar sapuan nada pelan dan lihat di mana tuning box kamu yang sebenarnya.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Segera hadir</b></span><span class="store soon"><small>App Store</small><b>Menyusul</b></span></div>
+<ul class="promise"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Tanpa akun</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Tanpa langganan</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Bisa offline</li></ul>
+</div>
+<figure class="card specimen" aria-label="Contoh box di Boxwright">
+<div class="sp-head"><span class="sp-tag">12 inch</span><span class="sp-name">Box ported untuk bagasi</span></div>
+<svg class="sp-draw" viewBox="0 0 300 190" role="img" aria-label="Tampak depan box dengan lubang speaker dan port bulat, diameternya ditandai">
+<path class="top" d="M40 50 70 22h190l-30 28z"/><path class="side" d="M230 50l30-28v118l-30 28z"/>
+<rect class="face" x="40" y="50" width="190" height="118" rx="3"/>
+<circle class="hole" cx="110" cy="109" r="44"/><circle class="cone" cx="110" cy="109" r="26"/><circle class="cone" cx="110" cy="109" r="10"/>
+<circle class="hole" cx="190" cy="109" r="17"/>
+<path class="dim" d="M173 140h34M173 135v10M207 135v10"/>
+<rect class="dimtag" x="158" y="149" width="64" height="18" rx="3"/><text x="190" y="162" text-anchor="middle">Ø 10 cm</text>
+</svg>
+<dl class="sp-nums">
+<div><dt>Volume bersih</dt><dd>50<small> L</small></dd></div>
+<div><dt>Tuning</dt><dd>34<small> Hz</small></dd></div>
+<div><dt>Port</dt><dd>10 × 33,2<small> cm</small></dd></div>
+<div><dt>Cek isian</dt><dd>✓<small> semua aman</small></dd></div>
+</dl>
+<figcaption>Panjang port dihitung dengan rumus yang sama seperti di aplikasi: satu ujung port rata dengan papan depan, ujung satunya bebas di dalam box.</figcaption>
+</figure>
+</section>
+
+<h2 class="gap-top">Yang bisa dikerjakan aplikasinya</h2>
+<div class="features"><div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="6.5" width="13" height="14" rx="1"/><path d="M3.5 6.5 7 3h13.5v14L16.5 20.5M16.5 6.5 20.5 3"/><circle cx="10" cy="12.5" r="3.5"/></svg></span><h3>Box, port dan volume bersih sekaligus</h3><p>Ganti port-nya, volume bersih ikut berubah. Dinding port, speaker, bracing dan papan depan dobel dikurangi dari volume kotor sebelum tuning dihitung.</p></div>
+<div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 2.5 20h19z"/><path d="M12 10v4.5M12 17.5v.5"/></svg></span><h3>Datasheet dicek dulu</h3><p>Qts, Fs, Vas dan Sd dicocokkan satu sama lain. Vas yang ternyata masih ft³ tapi diisi sebagai liter, atau Sd yang masih cm², ketahuan sebelum papan dipotong.</p></div>
+<div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15.5V12l2.2-5h13.6L21 12v3.5z"/><path d="M3 12h18"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span><h3>Hasil untuk mobil</h3><p>Isi RMS asli ampli kamu. Jawabannya satu dari tiga: aman, port bisa berisik, atau lewat Xmax, lengkap dengan ukuran box atau filter subsonic yang mengatasinya.</p></div>
+<div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18v16H3z"/><path d="M3 10h18M10 10v10M3 15h7"/></svg></span><h3>Pas di ruang, lalu ukuran potong</h3><p>Isi dua ukuran luar dan volume bersih, ukuran ketiga dihitung. Lalu daftar potong dalam mm atau 1/16 inch, sudah termasuk tebal mata gergaji, papan depan, dinding port dan lubang speaker.</p></div>
+<div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c2-5 4-5 6 0s4 5 6 0 4-5 6 0"/><path d="M21 6v12"/></svg></span><h3>Cek box saya</h3><p>Sapuan nada pelan lewat ampli kamu. Titik saat konus hampir diam, itulah tuning aslinya. Lalu aplikasinya kasih tahu port perlu dipotong berapa.</p></div>
+<div class="card feature"><span class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h6M7 13h4"/><path d="M15 12h3v3h-3z"/></svg></span><h3>Kartu box</h3><p>Satu gambar berisi speaker, volume bersih, tuning, port dan F3 buat dibagikan di forum, plus file proyek yang bisa dibuka di HP lain dengan semua angkanya.</p></div></div>
+<div class="tiers gap-top">
+<section class="card" aria-labelledby="free-h"><h2 id="free-h" class="h3">Gratis selamanya</h2><ul class="ticks"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Box dan speaker buatan sendiri tanpa batas</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Sekitar 700 speaker dari datasheet pabrikan</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Cek isian, desain box sealed dan ported</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Hitungan port dan volume bersih, sesuaikan dengan ruang</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Ukuran potong untuk box kotak dan box miring</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Rangkaian 1 sampai 16 sub, peringatan port berisik dan Xmax</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Cek box saya, kartu box, cadangan</li></ul></section>
+<section class="card pro" aria-labelledby="pro-h"><h2 id="pro-h" class="h3">Pro, sekali bayar</h2><ul class="ticks"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Kurva SPL, gerak konus, kecepatan udara port dan group delay di power kamu</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Penguatan kabin, plus sealed dan ported dibandingkan dalam satu grafik</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Desain bandpass orde 4</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Tata letak di lembar: berapa lembar dan letak tiap potongan</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Lembar kerja PDF untuk tukang kayu</li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Semua alignment berdampingan</li></ul><p class="small pro-note">Pro bisa dicoba gratis 7 hari, sekali saja. Tidak pernah berubah jadi tagihan dengan sendirinya. Setelah masa coba habis, semua box tetap seperti semula.</p></section>
+</div>
+<div class="split gap-top">
+<section class="card" aria-labelledby="priv-h"><h2 id="priv-h" class="h3">Box kamu tetap di HP kamu</h2><p>Tanpa akun, tanpa server, tanpa analitik. Boxwright tidak minta izin apa pun. Cek nada cuma memutar suara, mikrofon tidak pernah dipakai. Koneksi internet hanya ke toko aplikasi, saat kamu membeli Pro.</p><p><a href="../id/privacy/">Privasi</a></p></section>
+<section class="card" aria-labelledby="about-h"><h2 id="about-h" class="h3">Angkanya bisa kamu cek</h2><p>Setiap hasil menampilkan rumus dan angka kamu sendiri. Hitungannya diuji dengan 338 contoh soal, 79 di antaranya nilai yang diterbitkan di datasheet dan makalah, dan dibandingkan dengan Hornresp pada 7 desain nyata.</p></section>
+</div>
+</div>
+<div class="wrap"><p class="also-in"><span>Halaman ini dalam bahasa:</span> <a href="../" hreflang="en" lang="en">English</a><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../es/" hreflang="es-419" lang="es-419">Español (Latinoamérica)</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../pl/" hreflang="pl" lang="pl">Polski</a><a href="../de/" hreflang="de" lang="de">Deutsch</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../nl/" hreflang="nl" lang="nl">Nederlands</a><a href="../it/" hreflang="it" lang="it">Italiano</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Hasilnya perkiraan desain. Sebelum bikin, cek datasheet speaker dan beban minimum ampli kamu.</p>
+<p>Boxwright adalah aplikasi desain box speaker dan box subwoofer untuk audio mobil dan hi-fi rakitan, buatan Mufatech. Situs ini tidak memakai cookie dan tidak memuat apa pun dari server lain.</p>
+<nav aria-label="Situs"><a href="../id/">Boxwright</a><a href="../id/support/">Bantuan</a><a href="../id/privacy/">Privasi</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+
+</body>
+</html>

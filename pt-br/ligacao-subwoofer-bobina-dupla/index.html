@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Ligação de subwoofer bobina dupla: 1 ohm, 2 ohms, 4 ohms</title>
+<meta name="description" content="Tabelas de ligação para 1 a 4 subwoofers de bobina simples ou dupla: a impedância final de cada ligação em série e paralelo, e a carga mínima do módulo.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEAE5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131416" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/boxwright/pt-br/ligacao-subwoofer-bobina-dupla/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/boxwright/subwoofer-wiring/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/boxwright/pt-br/ligacao-subwoofer-bobina-dupla/">
+<link rel="alternate" hreflang="es-419" href="https://mufa-tech.github.io/boxwright/es/conexion-subwoofer-doble-bobina/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/boxwright/subwoofer-wiring/">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="preload" href="../../assets/fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Boxwright">
+<meta property="og:title" content="Ligação de subwoofer bobina dupla: 1 ohm, 2 ohms, 4 ohms">
+<meta property="og:description" content="Tabelas de ligação para 1 a 4 subwoofers de bobina simples ou dupla: a impedância final de cada ligação em série e paralelo, e a carga mínima do módulo.">
+<meta property="og:url" content="https://mufa-tech.github.io/boxwright/pt-br/ligacao-subwoofer-bobina-dupla/">
+<meta property="og:image" content="https://mufa-tech.github.io/boxwright/assets/og-pt-BR.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../../pt-br/"><img src="../../assets/icon.svg" alt="" width="32" height="32">Boxwright</a>
+<nav class="main" aria-label="Principal"><a href="../../pt-br/calculadora-caixa-subwoofer/">Calculadora de caixa</a><a href="../../pt-br/support/">Suporte</a></nav>
+<details class="langpick"><summary aria-label="Idioma: Português (Brasil)"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>PT</span></summary><nav aria-label="Idioma"><a href="../../subwoofer-wiring/" hreflang="en" lang="en">English</a><a href="../../pt-br/ligacao-subwoofer-bobina-dupla/" hreflang="pt-BR" lang="pt-BR" aria-current="true">Português (Brasil)</a><a href="../../es/conexion-subwoofer-doble-bobina/" hreflang="es-419" lang="es-419">Español (Latinoamérica)</a><a href="../../id/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../../pl/" hreflang="pl" lang="pl">Polski</a><a href="../../de/" hreflang="de" lang="de">Deutsch</a><a href="../../fr/" hreflang="fr" lang="fr">Français</a><a href="../../nl/" hreflang="nl" lang="nl">Nederlands</a><a href="../../it/" hreflang="it" lang="it">Italiano</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../../pt-br/">Boxwright</a></p>
+<h1>Ligação de subwoofer: série, paralelo e bobina dupla</h1>
+<p class="lead">A carga que o módulo enxerga depende de como você liga as bobinas e os subs. Aqui estão todas as ligações para um a quatro subs, calculadas com a mesma função do app.</p>
+
+<article class="prose">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">Nesta página</p><ol><li><a href="#rules">Duas regras</a></li><li><a href="#dvc">Subs de bobina dupla</a></li><li><a href="#svc">Subs de bobina simples</a></li><li><a href="#amp">Casar com o módulo</a></li><li><a href="#meter">O que o multímetro mostra</a></li></ol></nav>
+<h2 id="rules">Duas regras</h2>
+<p>Em <strong>série</strong> as impedâncias somam: duas bobinas de 4 Ω dão 8 Ω. Em <strong>paralelo</strong> elas dividem: duas bobinas de 4 Ω dão 2 Ω, e no geral 1/Z = 1/Z1 + 1/Z2 + … Um sub de bobina dupla são duas bobinas no mesmo cone. Primeiro ligue as bobinas em série ou em paralelo entre si, depois ligue os subs.</p>
+<h2 id="dvc">Subs de bobina dupla</h2>
+<p>“–” quer dizer que essa ligação não vale para um sub só.</p><p class="table-cap" aria-hidden="true">Subs de bobina dupla (DVC), impedância final</p><div class="table-wrap"><table class="num-table"><caption class="sr">Subs de bobina dupla (DVC), impedância final</caption>
+<thead><tr><th scope="col">Subs</th><th scope="col">Bobinas em série, subs em paralelo</th><th scope="col">Bobinas em paralelo, subs em paralelo</th><th scope="col">Bobinas em série, subs em série</th><th scope="col">Bobinas em paralelo, subs em série</th></tr></thead>
+<tbody><tr><th scope="row" class="l">1 × DVC 1 Ω</th><td>2 Ω</td><td>0,5 Ω</td><td>–</td><td>–</td></tr>
+<tr><th scope="row" class="l">2 × DVC 1 Ω</th><td>1 Ω</td><td>0,25 Ω</td><td>4 Ω</td><td>1 Ω</td></tr>
+<tr><th scope="row" class="l">3 × DVC 1 Ω</th><td>0,67 Ω</td><td>0,17 Ω</td><td>6 Ω</td><td>1,5 Ω</td></tr>
+<tr><th scope="row" class="l">4 × DVC 1 Ω</th><td>0,5 Ω</td><td>0,13 Ω</td><td>8 Ω</td><td>2 Ω</td></tr>
+<tr><th scope="row" class="l">1 × DVC 2 Ω</th><td>4 Ω</td><td>1 Ω</td><td>–</td><td>–</td></tr>
+<tr><th scope="row" class="l">2 × DVC 2 Ω</th><td>2 Ω</td><td>0,5 Ω</td><td>8 Ω</td><td>2 Ω</td></tr>
+<tr><th scope="row" class="l">3 × DVC 2 Ω</th><td>1,33 Ω</td><td>0,33 Ω</td><td>12 Ω</td><td>3 Ω</td></tr>
+<tr><th scope="row" class="l">4 × DVC 2 Ω</th><td>1 Ω</td><td>0,25 Ω</td><td>16 Ω</td><td>4 Ω</td></tr>
+<tr><th scope="row" class="l">1 × DVC 4 Ω</th><td>8 Ω</td><td>2 Ω</td><td>–</td><td>–</td></tr>
+<tr><th scope="row" class="l">2 × DVC 4 Ω</th><td>4 Ω</td><td>1 Ω</td><td>16 Ω</td><td>4 Ω</td></tr>
+<tr><th scope="row" class="l">3 × DVC 4 Ω</th><td>2,67 Ω</td><td>0,67 Ω</td><td>24 Ω</td><td>6 Ω</td></tr>
+<tr><th scope="row" class="l">4 × DVC 4 Ω</th><td>2 Ω</td><td>0,5 Ω</td><td>32 Ω</td><td>8 Ω</td></tr></tbody></table></div><p>Em série ou em paralelo, as bobinas dão a mesma força de motor (Bl²/Re), então o projeto da caixa não muda. Deixe uma bobina desligada e a força do motor cai pela metade: o Qes dobra e o sub fica solto numa caixa calculada para as duas bobinas. Ligue as duas.</p>
+<h2 id="svc">Subs de bobina simples</h2>
+<p class="table-cap" aria-hidden="true">Subs de bobina simples (SVC), impedância final</p><div class="table-wrap"><table class="num-table"><caption class="sr">Subs de bobina simples (SVC), impedância final</caption>
+<thead><tr><th scope="col">Subs</th><th scope="col">Paralelo</th><th scope="col">Série</th></tr></thead>
+<tbody><tr><th scope="row" class="l">1 × SVC 2 Ω</th><td>2 Ω</td><td>–</td></tr>
+<tr><th scope="row" class="l">2 × SVC 2 Ω</th><td>1 Ω</td><td>4 Ω</td></tr>
+<tr><th scope="row" class="l">3 × SVC 2 Ω</th><td>0,67 Ω</td><td>6 Ω</td></tr>
+<tr><th scope="row" class="l">4 × SVC 2 Ω</th><td>0,5 Ω</td><td>8 Ω</td></tr>
+<tr><th scope="row" class="l">1 × SVC 4 Ω</th><td>4 Ω</td><td>–</td></tr>
+<tr><th scope="row" class="l">2 × SVC 4 Ω</th><td>2 Ω</td><td>8 Ω</td></tr>
+<tr><th scope="row" class="l">3 × SVC 4 Ω</th><td>1,33 Ω</td><td>12 Ω</td></tr>
+<tr><th scope="row" class="l">4 × SVC 4 Ω</th><td>1 Ω</td><td>16 Ω</td></tr>
+<tr><th scope="row" class="l">1 × SVC 8 Ω</th><td>8 Ω</td><td>–</td></tr>
+<tr><th scope="row" class="l">2 × SVC 8 Ω</th><td>4 Ω</td><td>16 Ω</td></tr>
+<tr><th scope="row" class="l">3 × SVC 8 Ω</th><td>2,67 Ω</td><td>24 Ω</td></tr>
+<tr><th scope="row" class="l">4 × SVC 8 Ω</th><td>2 Ω</td><td>32 Ω</td></tr></tbody></table></div>
+<h2 id="amp">Casar com o módulo</h2>
+<p>Todo módulo tem uma carga mínima estável: “estável em 1 ohm”, “2 ohms estável”. Escolha uma ligação igual ou acima dela. A maioria dos módulos classe D mono entrega mais potência na menor carga estável, e por isso as ligações em 1 ohm e 2 ohms são as mais usadas. Abaixo dela o módulo esquenta e entra em proteção, ou queima.</p><p>Subs iguais dividem a potência por igual em qualquer uma dessas ligações. Subs diferentes no mesmo canal não dividem por igual, então monte o conjunto com um modelo só.</p>
+<h2 id="meter">O que o multímetro mostra</h2>
+<p>O multímetro mostra a resistência DC da bobina, o Re, e não a impedância nominal. Uma bobina de 4 Ω marca perto de 3,2 a 3,6 Ω (a ficha do JL Audio 12W3v3-4 traz Re = 3,56 Ω). Uma carga final de 2 Ω marca perto de 1,6 a 1,8 Ω. Isso é normal. Leitura perto de 0 Ω é curto.</p>
+<nav class="next" aria-label="Próxima pergunta"><p class="next-h">Próxima pergunta</p><ul><li><a href="../../pt-br/calculadora-caixa-subwoofer/">Calculadora de caixa<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><a href="../../pt-br/conferir-sintonia-do-duto/">Conferir a sintonia<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">No app</h2>
+<p>O app lista todas as ligações válidas para 1 a 16 subs com 1, 2 ou 4 bobinas, esconde as que ficam abaixo da carga mínima do módulo e mostra a potência que cada sub recebe.</p>
+<p class="small">Grátis: todas as caixas, a lista completa de falantes, o plano de corte, a ligação e o teste de tom. O Pro é pagamento único, sem assinatura. Sem cadastro, funciona offline.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Em breve</b></span><span class="store soon"><small>App Store</small><b>Chega depois</b></span></div>
+</aside>
+<h2>Fontes</h2>
+<ol class="sources"><li><a href="https://en.wikipedia.org/wiki/Series_and_parallel_circuits" rel="noopener">Series and parallel circuits (Ohm’s law)</a></li></ol>
+<p class="callout">Os resultados são estimativas de projeto. Antes de montar, confira a ficha técnica do falante e a carga mínima do módulo.</p>
+<p class="updated">Conferido com as fontes: 27 de outubro de 2026</p>
+</article>
+</div>
+<div class="wrap"><p class="also-in"><span>Esta página em:</span> <a href="../../subwoofer-wiring/" hreflang="en" lang="en">English</a><a href="../../es/conexion-subwoofer-doble-bobina/" hreflang="es-419" lang="es-419">Español (Latinoamérica)</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Os resultados são estimativas de projeto. Antes de montar, confira a ficha técnica do falante e a carga mínima do módulo.</p>
+<p>O Boxwright é um app da Mufatech pra projetar caixa de som e de subwoofer, no som automotivo e no hi-fi de casa. Este site não usa cookies e não carrega nada de outros servidores.</p>
+<nav aria-label="Site"><a href="../../pt-br/">Boxwright</a><a href="../../pt-br/calculadora-caixa-subwoofer/">Calculadora de caixa</a><a href="../../pt-br/erros-ficha-tecnica-thiele-small/">Conferência da ficha técnica</a><a href="../../pt-br/ligacao-subwoofer-bobina-dupla/">Tabelas de ligação</a><a href="../../pt-br/conferir-sintonia-do-duto/">Conferir a sintonia</a><a href="../../pt-br/support/">Suporte</a><a href="../../pt-br/privacy/">Privacidade</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+
+</body>
+</html>

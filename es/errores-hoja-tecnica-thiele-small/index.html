@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es-419">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Hoja técnica Thiele-Small: cuando Qts, Vas y Sd no cuadran</title>
+<meta name="description" content="Revisa la hoja técnica de una bocina: ¿cuadra el Qts con Qes y Qms, el Fs con Mms y Cms, el Vas con Cms y Sd? Gratis y en tu navegador.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEAE5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131416" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/boxwright/es/errores-hoja-tecnica-thiele-small/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/boxwright/thiele-small-datasheet-check/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/boxwright/pt-br/erros-ficha-tecnica-thiele-small/">
+<link rel="alternate" hreflang="es-419" href="https://mufa-tech.github.io/boxwright/es/errores-hoja-tecnica-thiele-small/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/boxwright/thiele-small-datasheet-check/">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="preload" href="../../assets/fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Boxwright">
+<meta property="og:title" content="Hoja técnica Thiele-Small: cuando Qts, Vas y Sd no cuadran">
+<meta property="og:description" content="Revisa la hoja técnica de una bocina: ¿cuadra el Qts con Qes y Qms, el Fs con Mms y Cms, el Vas con Cms y Sd? Gratis y en tu navegador.">
+<meta property="og:url" content="https://mufa-tech.github.io/boxwright/es/errores-hoja-tecnica-thiele-small/">
+<meta property="og:image" content="https://mufa-tech.github.io/boxwright/assets/og-es-419.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_MX">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Ir al contenido</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../../es/"><img src="../../assets/icon.svg" alt="" width="32" height="32">Boxwright</a>
+<nav class="main" aria-label="Principal"><a href="../../es/calculadora-cajon-subwoofer/">Calculadora de cajones</a><a href="../../es/support/">Soporte</a></nav>
+<details class="langpick"><summary aria-label="Idioma: Español (Latinoamérica)"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>ES</span></summary><nav aria-label="Idioma"><a href="../../thiele-small-datasheet-check/" hreflang="en" lang="en">English</a><a href="../../pt-br/erros-ficha-tecnica-thiele-small/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../../es/errores-hoja-tecnica-thiele-small/" hreflang="es-419" lang="es-419" aria-current="true">Español (Latinoamérica)</a><a href="../../id/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../../pl/" hreflang="pl" lang="pl">Polski</a><a href="../../de/" hreflang="de" lang="de">Deutsch</a><a href="../../fr/" hreflang="fr" lang="fr">Français</a><a href="../../nl/" hreflang="nl" lang="nl">Nederlands</a><a href="../../it/" hreflang="it" lang="it">Italiano</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../../es/">Boxwright</a></p>
+<h1>Errores en la hoja técnica: cuando Qts, Vas y Sd no cuadran</h1>
+<p class="lead">Los parámetros Thiele-Small están amarrados entre sí por unas cuantas fórmulas exactas. Si una hoja técnica rompe una, el cajón que diseñes con ella va a salir mal. Escribe lo que trae la hoja y ve qué números se sostienen.</p>
+<div class="calc">
+<form class="panel" id="calc-form" data-calc="ts" novalidate>
+<p class="small">Escribe lo que trae la hoja técnica y deja vacío lo demás. Unidades como se muestran.</p>
+<div class="field-row three"><div class="field"><label for="t-fs">Fs</label>
+<div class="joined"><input id="t-fs" name="t-fs" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="28" aria-describedby="t-fs-err"><span class="unit">Hz</span></div>
+<span class="err" id="t-fs-err" hidden></span></div><div class="field"><label for="t-re">Re</label>
+<div class="joined"><input id="t-re" name="t-re" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="5.8" aria-describedby="t-re-err"><span class="unit">Ω</span></div>
+<span class="err" id="t-re-err" hidden></span></div><div class="field"><label for="t-bl">Bl</label>
+<div class="joined"><input id="t-bl" name="t-bl" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="6.8" aria-describedby="t-bl-err"><span class="unit">T·m</span></div>
+<span class="err" id="t-bl-err" hidden></span></div></div>
+<div class="field-row three"><div class="field"><label for="t-qts">Qts</label>
+<input id="t-qts" name="t-qts" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="0.36" aria-describedby="t-qts-err">
+<span class="err" id="t-qts-err" hidden></span></div><div class="field"><label for="t-qes">Qes</label>
+<input id="t-qes" name="t-qes" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="0.39" aria-describedby="t-qes-err">
+<span class="err" id="t-qes-err" hidden></span></div><div class="field"><label for="t-qms">Qms</label>
+<input id="t-qms" name="t-qms" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="5.1" aria-describedby="t-qms-err">
+<span class="err" id="t-qms-err" hidden></span></div></div>
+<div class="field-row three"><div class="field"><label for="t-vas">Vas</label>
+<div class="joined"><input id="t-vas" name="t-vas" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="58.2" aria-describedby="t-vas-err"><span class="unit">L</span></div>
+<span class="err" id="t-vas-err" hidden></span></div><div class="field"><label for="t-cms">Cms</label>
+<div class="joined"><input id="t-cms" name="t-cms" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="1.85" aria-describedby="t-cms-err"><span class="unit">mm/N</span></div>
+<span class="err" id="t-cms-err" hidden></span></div><div class="field"><label for="t-mms">Mms</label>
+<div class="joined"><input id="t-mms" name="t-mms" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="17.5" aria-describedby="t-mms-err"><span class="unit">g</span></div>
+<span class="err" id="t-mms-err" hidden></span></div></div>
+<div class="field-row two"><div class="field"><label for="t-sd">Sd</label>
+<div class="joined"><input id="t-sd" name="t-sd" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="157" aria-describedby="t-sd-err"><span class="unit">cm²</span></div>
+<span class="err" id="t-sd-err" hidden></span></div><div class="field"><label for="t-d">Diámetro efectivo D</label>
+<div class="joined"><input id="t-d" name="t-d" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="13.8" aria-describedby="t-d-hint t-d-err"><span class="unit">cm</span></div>
+<span class="hint" id="t-d-hint">El cono más la mitad de la suspensión, más o menos.</span><span class="err" id="t-d-err" hidden></span></div></div>
+<p class="small">Ya viene lleno con la hoja técnica de la Scan-Speak 18W/8531G00. Dos revisiones fallan y la tabla te dice por qué.</p>
+</form>
+<section class="results" aria-labelledby="res-h">
+<h2 id="res-h" class="sr">Resultado</h2>
+<div id="calc-nojs" class="callout"><p>Esta calculadora necesita JavaScript. Corre en tu navegador y no manda nada a ningún lado.</p></div>
+<div id="res" class="res-card card" aria-live="polite" hidden></div>
+<p class="note">Corre en tu navegador. Lo que escribes no se manda ni se guarda.</p>
+</section>
+</div>
+<script type="application/json" id="calc-i18n">{"locale":"es-419","decimal":".","units":"metric","unitNames":{"metric":{"vol":"L","len":"cm"},"imperial":{"vol":"ft³","len":"pulg"}},"errEmpty":"Escribe un número.","errNumber":"Eso no es un número. Usa dígitos y un solo separador decimal.","errInteger":"Solo números enteros.","errRange":"Entre {min} y {max}.","errPositive":"Todos los valores tienen que ser mayores que cero.","fixInputs":"Corrige el campo marcado y aquí aparece el resultado.","howTitle":"Cómo se calculó","words":{"warn":"Revisa","stop":"No funciona","info":"Nota","good":"Bien"},"tsH":"Revisión cruzada de la hoja","tsGood":"Las {total} revisiones cuadran dentro de su tolerancia.","tsBad":"{n} de {total} revisiones quedan fuera de su tolerancia.","tsNeedMore":"Llena un grupo que se pueda revisar: Qts con Qes y Qms, Fs con Mms y Cms, Vas con Cms y Sd o D, Qes con Fs, Mms, Re y Bl.","tsCheck":"Revisión","tsGiven":"En la hoja","tsDerived":"Según los demás","tsResult":"Resultado","qtsImpossible":"El Qts tiene que ser menor que el Qes y que el Qms. Uno de los tres trae un error de dedo.","checks":{"qts":"Qts contra Qes·Qms/(Qes+Qms)","fs":"Fs contra 1/(2π√(Mms·Cms))","vas":"Vas contra ρc²·Sd²·Cms","vasFromDiameter":"Vas con el Sd sacado de D","qesBl":"Qes contra 2π·Fs·Mms·Re/Bl²","sdDiameter":"Sd contra π(D/2)²"},"traps":{"vasLooksLikeFt3":"El Vas sale unas 28 veces demasiado chico: parece que son pies cúbicos escritos como litros.","vasLooksLikeLitres":"El Vas sale unas 28 veces demasiado grande: parece que son litros escritos como pies cúbicos.","sdLooksLikeCm2":"El Sd está 10,000 veces fuera: se cruzaron cm² y m².","xmaxLooksPeakToPeak":"El Xmax parece de pico a pico. Las cuentas del cajón usan el recorrido hacia un solo lado."},"howTs":"Aire: ρ = 1.204 kg/m³, c = 343 m/s (20 °C). Tolerancias: Qts 2 %, Fs 3 %, Sd contra D 3 %, Vas 5 %, Qes contra Bl 5 %."}</script>
+<article class="prose gap-top">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">En esta página</p><ol><li><a href="#formulas">Las fórmulas que amarran los números</a></li><li><a href="#examples">Hojas reales que fallan</a></li><li><a href="#traps">Trampas de unidades</a></li><li><a href="#trust">En qué número confiar</a></li></ol></nav>
+<h2 id="formulas">Las fórmulas que amarran los números</h2>
+<p>Cinco identidades salen directo de las definiciones (Small, 1972). Una hoja técnica bien hecha cumple cada una, salvo por el redondeo:</p><ul><li><strong>Qts = Qes·Qms/(Qes + Qms)</strong>, con 2 % de margen.</li><li><strong>Fs = 1/(2π√(Mms·Cms))</strong>, con 3 % de margen.</li><li><strong>Vas = ρc²·Sd²·Cms</strong>, con 5 % de margen.</li><li><strong>Qes = 2π·Fs·Mms·Re/Bl²</strong>, con 5 % de margen.</li><li><strong>Sd = π(D/2)²</strong> para el diámetro efectivo de la hoja, con 3 % de margen.</li></ul><p>Los márgenes son amplios a propósito. Las hojas redondean a dos o tres cifras, y cada fabricante mide con constantes de aire un poco distintas: los 1.18 kg/m³ y 345 m/s de Small dan un ρc² 0.85 % más bajo que 1.204 y 343.</p>
+<h2 id="examples">Hojas reales que fallan</h2>
+<p><strong>Scan-Speak 18W/8531G00.</strong> La hoja trae Sd 157 cm² y D 13.8 cm. Un círculo de 13.8 cm mide 149.6 cm²: el Sd de la hoja es 4.9 % más grande. Con ese Sd, el Vas calculado desde Cms da 64.6 L contra los 58.2 L de la hoja (+11 %). Con el Sd sacado de D da 58.6 L, que sí cuadra. O sea que el Vas de la hoja se calculó con D, y el Sd impreso es el que no encaja.</p><p><strong>Dayton Audio RSS265HF-4.</strong> Cms 0.32 mm/N y Sd 356.3 cm² dan un Vas de 57.5 L, 6.5 % más que los 54 L de la hoja. Es poco, pero mueve un cajón sellado unos cuantos litros.</p><p><strong>Peerless SLS-P830669.</strong> El Fs calculado con Mms y Cms es 31.48 Hz, igual que en la hoja. El Vas queda a 0.9 %. Una hoja también puede estar bien.</p>
+<h2 id="traps">Trampas de unidades</h2>
+<ul><li><strong>Vas en pies cúbicos escrito como litros</strong> (o al revés): sale 28.3 veces mal. Un sub de 12" con un Vas de 2.8 L en realidad tiene 2.8 ft³.</li><li><strong>Sd en cm² escrito como m²</strong>: sale 10,000 veces mal.</li><li><strong>Xmax de pico a pico</strong>: algunas hojas traen el recorrido total. Las cuentas del cajón usan el de un solo lado, o sea la mitad.</li><li><strong>Re contra la impedancia nominal</strong>: una bobina de 4 Ω marca unos 3.2 a 3.6 Ω con el multímetro. Ese es el Re, y es normal.</li></ul>
+<h2 id="trust">En qué número confiar</h2>
+<p>Fs, Re, Qes y Qms salen de un barrido de impedancia, la medición más directa. Vas y Cms salen de una prueba con masa agregada o con un cajón de prueba, y varían más de una pieza a otra. Si la revisión falla, quédate con los valores medidos, pregúntale al fabricante o mide tu propia bocina. La app marca cada valor que calculó y te deja corregir una bocina de la lista; tu corrección se queda en tu celular.</p>
+<nav class="next" aria-label="Siguiente pregunta"><p class="next-h">Siguiente pregunta</p><ul><li><a href="../../es/calculadora-cajon-subwoofer/">Calculadora de cajón<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">En la app</h2>
+<p>La app hace estas revisiones cuando eliges o escribes una bocina, marca los valores que calculó y te avisa antes de que diseñes con una hoja que no cuadra.</p>
+<p class="small">Gratis: todos los tipos de cajón, la lista completa de bocinas, las medidas de corte, la conexión y la prueba de tono. Pro es un solo pago, sin suscripción. Sin cuenta y funciona sin internet.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Muy pronto</b></span><span class="store soon"><small>App Store</small><b>Más adelante</b></span></div>
+</aside>
+<h2>Fuentes</h2>
+<ol class="sources"><li><a href="https://www.aes.org/e-lib/browse.cfm?elib=2026" rel="noopener">Small, R. H., “Closed-Box Loudspeaker Systems”, JAES 20 (1972)</a></li><li><a href="https://www.scan-speak.dk/datasheet/pdf/18w-8531g00.pdf" rel="noopener">Scan-Speak 18W/8531G00 datasheet</a></li><li><a href="https://www.parts-express.com/pedocs/specs/295-460-dayton-audio-rss265hf-4-specifications-46172.pdf" rel="noopener">Dayton Audio RSS265HF-4 specifications</a></li><li><a href="https://www.Lautsprechershop.de/pdf/peerless/peerless_sls_p830669.pdf" rel="noopener">Peerless SLS-P830669 datasheet</a></li><li><a href="https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9" rel="noopener">NIST SP 811, Appendix B.9: cubic foot and inch</a></li></ol>
+<p class="callout">Los resultados son estimados de diseño. Antes de armar, revisa la hoja técnica de la bocina y la carga mínima de tu amplificador.</p>
+<p class="updated">Revisado contra las fuentes: 27 de octubre de 2026</p>
+</article>
+</div>
+<div class="wrap"><p class="also-in"><span>Esta página en:</span> <a href="../../thiele-small-datasheet-check/" hreflang="en" lang="en">English</a><a href="../../pt-br/erros-ficha-tecnica-thiele-small/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Los resultados son estimados de diseño. Antes de armar, revisa la hoja técnica de la bocina y la carga mínima de tu amplificador.</p>
+<p>Boxwright es una app para diseñar cajones de subwoofer y bafles, para car audio y hi-fi casero, hecha por Mufatech. Este sitio no usa cookies y no carga nada de otros servidores.</p>
+<nav aria-label="Sitio"><a href="../../es/">Boxwright</a><a href="../../es/calculadora-cajon-subwoofer/">Calculadora de cajón</a><a href="../../es/errores-hoja-tecnica-thiele-small/">Revisión de hoja técnica</a><a href="../../es/conexion-subwoofer-doble-bobina/">Tablas de conexión</a><a href="../../es/verificar-sintonia-del-puerto/">Revisión de sintonía</a><a href="../../es/support/">Soporte</a><a href="../../es/privacy/">Privacidad</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+<script type="module" src="../../assets/calc-ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es-419">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Calculadora de cajones para subwoofer: sellado y puerto</title>
+<meta name="description" content="Calculadora de cajón para subwoofer gratis: Qtc, Fc y F3 del cajón sellado con Fs, Qts y Vas, y el largo del puerto del cajón porteado. En tu navegador.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEAE5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131416" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/boxwright/es/calculadora-cajon-subwoofer/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/boxwright/subwoofer-box-calculator/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/boxwright/pt-br/calculadora-caixa-subwoofer/">
+<link rel="alternate" hreflang="es-419" href="https://mufa-tech.github.io/boxwright/es/calculadora-cajon-subwoofer/">
+<link rel="alternate" hreflang="de" href="https://mufa-tech.github.io/boxwright/de/gehaeuse-rechner/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/boxwright/subwoofer-box-calculator/">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="preload" href="../../assets/fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Boxwright">
+<meta property="og:title" content="Calculadora de cajones para subwoofer: sellado y puerto">
+<meta property="og:description" content="Calculadora de cajón para subwoofer gratis: Qtc, Fc y F3 del cajón sellado con Fs, Qts y Vas, y el largo del puerto del cajón porteado. En tu navegador.">
+<meta property="og:url" content="https://mufa-tech.github.io/boxwright/es/calculadora-cajon-subwoofer/">
+<meta property="og:image" content="https://mufa-tech.github.io/boxwright/assets/og-es-419.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_MX">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Ir al contenido</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../../es/"><img src="../../assets/icon.svg" alt="" width="32" height="32">Boxwright</a>
+<nav class="main" aria-label="Principal"><a href="../../es/calculadora-cajon-subwoofer/" aria-current="page">Calculadora de cajones</a><a href="../../es/support/">Soporte</a></nav>
+<details class="langpick"><summary aria-label="Idioma: Español (Latinoamérica)"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>ES</span></summary><nav aria-label="Idioma"><a href="../../subwoofer-box-calculator/" hreflang="en" lang="en">English</a><a href="../../pt-br/calculadora-caixa-subwoofer/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../../es/calculadora-cajon-subwoofer/" hreflang="es-419" lang="es-419" aria-current="true">Español (Latinoamérica)</a><a href="../../id/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../../pl/" hreflang="pl" lang="pl">Polski</a><a href="../../de/gehaeuse-rechner/" hreflang="de" lang="de">Deutsch</a><a href="../../fr/" hreflang="fr" lang="fr">Français</a><a href="../../nl/" hreflang="nl" lang="nl">Nederlands</a><a href="../../it/" hreflang="it" lang="it">Italiano</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../../es/">Boxwright</a></p>
+<h1>Calculadora de cajones para subwoofer</h1>
+<p class="lead">Sellado: pon el Fs, Qts y Vas de la bocina y el volumen neto, y ve el Qtc, Fc y F3. Porteado: pon el volumen neto, la sintonía y el tamaño del puerto, y te da el largo que hay que cortar.</p>
+<div class="calc">
+<form class="panel" id="calc-form" data-calc="box" novalidate>
+<fieldset class="choice"><legend>Tipo de cajón</legend><div class="pills"><label class="pill"><input type="radio" name="mode" value="sealed" checked><span>Sellado</span></label><label class="pill"><input type="radio" name="mode" value="ported"><span>Porteado</span></label></div></fieldset>
+<fieldset class="choice"><legend>Unidades</legend><div class="pills"><label class="pill"><input type="radio" name="units" value="metric" checked><span>Litros, cm</span></label><label class="pill"><input type="radio" name="units" value="imperial"><span>ft³, pulgadas</span></label></div></fieldset>
+<div data-show="mode:sealed">
+<div class="field-row two"><div class="field"><label for="fs">Fs</label>
+<div class="joined"><input id="fs" name="fs" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="26.7" required aria-describedby="fs-hint fs-err"><span class="unit">Hz</span></div>
+<span class="hint" id="fs-hint">Resonancia al aire libre, de la hoja técnica.</span><span class="err" id="fs-err" hidden></span></div><div class="field"><label for="qts">Qts</label>
+<input id="qts" name="qts" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="0.44" required aria-describedby="qts-hint qts-err">
+<span class="hint" id="qts-hint">Q total de la bocina.</span><span class="err" id="qts-err" hidden></span></div></div>
+<div class="field"><label for="vas">Vas</label>
+<div class="joined"><input id="vas" name="vas" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="vol" value="80.5" required aria-describedby="vas-hint vas-err"><span class="unit" data-unit="vol">L</span></div>
+<span class="hint" id="vas-hint">Revisa la unidad en la hoja: litros o pies cúbicos.</span><span class="err" id="vas-err" hidden></span></div>
+<div class="field"><label for="vb">Volumen neto</label>
+<div class="joined"><input id="vb" name="vb" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="vol" value="35" required aria-describedby="vb-hint vb-err"><span class="unit" data-unit="vol">L</span></div>
+<span class="hint" id="vb-hint">El aire dentro del cajón, ya sin bocina, puerto ni refuerzos.</span><span class="err" id="vb-err" hidden></span></div>
+</div>
+<div data-show="mode:ported" hidden>
+<div class="field-row two"><div class="field"><label for="pvb">Volumen neto</label>
+<div class="joined"><input id="pvb" name="pvb" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="vol" value="50" aria-describedby="pvb-hint pvb-err"><span class="unit" data-unit="vol">L</span></div>
+<span class="hint" id="pvb-hint">El aire dentro del cajón, ya sin bocina, puerto ni refuerzos.</span><span class="err" id="pvb-err" hidden></span></div><div class="field"><label for="fb">Sintonía (Fb)</label>
+<div class="joined"><input id="fb" name="fb" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="34" aria-describedby="fb-hint fb-err"><span class="unit">Hz</span></div>
+<span class="hint" id="fb-hint">En el carro los subs suelen ir entre 30 y 40 Hz.</span><span class="err" id="fb-err" hidden></span></div></div>
+<fieldset class="choice"><legend>Puerto</legend><div class="pills"><label class="pill"><input type="radio" name="shape" value="round" checked><span>Redondo</span></label><label class="pill"><input type="radio" name="shape" value="slot"><span>Slot</span></label></div></fieldset>
+<div data-show="shape:round"><div class="field"><label for="dia">Diámetro interior</label>
+<div class="joined"><input id="dia" name="dia" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="len" value="10" aria-describedby="dia-hint dia-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="hint" id="dia-hint">De cada puerto.</span><span class="err" id="dia-err" hidden></span></div></div>
+<div data-show="shape:slot" hidden><div class="field-row two"><div class="field"><label for="sw">Ancho del slot</label>
+<div class="joined"><input id="sw" name="sw" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="len" value="5" aria-describedby="sw-hint sw-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="hint" id="sw-hint">El lado angosto, por dentro.</span><span class="err" id="sw-err" hidden></span></div><div class="field"><label for="sh">Alto del slot</label>
+<div class="joined"><input id="sh" name="sh" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="len" value="30" aria-describedby="sh-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="err" id="sh-err" hidden></span></div></div></div>
+<div class="field"><label for="count">Número de puertos</label>
+<input id="count" name="count" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" value="1" aria-describedby="count-hint count-err">
+<span class="hint" id="count-hint">Puertos iguales, cada uno de este tamaño.</span><span class="err" id="count-err" hidden></span></div>
+<div class="field"><label for="built">Largo que armaste (opcional)</label>
+<div class="joined"><input id="built" name="built" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="len" aria-describedby="built-hint built-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="hint" id="built-hint">Te dice a cuánto sintoniza ese largo.</span><span class="err" id="built-err" hidden></span></div>
+<details class="more"><summary>Extremos del puerto</summary>
+<fieldset class="choice"><legend>Corrección de extremos</legend><div class="pills"><label class="pill"><input type="radio" name="ends" value="flanged-free" checked><span>Al ras + libre</span></label><label class="pill"><input type="radio" name="ends" value="flanged-flanged"><span>Los dos con campana</span></label><label class="pill"><input type="radio" name="ends" value="free-free"><span>Los dos libres</span></label></div></fieldset>
+<p class="small">Por defecto: el extremo de afuera al ras del frente y el de adentro libre en el cajón. Una campana, o un puerto pegado a una pared, hace que ese extremo cuente como uno al ras.</p></details>
+</div>
+</form>
+<section class="results" aria-labelledby="res-h">
+<h2 id="res-h" class="sr">Resultado</h2>
+<div id="calc-nojs" class="callout"><p>Esta calculadora necesita JavaScript. Corre en tu navegador y no manda nada a ningún lado.</p></div>
+<div id="res" class="res-card card" aria-live="polite" hidden></div>
+<p class="note">Corre en tu navegador. Lo que escribes no se manda ni se guarda.</p>
+</section>
+</div>
+<script type="application/json" id="calc-i18n">{"locale":"es-419","decimal":".","units":"metric","unitNames":{"metric":{"vol":"L","len":"cm"},"imperial":{"vol":"ft³","len":"pulg"}},"errEmpty":"Escribe un número.","errNumber":"Eso no es un número. Usa dígitos y un solo separador decimal.","errInteger":"Solo números enteros.","errRange":"Entre {min} y {max}.","errPositive":"Todos los valores tienen que ser mayores que cero.","fixInputs":"Corrige el campo marcado y aquí aparece el resultado.","howTitle":"Cómo se calculó","words":{"warn":"Revisa","stop":"No funciona","info":"Nota","good":"Bien"},"sealedH":"Cajón sellado","fc":"Fc, resonancia del cajón","f3":"F3, −3 dB respecto a la línea plana","f3Peak":"F3, −3 dB debajo del pico","peak":"Pico","qtcLow":"Qtc menor de 0.6: seco y profundo, pero cae pronto. En el carro la ganancia de cabina recupera una parte.","qtcFlat":"Qtc de 0.6 a 0.8: plano y controlado. Lo que normalmente se busca.","qtcPunchy":"Qtc de 0.8 a 1.0: más pegada alrededor de Fc, una jorobita, menos bajo profundo.","qtcPeaky":"Qtc mayor de 1.0: un pico claro, retumba. Un cajón más grande lo baja.","qtcTable":"Volumen neto para los Qtc más comunes","netVolume":"Volumen neto","noBox":"ninguno: el Qts es demasiado alto","howSealed":"α = Vas/Vb. F3 es donde la respuesta queda 3 dB debajo de la línea plana en la que se asienta; arriba de Qtc 0.707 el segundo F3 se mide desde el pico.","portedH":"Largo del puerto a cortar","portedWhat":"Puertos: {n}. Volumen neto {vb}, sintonía a {fb}.","effective":"Largo acústico (Leff)","endCorr":"Corrección de extremos","area":"Área total del puerto","pipe":"Primera resonancia de tubo","builtTunes":"Un puerto de {len} sintoniza a","tooShort":"El puerto necesitaría un largo negativo: el Leff de {leff} es más corto que la corrección de extremos de {ec}. Usa un puerto más grande o más puertos (más área total), o sintoniza más abajo.","tooLong":"Con {len} el puerto es más largo de lo que cabe en un cajón de este tamaño (unos {room}). Dóblalo, usa un puerto en L o usa menos área de puerto.","pipeLow":"La resonancia de tubo del propio puerto queda en {hz}, tan abajo que se puede oír como una nota. Un puerto más corto o un corte de crossover más bajo la deja fuera.","slotEstimate":"La corrección de extremos de un slot es un estimado. Arma el puerto un poco largo y recórtalo después de una prueba de tono.","netNote":"Volumen neto quiere decir el aire que queda ya con el puerto adentro. Un puerto largo se come litros; la app calcula el puerto y el volumen juntos.","howPorted":"Largo físico = Leff menos la corrección de extremos. Extremos: {ends}, corrección {ec}.","endsNames":{"flanged-free":"uno al ras, uno libre (1.46 × radio)","flanged-flanged":"los dos con campana (1.70 × radio)","free-free":"los dos libres (1.23 × radio)"}}</script>
+<article class="prose gap-top">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">En esta página</p><ol><li><a href="#inputs">Qué números necesitas</a></li><li><a href="#sealed">Sellado: Qtc, Fc y F3</a></li><li><a href="#ported">Porteado: el largo del puerto</a></li><li><a href="#speed">Lo que esta página no cubre</a></li></ol></nav>
+<h2 id="inputs">Qué números necesitas</h2>
+<p>Para el cajón bastan tres números de la hoja técnica de la bocina: <strong>Fs</strong> (resonancia al aire libre), <strong>Qts</strong> (Q total) y <strong>Vas</strong> (el volumen de aire que es igual de duro que la suspensión). Fíjate bien en la unidad del Vas: casi todas las hojas de Estados Unidos lo traen en pies cúbicos y las europeas en litros. Si la hoja trae Qes y Qms pero no Qts, Qts = Qes·Qms/(Qes + Qms). ¿No sabes si los números cuadran? La <a href="../../es/errores-hoja-tecnica-thiele-small/">revisión de la hoja técnica</a> los compara entre sí.</p><p>El volumen que se usa aquí es el <strong>neto</strong>: el aire que queda adentro ya sin la bocina, el puerto, los refuerzos ni el doble frente. Un cajón de 50 L por dentro queda en unos 44 L netos con una bocina de 12" y un puerto de 10 cm.</p>
+<h2 id="sealed">Sellado: Qtc, Fc y F3</h2>
+<p>Un cajón sellado le suma la rigidez de su aire a la suspensión de la bocina. Con α = Vas/Vb, la resonancia del cajón es Fc = Fs·√(α + 1) y la Q del cajón es Qtc = Qts·√(α + 1) (Small, 1972). Entre más chico el cajón, más altos salen Qtc y Fc.</p><ul><li><strong>0.577</strong>: el retardo de grupo más plano, seco, pide un cajón más grande.</li><li><strong>0.707</strong>: máximamente plano. Lo que normalmente se busca en hi-fi.</li><li><strong>0.8 a 1.0</strong>: lo común en carros. La ganancia de cabina levanta los bajos, así que un poco de pegada en Fc funciona.</li><li><strong>Arriba de 1.1</strong>: retumba. El cajón es muy chico para esa bocina.</li></ul><p>El F3 se da de dos formas porque las páginas y las hojas técnicas usan las dos: −3 dB debajo de la línea plana a la que llega la respuesta y, cuando hay pico, −3 dB debajo del pico. La calculadora te dice cuál es cuál.</p>
+<h2 id="ported">Porteado: el largo del puerto</h2>
+<p>El puerto y el aire del cajón forman un resonador de Helmholtz. El largo acústico que sintoniza un volumen neto Vb a Fb con un área de puerto Sp es Leff = c²·Sp/(4π²·Fb²·Vb), con c = 343 m/s a 20 °C. El largo que cortas es menor: el aire que está justo afuera de cada extremo se mueve junto con el puerto, así que cada extremo suma una corrección.</p><p>Esta calculadora, igual que la app, usa un extremo con brida (0.85 × radio, el que queda al ras del frente) y uno libre (0.61 × radio, el que queda dentro del cajón). Al comparar con Hornresp, su corrección implícita salió entre 1.46 y 1.62 × radio, y con este valor por defecto la sintonía quedó a menos de 1 % de la suya. Un puerto con campana, o uno que corre pegado a una pared, se comporta como extremo con brida de ese lado: elígelo en Extremos del puerto.</p><p>De las mismas cuentas salen dos avisos. Si el puerto sale más largo que el cajón, dóblalo o usa menos área. Si su propia resonancia de tubo, c/(2·Leff), cae debajo de unas cuatro veces tu corte de crossover, la puedes oír como una nota.</p>
+<h2 id="speed">Lo que esta página no cubre</h2>
+<p>La velocidad del aire en el puerto y el recorrido del cono dependen del Sd y el Xmax de la bocina y de la potencia de tu amplificador. Un puerto bien sintonizado igual puede soplar a 300 W. La app revisa las dos cosas con el RMS real de tu amplificador y te sugiere el área de puerto o el filtro subsónico que lo arregla. Para la respuesta completa de un cajón porteado, su F3 y las alineaciones clásicas (QB3, SBB4, SC4), usa la app.</p>
+<nav class="next" aria-label="Siguiente pregunta"><p class="next-h">Siguiente pregunta</p><ul><li><a href="../../es/verificar-sintonia-del-puerto/">Revisión de sintonía<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><a href="../../es/conexion-subwoofer-doble-bobina/">Tablas de conexión<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><a href="../../es/errores-hoja-tecnica-thiele-small/">Revisión de hoja técnica<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">En la app</h2>
+<p>En la app el puerto y el volumen neto se calculan juntos: el volumen del propio puerto se le resta al cajón, el largo se vuelve a calcular y las medidas de corte incluyen las paredes del puerto.</p>
+<p class="small">Gratis: todos los tipos de cajón, la lista completa de bocinas, las medidas de corte, la conexión y la prueba de tono. Pro es un solo pago, sin suscripción. Sin cuenta y funciona sin internet.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Muy pronto</b></span><span class="store soon"><small>App Store</small><b>Más adelante</b></span></div>
+</aside>
+<h2>Fuentes</h2>
+<ol class="sources"><li><a href="https://www.aes.org/e-lib/browse.cfm?elib=2026" rel="noopener">Small, R. H., “Closed-Box Loudspeaker Systems”, JAES 20 (1972)</a></li><li><a href="https://sdlabo.jp/archives/Vented_Box_Loudspeaker%20Systems_Part_1-4.pdf" rel="noopener">Small, R. H., “Vented-Box Loudspeaker Systems” Parts I–IV, JAES 21 (1973)</a></li><li><a href="https://en.wikipedia.org/wiki/End_correction" rel="noopener">End correction: Rayleigh (flanged, 0.8488 r) and Levine &amp; Schwinger 1948 (free, 0.6133 r)</a></li><li><a href="https://usenclosure.com/Enclosure%20Formulas/enclosure_formula.html" rel="noopener">usenclosure.com, enclosure formulas</a></li><li><a href="https://www.scan-speak.dk/datasheet/tech/Scan-Speak_Technote07_Box-alignments.pdf" rel="noopener">Scan-Speak Technote 07, box alignments</a></li></ol>
+<p class="callout">Los resultados son estimados de diseño. Antes de armar, revisa la hoja técnica de la bocina y la carga mínima de tu amplificador.</p>
+<p class="updated">Revisado contra las fuentes: 27 de octubre de 2026</p>
+</article>
+</div>
+<div class="wrap"><p class="also-in"><span>Esta página en:</span> <a href="../../subwoofer-box-calculator/" hreflang="en" lang="en">English</a><a href="../../pt-br/calculadora-caixa-subwoofer/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../../de/gehaeuse-rechner/" hreflang="de" lang="de">Deutsch</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Los resultados son estimados de diseño. Antes de armar, revisa la hoja técnica de la bocina y la carga mínima de tu amplificador.</p>
+<p>Boxwright es una app para diseñar cajones de subwoofer y bafles, para car audio y hi-fi casero, hecha por Mufatech. Este sitio no usa cookies y no carga nada de otros servidores.</p>
+<nav aria-label="Sitio"><a href="../../es/">Boxwright</a><a href="../../es/calculadora-cajon-subwoofer/">Calculadora de cajón</a><a href="../../es/errores-hoja-tecnica-thiele-small/">Revisión de hoja técnica</a><a href="../../es/conexion-subwoofer-doble-bobina/">Tablas de conexión</a><a href="../../es/verificar-sintonia-del-puerto/">Revisión de sintonía</a><a href="../../es/support/">Soporte</a><a href="../../es/privacy/">Privacidad</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+<script type="module" src="../../assets/calc-ui.js"></script>
+</body>
+</html>

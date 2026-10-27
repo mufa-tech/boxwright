@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Subwoofer wiring: DVC and SVC to 1, 2 or 4 ohms</title>
+<meta name="description" content="Wiring charts for 1 to 4 subwoofers with single or dual voice coils: the final impedance for every series and parallel layout, and the amp’s minimum load.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEAE5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131416" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/boxwright/subwoofer-wiring/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/boxwright/subwoofer-wiring/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/boxwright/pt-br/ligacao-subwoofer-bobina-dupla/">
+<link rel="alternate" hreflang="es-419" href="https://mufa-tech.github.io/boxwright/es/conexion-subwoofer-doble-bobina/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/boxwright/subwoofer-wiring/">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<link rel="preload" href="../assets/fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Boxwright">
+<meta property="og:title" content="Subwoofer wiring: DVC and SVC to 1, 2 or 4 ohms">
+<meta property="og:description" content="Wiring charts for 1 to 4 subwoofers with single or dual voice coils: the final impedance for every series and parallel layout, and the amp’s minimum load.">
+<meta property="og:url" content="https://mufa-tech.github.io/boxwright/subwoofer-wiring/">
+<meta property="og:image" content="https://mufa-tech.github.io/boxwright/assets/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../"><img src="../assets/icon.svg" alt="" width="32" height="32">Boxwright</a>
+<nav class="main" aria-label="Main"><a href="../subwoofer-box-calculator/">Box calculator</a><a href="../validation/">How we check the maths</a><a href="../support/">Support</a></nav>
+<details class="langpick"><summary aria-label="Language: English"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>EN</span></summary><nav aria-label="Language"><a href="../subwoofer-wiring/" hreflang="en" lang="en" aria-current="true">English</a><a href="../pt-br/ligacao-subwoofer-bobina-dupla/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../es/conexion-subwoofer-doble-bobina/" hreflang="es-419" lang="es-419">Español (Latinoamérica)</a><a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../pl/" hreflang="pl" lang="pl">Polski</a><a href="../de/" hreflang="de" lang="de">Deutsch</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../nl/" hreflang="nl" lang="nl">Nederlands</a><a href="../it/" hreflang="it" lang="it">Italiano</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../">Boxwright</a></p>
+<h1>Subwoofer wiring: series, parallel and dual voice coils</h1>
+<p class="lead">The load your amplifier sees depends on how the coils and the subs are joined. Here is every layout for one to four subs, worked out with the same function the app uses.</p>
+
+<article class="prose">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">On this page</p><ol><li><a href="#rules">Two rules</a></li><li><a href="#dvc">Dual voice coil subs</a></li><li><a href="#svc">Single voice coil subs</a></li><li><a href="#amp">Match the amplifier</a></li><li><a href="#meter">What a meter reads</a></li></ol></nav>
+<h2 id="rules">Two rules</h2>
+<p>In <strong>series</strong> the impedances add: two 4 Ω coils make 8 Ω. In <strong>parallel</strong> they divide: two 4 Ω coils make 2 Ω, and in general 1/Z = 1/Z1 + 1/Z2 + … A dual voice coil sub is two coils on one cone. Wire them in series or parallel to each other first, then wire the subs.</p>
+<h2 id="dvc">Dual voice coil subs</h2>
+<p>“–” means that layout does not apply to one sub.</p><p class="table-cap" aria-hidden="true">Dual voice coil (DVC) subs, final impedance</p><div class="table-wrap"><table class="num-table"><caption class="sr">Dual voice coil (DVC) subs, final impedance</caption>
+<thead><tr><th scope="col">Subs</th><th scope="col">Coils series, subs parallel</th><th scope="col">Coils parallel, subs parallel</th><th scope="col">Coils series, subs series</th><th scope="col">Coils parallel, subs series</th></tr></thead>
+<tbody><tr><th scope="row" class="l">1 × DVC 1 Ω</th><td>2 Ω</td><td>0.5 Ω</td><td>–</td><td>–</td></tr>
+<tr><th scope="row" class="l">2 × DVC 1 Ω</th><td>1 Ω</td><td>0.25 Ω</td><td>4 Ω</td><td>1 Ω</td></tr>
+<tr><th scope="row" class="l">3 × DVC 1 Ω</th><td>0.67 Ω</td><td>0.17 Ω</td><td>6 Ω</td><td>1.5 Ω</td></tr>
+<tr><th scope="row" class="l">4 × DVC 1 Ω</th><td>0.5 Ω</td><td>0.13 Ω</td><td>8 Ω</td><td>2 Ω</td></tr>
+<tr><th scope="row" class="l">1 × DVC 2 Ω</th><td>4 Ω</td><td>1 Ω</td><td>–</td><td>–</td></tr>
+<tr><th scope="row" class="l">2 × DVC 2 Ω</th><td>2 Ω</td><td>0.5 Ω</td><td>8 Ω</td><td>2 Ω</td></tr>
+<tr><th scope="row" class="l">3 × DVC 2 Ω</th><td>1.33 Ω</td><td>0.33 Ω</td><td>12 Ω</td><td>3 Ω</td></tr>
+<tr><th scope="row" class="l">4 × DVC 2 Ω</th><td>1 Ω</td><td>0.25 Ω</td><td>16 Ω</td><td>4 Ω</td></tr>
+<tr><th scope="row" class="l">1 × DVC 4 Ω</th><td>8 Ω</td><td>2 Ω</td><td>–</td><td>–</td></tr>
+<tr><th scope="row" class="l">2 × DVC 4 Ω</th><td>4 Ω</td><td>1 Ω</td><td>16 Ω</td><td>4 Ω</td></tr>
+<tr><th scope="row" class="l">3 × DVC 4 Ω</th><td>2.67 Ω</td><td>0.67 Ω</td><td>24 Ω</td><td>6 Ω</td></tr>
+<tr><th scope="row" class="l">4 × DVC 4 Ω</th><td>2 Ω</td><td>0.5 Ω</td><td>32 Ω</td><td>8 Ω</td></tr></tbody></table></div><p>Series or parallel, the coils give the same motor strength (Bl²/Re), so the box design does not change. Leave one coil unconnected and the motor strength halves: Qes doubles and the sub plays looser in a box sized for both coils. Use both.</p>
+<h2 id="svc">Single voice coil subs</h2>
+<p class="table-cap" aria-hidden="true">Single voice coil (SVC) subs, final impedance</p><div class="table-wrap"><table class="num-table"><caption class="sr">Single voice coil (SVC) subs, final impedance</caption>
+<thead><tr><th scope="col">Subs</th><th scope="col">Parallel</th><th scope="col">Series</th></tr></thead>
+<tbody><tr><th scope="row" class="l">1 × SVC 2 Ω</th><td>2 Ω</td><td>–</td></tr>
+<tr><th scope="row" class="l">2 × SVC 2 Ω</th><td>1 Ω</td><td>4 Ω</td></tr>
+<tr><th scope="row" class="l">3 × SVC 2 Ω</th><td>0.67 Ω</td><td>6 Ω</td></tr>
+<tr><th scope="row" class="l">4 × SVC 2 Ω</th><td>0.5 Ω</td><td>8 Ω</td></tr>
+<tr><th scope="row" class="l">1 × SVC 4 Ω</th><td>4 Ω</td><td>–</td></tr>
+<tr><th scope="row" class="l">2 × SVC 4 Ω</th><td>2 Ω</td><td>8 Ω</td></tr>
+<tr><th scope="row" class="l">3 × SVC 4 Ω</th><td>1.33 Ω</td><td>12 Ω</td></tr>
+<tr><th scope="row" class="l">4 × SVC 4 Ω</th><td>1 Ω</td><td>16 Ω</td></tr>
+<tr><th scope="row" class="l">1 × SVC 8 Ω</th><td>8 Ω</td><td>–</td></tr>
+<tr><th scope="row" class="l">2 × SVC 8 Ω</th><td>4 Ω</td><td>16 Ω</td></tr>
+<tr><th scope="row" class="l">3 × SVC 8 Ω</th><td>2.67 Ω</td><td>24 Ω</td></tr>
+<tr><th scope="row" class="l">4 × SVC 8 Ω</th><td>2 Ω</td><td>32 Ω</td></tr></tbody></table></div>
+<h2 id="amp">Match the amplifier</h2>
+<p>Every amp has a minimum stable load: “stable to 1 Ω”, “2 Ω stable”. Pick a layout at or above it. Most class D mono amps make their most power at their lowest stable load, which is why 1 Ω and 2 Ω layouts are popular. Going below it makes the amp run hot and shut down, or fail.</p><p>Identical subs share the power equally in any of these layouts. Mixing different subs on one channel does not share evenly, so keep a bank to one model.</p>
+<h2 id="meter">What a meter reads</h2>
+<p>A multimeter shows the coil’s DC resistance Re, not the nominal impedance. A 4 Ω coil reads around 3.2 to 3.6 Ω (the JL Audio 12W3v3-4 prints Re = 3.56 Ω). A 2 Ω final load reads around 1.6 to 1.8 Ω. That is normal. A reading near 0 Ω is a short.</p>
+<nav class="next" aria-label="Next question"><p class="next-h">Next question</p><ul><li><a href="../subwoofer-box-calculator/">Box calculator<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><a href="../port-tuning-check/">Port tuning check<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">In the app</h2>
+<p>The app lists every valid layout for 1 to 16 subs with 1, 2 or 4 coils, hides the ones below your amp’s minimum load, and shows the power each sub gets.</p>
+<p class="small">Free: every box, the full driver list, the cut list, wiring and the tone check. Pro is one payment, no subscription. No account, works offline.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Coming soon</b></span><span class="store soon"><small>App Store</small><b>Coming later</b></span></div>
+</aside>
+<h2>Sources</h2>
+<ol class="sources"><li><a href="https://en.wikipedia.org/wiki/Series_and_parallel_circuits" rel="noopener">Series and parallel circuits (Ohm’s law)</a></li></ol>
+<p class="callout">Results are design estimates. Check the driver’s datasheet and your amplifier’s minimum load before you build.</p>
+<p class="updated">Checked against the sources: October 27, 2026</p>
+</article>
+</div>
+<div class="wrap"><p class="also-in"><span>This page in:</span> <a href="../pt-br/ligacao-subwoofer-bobina-dupla/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="../es/conexion-subwoofer-doble-bobina/" hreflang="es-419" lang="es-419">Español (Latinoamérica)</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Results are design estimates. Check the driver’s datasheet and your amplifier’s minimum load before you build.</p>
+<p>Boxwright is a speaker and subwoofer box designer for car audio and DIY hi-fi, made by Mufatech. This site sets no cookies and loads nothing from other servers.</p>
+<nav aria-label="Site"><a href="../">Boxwright</a><a href="../subwoofer-box-calculator/">Box calculator</a><a href="../thiele-small-datasheet-check/">Datasheet check</a><a href="../subwoofer-wiring/">Wiring charts</a><a href="../port-tuning-check/">Port tuning check</a><a href="../validation/">Validation</a><a href="../support/">Support</a><a href="../privacy/">Privacy</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+
+</body>
+</html>
